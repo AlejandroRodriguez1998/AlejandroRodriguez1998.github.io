@@ -12,6 +12,8 @@
 
 #section1 {
     background: #f0f0f0; /* Color de fondo */
+    z-index: 1001 !important;
+    position: relative;
 }
 
 /* Estilo para el contenedor de la elipse */
@@ -116,7 +118,7 @@ h1 span {
     border-radius: 50%;
     cursor: pointer;
     z-index: 1000;
-    display: none; /* Ocultamos inicialmente */
+    display: block;
 }
 
 .side-menu {
@@ -129,7 +131,7 @@ h1 span {
     box-shadow: -4px 0 6px rgba(0,0,0,0.2);
     transition: right 0.3s ease;
     padding: 20px;
-    z-index: 1001;
+    z-index: 1002;
 }
 
 .side-menu a {

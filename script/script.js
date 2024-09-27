@@ -23,30 +23,3 @@ document.addEventListener('click', function(event) {
     }
 });
 
-// Mostrar el botón cuando la sección 2 sea visible
-const observerSection2 = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            menuButton.style.display = 'block'; // Mostrar el botón cuando la sección 2 es visible
-        }
-    });
-}, {
-    threshold: 0.8 // Al menos el 50% de la sección 2 debe estar visible
-});
-
-// Observar la sección 2
-observerSection2.observe(section2);
-
-// Ocultar el botón cuando se vuelve a la sección 1
-const observerSection1 = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            menuButton.style.display = 'none'; // Ocultar el botón cuando la sección 1 es visible
-        }
-    });
-}, {
-    threshold: 0.4 // Al menos el 50% de la sección 1 debe estar visible
-});
-
-// Observar la sección 1
-observerSection1.observe(section1);
