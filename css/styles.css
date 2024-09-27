@@ -1,0 +1,238 @@
+ body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.fullscreen-section {
+    background-color: #f8f8f8; /* Ajusta el color de fondo si lo deseas */
+    min-height: 100vh;
+}
+
+#section1 {
+    background: #f0f0f0; /* Color de fondo */
+}
+
+/* Estilo para el contenedor de la elipse */
+.ellipse-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: rotate(-2deg) translate(0%, -50%);
+
+}
+
+/* Animación de la elipse que se forma poco a poco */
+svg ellipse {
+    fill: none;
+    stroke: rgb(25,25,25); /* Color de la elipse */
+    stroke-width: 2;
+    stroke-dasharray: 829.6; /* La longitud del trazo */
+    stroke-dashoffset: 829.6; /* Inicialmente la elipse está invisible */
+    animation: drawEllipse 5s ease-in-out infinite; /* Animación para que se dibuje y desdibuje */
+}
+
+@keyframes drawEllipse {
+    0% {
+        stroke-dashoffset: 829.6; /* Elipse invisible */
+    }
+    50% {
+        stroke-dashoffset: 0; /* Elipse completamente dibujada */
+    }
+    75% {
+        stroke-dashoffset: 0; /* Elipse se mantiene dibujada */
+    }
+
+    100% {
+        stroke-dashoffset: 829.6; /* Elipse desaparece */
+    }
+}
+
+/* Estilos adicionales */
+img.logo {
+    width: 80px;
+}
+
+
+h1 {
+    position: relative;
+    color: rgb(0,0,1);
+    font-kerning: none;
+    font-size: 85.9px;
+    font-family: "Kalam", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1 span {
+    position: relative;
+    z-index: 1;
+    color: #6d6968;; /* Color del texto */
+}
+
+#section1 p {
+    font-family: 'Georgia', serif; /* Usa una fuente serif similar */
+    font-size: 1.2em; /* Ajusta el tamaño de la fuente */
+    line-height: 1.8; /* Aumenta el interlineado para mayor legibilidad */
+    color: #333; /* Color del texto en tono oscuro */
+    text-align: center; /* Centra el texto */
+    margin-top: 30px; /* Espacio entre el párrafo y el título */
+    max-width: 700px; /* Limita el ancho para que no sea muy largo */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #6d6968;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: 'Georgia', serif;
+    position: absolute;
+    bottom: 40px; /* Espacio desde el borde inferior */
+    left: 50%;
+    transform: translateX(-50%); /* Centra el botón horizontalmente */
+}
+
+#section2 {
+    background-color: #AFAFAf;
+    position: relative;
+}
+
+/* Botón flotante oculto inicialmente */
+.floating-button {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    background-color: #6d6968;;
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+    display: none; /* Ocultamos inicialmente */
+}
+
+.side-menu {
+    position: fixed;
+    right: -300px;
+    top: 0;
+    height: 100%;
+    width: 300px;
+    background-color: #f8f8f8;
+    box-shadow: -4px 0 6px rgba(0,0,0,0.2);
+    transition: right 0.3s ease;
+    padding: 20px;
+    z-index: 1001;
+}
+
+.side-menu a {
+    display: block;
+    padding: 15px 0;
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    border-bottom: 1px solid #ddd;
+}
+
+.side-menu a:hover {
+    color: #6d6968;
+}
+
+.sobreMi {
+    color: rgb(0,0,1);
+    font-kerning: none;
+    font-size: 80.9px;
+    font-family: "Kalam", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#section2 p {
+    font-family: 'Georgia', serif; /* Usa una fuente serif similar */
+    font-size: 1.2em; /* Ajusta el tamaño de la fuente */
+    line-height: 1.5; /* Aumenta el interlineado para mayor legibilidad */
+    color: #333; /* Color del texto en tono oscuro */
+    text-align:justify; /* Centra el texto */
+    margin-top: 15px; /* Espacio entre el párrafo y el título */
+    max-width: 700px; /* Limita el ancho para que no sea muy largo */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.circle {
+    width: 120px; /* Tamaño del círculo */
+    height: 120px; /* Tamaño del círculo */
+    border-radius: 50%; /* Hace que el div sea un círculo */
+    background-color: #f5f5f5; /* Color de fondo del círculo */
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en columna */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+    margin: 10px;
+    padding: 15px 0; /* Añade espacio interior al círculo */
+}
+
+.circle img {
+    width: 50px; /* Ajusta el tamaño del icono */
+    height: 50px;
+    margin-bottom: 10%; /* Añade espacio entre la imagen y el texto */
+    margin-top: 50% !important
+}
+
+.circle p {
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+    margin-top: 20px !important;
+}
+
+#section3 h1 {
+    color: rgb(0,0,1);
+    font-kerning: none;
+    font-size: 80.9px;
+    font-family: "Kalam", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#section3 p {
+    font-family: 'Georgia', serif; /* Usa una fuente serif similar */
+    font-size: 1.2em; /* Ajusta el tamaño de la fuente */
+    line-height: 1.5; /* Aumenta el interlineado para mayor legibilidad */
+    color: #333; /* Color del texto en tono oscuro */
+    margin-top: 15px; /* Espacio entre el párrafo y el título */
+}
+
+.img-intereses{
+    height: 20%;
+    width: 20%;
+}
+
+.timeline-dot::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 24px;
+    border-radius: 50px;
+    left: -9px;
+    top: 0;
+    background: rgb(25,25,25);
+    border: 2px solid rgb(25,25,25);
+}
+
+.tarjeta {
+    border-left: 2px solid rgb(25,25,25) !important;
+    border-radius: 0%;
+}
+
+.text-bg-primary {
+    background-color: #6d6968 !important;
+}
