@@ -382,6 +382,18 @@ h1 span {
     .mi-carousel-item {
         flex: 0 0 100%; /* 1 elemento en pantallas pequeñas */
     }
+
+    .ellipse-container {
+        top: 74%;
+        left: 20%;
+    }
+}
+
+@media (max-width: 576px) {
+    .ellipse-container {
+        top: 74%;
+        left: 10%;
+    }
 }
 
 .ticket-sales-container {
