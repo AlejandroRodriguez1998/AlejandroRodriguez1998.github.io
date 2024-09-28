@@ -138,8 +138,8 @@ h1 span {
 /* Botón flotante oculto inicialmente */
 .floating-button {
     position: fixed;
-    top: 50%;
-    right: 20px;
+    top: 4.5%;
+    right: 1.6%;
     transform: translateY(-50%);
     background-color: #6d6968;;
     color: white;
@@ -334,15 +334,16 @@ h1 span {
     margin: 0 auto;
     overflow: hidden;
     position: relative;
-    padding: 20px 0;
 }
 
 .mi-carousel-track {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    flex-wrap: nowrap;
 }
 
 .mi-carousel-item {
+    flex: 0 0 33.33%; /* 3 elementos en pantallas grandes */
     box-sizing: border-box;
     padding: 10px;
 }
@@ -362,7 +363,7 @@ h1 span {
     transform: translateY(-50%);
     background-color: transparent;
     border: none;
-    color: rgb(0,0,1);
+    color:  rgb(0,0,1);
     padding: 10px;
     cursor: pointer;
     border-radius: 50%;
@@ -377,44 +378,15 @@ h1 span {
     right: 1px;
 }
 
-.ticket-sales-container {
-    text-align: left;
-}
-
-.banner-image-container img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-}
-
-.modal-content {
-    background-color: #fff;
-    margin: 15% auto;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    width: 50%;
-}
-
 @media (max-width: 768px) {
     .mi-carousel-item {
-        min-width: 100%; /* Mostrar 1 elemento en pantallas pequeñas */
+        flex: 0 0 100%; /* 1 elemento en pantallas pequeñas */
     }
 }
 
 .ticket-sales-container {
     margin: 20px;
+    margin-top: 10px;
     border: 1px solid #000;
     max-width: 332px;
     text-align: center;
@@ -429,12 +401,11 @@ h1 span {
   
 .banner-image-container img {
     width: 100%;
-    height: auto;
+    height: 150px;
 }
   
 #add-to-cart {
     background: #ffffff;
-    margin-top: 10px;
     padding: 10px;
     color: #000;
     border: 2px solid #000;

@@ -27,19 +27,33 @@ let customIndex = 0;
 
 function updateCustomCarousel() {
     const track = document.getElementById('miCarouselTrack');
+    const items = track.querySelectorAll('.mi-carousel-item').length;
     const itemWidth = track.querySelector('.mi-carousel-item').offsetWidth;
+
+    // Calcula cuántos ítems son visibles en función del tamaño de la pantalla
+    const visibleItems = window.innerWidth < 768 ? 1 : 3;
+
+    // Restablece el índice si es mayor al número de items visibles para que se reinicie
+    if (customIndex >= items - visibleItems) {
+        customIndex = 0; // Vuelve al principio al final
+    } else if (customIndex < 0) {
+        customIndex = items - visibleItems; // Ir al último conjunto de items
+    }
+
     track.style.transform = `translateX(${-customIndex * itemWidth}px)`;
 }
 
 function nextCustomSlide() {
     const items = document.querySelectorAll('.mi-carousel-item').length;
-    customIndex = (customIndex + 1) % items;
+    const visibleItems = window.innerWidth < 768 ? 1 : 3;
+    customIndex = (customIndex + 1) % (items - visibleItems + 1);
     updateCustomCarousel();
 }
 
 function prevCustomSlide() {
     const items = document.querySelectorAll('.mi-carousel-item').length;
-    customIndex = (customIndex - 1 + items) % items;
+    const visibleItems = window.innerWidth < 768 ? 1 : 3;
+    customIndex = (customIndex - 1 + (items - visibleItems + 1)) % (items - visibleItems + 1);
     updateCustomCarousel();
 }
 
@@ -47,5 +61,11 @@ function prevCustomSlide() {
 window.addEventListener('resize', updateCustomCarousel);
 
 // Inicializar carrusel
-window.onload = updateCustomCarousel;
+window.onload = function() {
+    updateCustomCarousel();
+    
+    // Avanzar el carrusel automáticamente cada 6 segundos
+    setInterval(nextCustomSlide, 6000); 
+};
+
 
