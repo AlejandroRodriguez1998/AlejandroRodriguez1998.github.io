@@ -85,21 +85,51 @@ h1 span {
     margin-right: auto;
 }
 
-.content button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    background-color: #6d6968;
-    color: white;
-    border: none;
+.btn {
     cursor: pointer;
-    font-family: 'Georgia', serif;
-    position: absolute;
-    bottom: 40px; /* Espacio desde el borde inferior */
-    left: 50%;
-    transform: translateX(-50%); /* Centra el botón horizontalmente */
+    position: relative;
+    padding: 10px 20px;
+    background: transparent;
+    font-size: 20px;
+    font-family: Georgia, serif;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: all 1s;
 }
 
+.btn:after, .btn:before {
+    content: " ";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    border: 0px solid #fff;
+    transition: all 1s;
+}
+
+.btn:after {
+    top: -1px;
+    left: -1px;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+}
+
+.btn:before {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+}
+
+.btn:hover {
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.btn:hover:before, .btn:hover:after {
+    width: 100%;
+    height: 100%;
+}
+  
 #section2 {
     background-color: #AFAFAf;
     position: relative;
@@ -256,3 +286,160 @@ h1 span {
     font-weight: 400;
     font-style: normal;
 }
+
+.skills-box {
+    position: relative;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.skills-title {
+    font-family: "Kalam", cursive;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    padding: 5px 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.progress {
+    height: 18px;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    font-size: 14px;
+    line-height: 25px;
+}
+
+#section4 h6 {
+    color: rgb(0,0,1);
+    font-kerning: none;
+    font-size: 400%;
+    font-family: "Kalam", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.mi-carousel-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+}
+
+.mi-carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.mi-carousel-item {
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.mi-project-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.mi-carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    color: rgb(0,0,1);
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 100;
+}
+
+.mi-carousel-button.prev {
+    left: 1px;
+}
+
+.mi-carousel-button.next {
+    right: 1px;
+}
+
+.ticket-sales-container {
+    text-align: left;
+}
+
+.banner-image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 50%;
+}
+
+@media (max-width: 768px) {
+    .mi-carousel-item {
+        min-width: 100%; /* Mostrar 1 elemento en pantallas pequeñas */
+    }
+}
+
+.ticket-sales-container {
+    margin: 20px;
+    border: 1px solid #000;
+    max-width: 332px;
+    text-align: center;
+    padding: 16px;
+    box-shadow: 4px 4px #000000;
+}
+  
+.banner-image-container {
+    max-width: 300px;
+    width: 100%;
+}
+  
+.banner-image-container img {
+    width: 100%;
+    height: auto;
+}
+  
+#add-to-cart {
+    background: #ffffff;
+    margin-top: 10px;
+    padding: 10px;
+    color: #000;
+    border: 2px solid #000;
+    box-shadow: 4px 4px #000000;
+    font-family: Sans-serif;
+    font-size: 100%;
+}  
+

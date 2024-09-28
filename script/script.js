@@ -23,3 +23,29 @@ document.addEventListener('click', function(event) {
     }
 });
 
+let customIndex = 0;
+
+function updateCustomCarousel() {
+    const track = document.getElementById('miCarouselTrack');
+    const itemWidth = track.querySelector('.mi-carousel-item').offsetWidth;
+    track.style.transform = `translateX(${-customIndex * itemWidth}px)`;
+}
+
+function nextCustomSlide() {
+    const items = document.querySelectorAll('.mi-carousel-item').length;
+    customIndex = (customIndex + 1) % items;
+    updateCustomCarousel();
+}
+
+function prevCustomSlide() {
+    const items = document.querySelectorAll('.mi-carousel-item').length;
+    customIndex = (customIndex - 1 + items) % items;
+    updateCustomCarousel();
+}
+
+// Ajustar el carrusel al cambiar el tamaño de la ventana
+window.addEventListener('resize', updateCustomCarousel);
+
+// Inicializar carrusel
+window.onload = updateCustomCarousel;
+
