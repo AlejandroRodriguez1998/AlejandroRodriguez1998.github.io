@@ -1,4 +1,133 @@
- body, html {
+@media (max-width: 1440px) {
+    .ellipse-container {
+        top: 49% !important;
+        left: 50% !important;
+    }
+
+    .responsive-svg {
+        transform: scale(1.1) !important; 
+    }
+}
+
+@media (max-width: 1120px) {
+    .ellipse-container {
+        top: 72% !important;
+        left: 25% !important;
+    }
+
+    .responsive-svg {
+        transform: scale(1.1) !important; 
+    }
+}
+
+@media (max-width: 1024px) {
+    .ellipse-container {
+        top: 74% !important;
+        left: 22% !important;
+    }
+
+    .responsive-svg {
+        transform: scale(1.1) !important; 
+    }
+}
+
+@media (max-width: 991px) {
+    .ellipse-container {
+        top: 55% !important;
+        left: 49% !important;
+    }
+
+    .responsive-svg {
+        transform: scale(1.1) !important; 
+    }
+}
+
+@media (max-width: 897px) {
+    .ellipse-container {
+        top: 73% !important;
+        left: 25% !important;
+    }
+
+    .responsive-svg {
+        transform: scale(1.1) !important; 
+    }
+}
+
+@media (max-width: 768px) {
+    .mi-carousel-item {
+        flex: 0 0 100% !important; 
+    }
+
+    .ellipse-container {
+        top: 54% !important;
+        left: 50% !important;
+    }
+
+    .responsive-svg {
+        transform: scale(1.1) !important;  
+    }
+}
+
+@media (max-width: 747px) {
+    .ellipse-container {
+        top: 74% !important;
+        left: 25% !important;
+    }
+
+    .responsive-svg {
+        transform: scale(1.1) !important; 
+    }
+}
+
+@media (max-width: 576px) {
+    .ellipse-container {
+        top: 74% !important;
+        left: 10% !important;
+    }
+}
+
+@media (max-width: 425px) {
+    .ellipse-container {
+        top: 75% !important;
+        left: 5% !important;
+    }
+
+    .responsive-svg {
+        transform: scale(1.1) !important;
+    }
+}
+
+@media (max-width: 375px) {
+    #section1 h1 {
+        font-size: 70.9px !important;
+    }
+
+    .ellipse-container {
+        top: 75% !important;
+        left: -2% !important;
+    }
+
+    .responsive-svg {
+        transform: scale(0.88) !important;  
+    }
+}
+
+@media (max-width: 320px) {
+    #section1 h1 {
+        font-size: 60.9px !important;
+    }
+
+    .ellipse-container {
+        top: 75% !important;
+        left: -12% !important;
+    }
+
+    .responsive-svg {
+        transform: scale(0.78) !important;
+    }
+}
+
+body, html {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -57,7 +186,7 @@ img.logo {
 }
 
 
-h1 {
+#section1 h1 {
     position: relative;
     color: rgb(0,0,1);
     font-kerning: none;
@@ -67,10 +196,10 @@ h1 {
     font-style: normal;
 }
 
-h1 span {
+#section1 h1 span {
     position: relative;
     z-index: 1;
-    color: #6d6968;; /* Color del texto */
+    color: #6d6968; /* Color del texto */
 }
 
 #section1 p {
@@ -128,6 +257,15 @@ h1 span {
 .btn:hover:before, .btn:hover:after {
     width: 100%;
     height: 100%;
+}
+
+#section1 a {
+    color: rgb(0,0,1);
+}
+
+#section1 a:hover, 
+#section1 a:focus {
+    color: #6d6968;
 }
   
 #section2 {
@@ -294,6 +432,12 @@ h1 span {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     margin-bottom: 30px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    display: flex;
+    align-items: center;
+    place-content: center;
+    justify-content: space-around;
 }
 
 .skills-title {
@@ -309,6 +453,10 @@ h1 span {
     border: 1px solid #ddd;
 }
 
+.skills-box b {
+    font-family: 'Georgia', serif;
+}
+
 .progress {
     height: 18px;
     margin-bottom: 10px;
@@ -317,6 +465,23 @@ h1 span {
 .progress-bar {
     font-size: 14px;
     line-height: 25px;
+}
+
+.skills-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+    position: relative;
+    padding: 5px;
+    flex: 0 0 33.333%;
+
+}
+
+.tamanioIcon img {
+    height: 96px;
 }
 
 #section6 h1 {
@@ -376,24 +541,6 @@ h1 span {
 
 .mi-carousel-button.next {
     right: 1px;
-}
-
-@media (max-width: 768px) {
-    .mi-carousel-item {
-        flex: 0 0 100%; /* 1 elemento en pantallas pequeñas */
-    }
-
-    .ellipse-container {
-        top: 74%;
-        left: 20%;
-    }
-}
-
-@media (max-width: 576px) {
-    .ellipse-container {
-        top: 74%;
-        left: 10%;
-    }
 }
 
 .ticket-sales-container {

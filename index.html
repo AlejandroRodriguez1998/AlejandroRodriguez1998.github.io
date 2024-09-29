@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Whisper&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -22,12 +23,20 @@
                 <h1 class="letra">
                     Hola, soy <span>Alejandro!</span>
                     <div class="ellipse-container">
-                        <svg width="365" height="100" viewBox="0 0 350 100">
-                            <ellipse cx="175" cy="50" rx="180" ry="50"></ellipse>
+                        <svg width="365" height="100" class="responsive-svg">
+                            <ellipse cx="182" cy="50" rx="168" ry="50"></ellipse>
                         </svg>
                     </div>
                 </h1>
                 <p class="mt-4">Me apasiona desarrollar aplicaciones web, tanto en el frontend como en el backend, lo que me convierte en un desarrollador full-stack.</p>
+                
+                <h3>
+                    <a class="text-decoration-none mx-3" href="https://github.com/AlejandroRodriguez1998" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+                    <a class="text-decoration-none mx-3" href="https://www.linkedin.com/in/alejandro-paniagua-rodriguez-58a42b169/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+                    <a class="text-decoration-none mx-3" href="mailto:alexcr31@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+
+                </h3>
+                
                 <div class="data-container">
                     <span class="btn mt-4">Descargar CV</span>
                 </div>
@@ -212,7 +221,7 @@
                                     <div class="badge text-bg-primary text-wrap my-1" style="width: 8rem;">
                                         2019 - 2019
                                     </div>
-                                    <p><a href="https://www.udemy.com/course/angular-2-fernando-herrera/">Curso</a> de angular en Udemy de unas 35.5 horas.</p>
+                                    <p><a href="https://www.udemy.com/course/angular-2-fernando-herrera/" target="_blank" rel="noopener noreferrer">Curso</a> de angular en Udemy de unas 35.5 horas.</p>
                                 </div>
                             </div>
                         </div>
@@ -274,25 +283,19 @@
                     <div class="skills-box">
                         <div class="skills-title">Web</div>
 
-                        <h5>HTML</h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 90%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                                90%
-                            </div>
-                        </div>
-        
-                        <h5>CSS</h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 85%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-                                85%
-                            </div>
+                        <div class="skills-icon">
+                            <img src="images/html.svg" alt="HTML"/>
+                            <b>HTML</b>
                         </div>
 
-                        <h5>JavaScript</h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 90%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                90%
-                            </div>
+                        <div class="skills-icon">
+                            <img src="images/javaScript.svg" alt="HTML"/>
+                            <b>JavaScript</b>
+                        </div>
+
+                        <div class="skills-icon">
+                            <img src="images/css.svg" alt="HTML"/>
+                            <b>CSS</b>
                         </div>
 
                     </div>
@@ -303,119 +306,99 @@
                     <div class="skills-box">
                         <div class="skills-title">Lenguajes</div>
         
-                        <h5>Java</h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 85%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                85%
-                            </div>
-                        </div>
-        
-                        <h5>Python</h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-warning" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                85%
-                            </div>
+                        <div class="skills-icon">
+                            <img src="images/java.svg" alt="HTML"/>
+                            <b>Java</b>
                         </div>
 
-                        <h5>PHP</h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 80%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                80%
-                            </div>
+                        <div class="skills-icon">
+                            <img src="images/python.svg" alt="HTML"/>
+                            <b>Python</b>
                         </div>
+
+                        <div class="skills-icon">
+                            <img src="images/php.svg" alt="HTML"/>
+                            <b>PHP</b>
+                        </div>
+
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="skills-box">
                         <div class="skills-title">Frameworks</div>
         
-                        <h5>Bootstrap</h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 95%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                95%
-                            </div>
-                        </div>
-        
-                        <h5>Angular</h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                80%
-                            </div>
+                        <div class="skills-icon">
+                            <img src="images/bootstrap.svg" alt="HTML"/>
+                            <b>Bootstrap</b>
                         </div>
 
-                        <h5>Ruby on Rails </h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                75%
-                            </div>
+                        <div class="skills-icon">
+                            <img src="images/rails.svg" alt="HTML"/>
+                            <b>Ruby on Rails</b>
                         </div>
+
+                        <div class="skills-icon">
+                            <img src="images/angular.svg" alt="HTML"/>
+                            <b>Angular</b>
+                        </div>
+
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="skills-box">
                         <div class="skills-title">Entornos</div>
         
-                        <h5>Visual Studio Code</h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 97%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                97%
-                            </div>
-                        </div>
-        
-                        <h5>Netbeans</h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-warning" role="progressbar" style="width: 88%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                88%
-                            </div>
+                        <div class="skills-icon">
+                            <img src="images/code.svg" alt="HTML"/>
+                            <b>Visual Studio Code</b>
                         </div>
 
-                        <h5>Eclipse</h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 78%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                78%
-                            </div>
+                        <div class="skills-icon">
+                            <img src="images/netbeans.svg" alt="HTML"/>
+                            <b>Netbeans</b>
                         </div>
-                        
-                        <h5>MySQL Workbench</h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                75%
-                            </div>
+
+                        <div class="skills-icon tamanioIcon">
+                            <img src="images/eclipse.svg" alt="HTML"/>
+                            <b>Eclipse</b>
                         </div>
+
+                        <div class="skills-icon tamanioIcon">
+                            <img src="images/workbench.svg" alt="HTML"/>
+                            <b>Workbench</b>
+                        </div>
+
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="skills-box">
                         <div class="skills-title">Otras</div>
         
-                        <h5>MySQL</h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 90%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                90%
-                            </div>
-                        </div>
-        
-                        <h5>GitHub</h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-warning" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                85%
-                            </div>
+                        <div class="skills-icon">
+                            <img src="images/sql.svg" alt="HTML"/>
+                            <b>MySQL</b>
                         </div>
 
-                        <h5>Xampp</h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                75%
-                            </div>
+                        <div class="skills-icon">
+                            <img src="images/mongoDB.svg" alt="HTML"/>
+                            <b>MongoDB</b>
                         </div>
 
-                        <h5>Cisco PT</h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 70%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                70%
-                            </div>
+                        <div class="skills-icon">
+                            <img src="images/gitHub.svg" alt="HTML"/>
+                            <b>GitHub</b>
                         </div>
-                        
+
+                        <div class="skills-icon tamanioIcon">
+                            <img src="images/xampp.svg" alt="HTML"/>
+                            <b>Xampp</b>
+                        </div>
+
+                        <div class="skills-icon tamanioIcon">
+                            <img src="images/ciscoPT.svg" alt="HTML"/>
+                            <b>CiscoPT</b>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -426,7 +409,7 @@
         <div class="container">
             <h1 class="text-center pt-5 mb-0">Portafolio</h1>
 
-            <div class="mi-carousel-container">
+            <div class="mi-carousel-container mt-3">
                 <button class="mi-carousel-button prev" onclick="prevCustomSlide()">&#10094;</button>
                 <div class="mi-carousel-track" id="miCarouselTrack">
                     <div class="mi-carousel-item">
@@ -439,7 +422,7 @@
                             <p class="mb-1">Aplicación hecha en Ruby on Rails para llevar notas y compartirlas.</p>
                             <p class="mb-1">2024 - 2024</p>
                             <button id="add-to-cart">
-                                <a class="text-decoration-none font-monospace" href="https://github.com/AlejandroRodriguez1998/Lynx_note">Ver más</a>
+                                <a class="text-decoration-none font-monospace" href="https://github.com/AlejandroRodriguez1998/Lynx_note" target="_blank" rel="noopener noreferrer">Ver más</a>
                             </button>
                         </div>
                     </div>
@@ -452,7 +435,7 @@
                             <p class="mb-1">Aplicacion para buscar las mejores ofertas en videojuegos.</p>
                             <p class="mb-1">2023 - 2023</p>
                             <button id="add-to-cart">
-                                <a class="text-decoration-none font-monospace" href="https://github.com/AitorMillan/TheGameBazar">Ver más</a>
+                                <a class="text-decoration-none font-monospace" href="https://github.com/AitorMillan/TheGameBazar" target="_blank" rel="noopener noreferrer">Ver más</a>
                             </button>
                         </div>
                     </div>
@@ -465,7 +448,7 @@
                             <p class="mb-1">Aplicacion para aprender sobre diseño de microservicios en ZeroIce.</p>
                             <p class="mb-1">2023 - 2023</p>
                             <button id="add-to-cart">
-                                <a class="text-decoration-none font-monospace" href="https://github.com/AlejandroRodriguez1998/IceDrive">Ver más</a>
+                                <a class="text-decoration-none font-monospace" href="https://github.com/AlejandroRodriguez1998/IceDrive" target="_blank" rel="noopener noreferrer">Ver más</a>
                             </button>
                         </div>
                     </div>
@@ -478,7 +461,7 @@
                             <p class="mb-1">Aplicacion en windows formanda por combates y una pokedex.</p>
                             <p class="mb-1">2022 - 2022</p>
                             <button id="add-to-cart">
-                                <a class="text-decoration-none font-monospace" href="https://github.com/AlejandroRodriguez1998/IPOkemon">Ver más</a>
+                                <a class="text-decoration-none font-monospace" href="https://github.com/AlejandroRodriguez1998/IPOkemon" target="_blank" rel="noopener noreferrer">Ver más</a>
                             </button>
                         </div>
                     </div>
@@ -491,7 +474,7 @@
                             <p class="mb-1">Pequeño juego con el pokemon Electrode hecho con WPF & UWP.</p>
                             <p class="mb-1">2022 - 2022</p>
                             <button id="add-to-cart">
-                                <a class="text-decoration-none font-monospace" href="https://github.com/AlejandroRodriguez1998/PokemonWPF-UWP">Ver más</a>
+                                <a class="text-decoration-none font-monospace" href="https://github.com/AlejandroRodriguez1998/PokemonWPF-UWP" target="_blank" rel="noopener noreferrer">Ver más</a>
                             </button>
                         </div>
                     </div>
@@ -504,7 +487,7 @@
                             <p class="mb-1">Gestión de pacientes con enfermedades infectocontagiosas.</p>
                             <p class="mb-1">2021 - 2021</p>
                             <button id="add-to-cart">
-                                <a class="text-decoration-none font-monospace" href="https://github.com/jcalzadog/ISO2-2122-BC.02">Ver más</a>
+                                <a class="text-decoration-none font-monospace" href="https://github.com/jcalzadog/ISO2-2122-BC.02" target="_blank" rel="noopener noreferrer">Ver más</a>
                             </button>
                         </div>
                     </div>
@@ -517,7 +500,7 @@
                             <p class="mb-1">Trabajo de fin de grado del grado superior DAW.</p>
                             <p class="mb-1">2019 - 2019</p>
                             <button id="add-to-cart">
-                                <a class="text-decoration-none font-monospace" href="https://github.com/AlejandroRodriguez1998/DAW-Proyecto">Ver más</a>
+                                <a class="text-decoration-none font-monospace" href="https://github.com/AlejandroRodriguez1998/DAW-Proyecto" target="_blank" rel="noopener noreferrer">Ver más</a>
                             </button>
                         </div>
                     </div>
@@ -530,7 +513,7 @@
                             <p class="mb-1">Pequeña pagina donde se reunen todos los diseños hechos en la FP.</p>
                             <p class="mb-1">2019 - 2019</p>
                             <button id="add-to-cart">
-                                <a class="text-decoration-none font-monospace" href="https://alejandrorodriguez1998.github.io/DAW-Interfaces/">Ver más</a>
+                                <a class="text-decoration-none font-monospace" href="https://alejandrorodriguez1998.github.io/DAW-Interfaces/" target="_blank" rel="noopener noreferrer">Ver más</a>
                             </button>
                         </div>
                     </div>
@@ -543,7 +526,7 @@
                             <p class="mb-1">Pequeño proyecto para entender todo DOM que contiene una pagina.</p>
                             <p class="mb-1">2019 - 2019</p>
                             <button id="add-to-cart">
-                                <a class="text-decoration-none font-monospace" href="https://alejandrorodriguez1998.github.io/DAW-UT09-Ajax/">Ver más</a>
+                                <a class="text-decoration-none font-monospace" href="https://alejandrorodriguez1998.github.io/DAW-UT09-Ajax/" target="_blank" rel="noopener noreferrer">Ver más</a>
                             </button>
                         </div>
                     </div>

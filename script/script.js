@@ -24,6 +24,7 @@ document.addEventListener('click', function(event) {
 });
 
 let customIndex = 0;
+let autoSlideInterval;
 
 function updateCustomCarousel() {
     const track = document.getElementById('miCarouselTrack');
@@ -48,6 +49,7 @@ function nextCustomSlide() {
     const visibleItems = window.innerWidth < 768 ? 1 : 3;
     customIndex = (customIndex + 1) % (items - visibleItems + 1);
     updateCustomCarousel();
+    resetAutoSlideInterval(); 
 }
 
 function prevCustomSlide() {
@@ -55,17 +57,19 @@ function prevCustomSlide() {
     const visibleItems = window.innerWidth < 768 ? 1 : 3;
     customIndex = (customIndex - 1 + (items - visibleItems + 1)) % (items - visibleItems + 1);
     updateCustomCarousel();
+    resetAutoSlideInterval(); 
 }
 
-// Ajustar el carrusel al cambiar el tamaño de la ventana
+function resetAutoSlideInterval() {
+    clearInterval(autoSlideInterval);
+    autoSlideInterval = setInterval(nextCustomSlide, 6000);
+}
+
 window.addEventListener('resize', updateCustomCarousel);
 
-// Inicializar carrusel
 window.onload = function() {
     updateCustomCarousel();
-    
-    // Avanzar el carrusel automáticamente cada 6 segundos
-    setInterval(nextCustomSlide, 6000); 
+    resetAutoSlideInterval(); 
 };
 
 
