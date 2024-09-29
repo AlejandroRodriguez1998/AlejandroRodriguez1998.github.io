@@ -1,144 +1,6 @@
-@media (max-width: 1440px) {
-    .ellipse-container {
-        top: 49% !important;
-        left: 50% !important;
-    }
-
-    .responsive-svg {
-        transform: scale(1.1) !important; 
-    }
-}
-
-@media (max-width: 1120px) {
-    .ellipse-container {
-        top: 72% !important;
-        left: 25% !important;
-    }
-
-    .responsive-svg {
-        transform: scale(1.1) !important; 
-    }
-}
-
-@media (max-width: 1024px) {
-    .ellipse-container {
-        top: 74% !important;
-        left: 22% !important;
-    }
-
-    .responsive-svg {
-        transform: scale(1.1) !important; 
-    }
-}
-
-@media (max-width: 991px) {
-    .ellipse-container {
-        top: 55% !important;
-        left: 49% !important;
-    }
-
-    .responsive-svg {
-        transform: scale(1.1) !important; 
-    }
-}
-
-@media (max-width: 897px) {
-    .ellipse-container {
-        top: 73% !important;
-        left: 25% !important;
-    }
-
-    .responsive-svg {
-        transform: scale(1.1) !important; 
-    }
-}
-
 @media (max-width: 768px) {
     .mi-carousel-item {
         flex: 0 0 100% !important; 
-    }
-
-    .ellipse-container {
-        top: 54% !important;
-        left: 50% !important;
-    }
-
-    .responsive-svg {
-        transform: scale(1.1) !important;  
-    }
-}
-
-@media (max-width: 747px) {
-    .ellipse-container {
-        top: 74% !important;
-        left: 25% !important;
-    }
-
-    .responsive-svg {
-        transform: scale(1.1) !important; 
-    }
-}
-
-@media (max-width: 576px) {
-    .ellipse-container {
-        top: 74% !important;
-        left: 10% !important;
-    }
-}
-
-@media (max-width: 425px) {
-    .ellipse-container {
-        top: 75% !important;
-        left: 5% !important;
-    }
-
-    .responsive-svg {
-        transform: scale(1.1) !important;
-    }
-}
-
-@media (max-width: 375px) {
-    #section1 h1 {
-        font-size: 70.9px !important;
-    }
-
-    .ellipse-container {
-        top: 75% !important;
-        left: -2% !important;
-    }
-
-    .responsive-svg {
-        transform: scale(0.88) !important;  
-    }
-}
-
-@media (max-width: 351px) {
-    #section1 h1 {
-        font-size: 60.9px !important;
-    }
-
-    .ellipse-container {
-        top: 75% !important;
-        left: -5% !important;
-    }
-
-    .responsive-svg {
-        transform: scale(0.77) !important;
-    }
-}
-
-@media (max-width: 320px) {
-    #section1 h1 {
-        font-size: 57.9px !important;
-    }
-
-    .ellipse-container {
-        top: 75% !important;
-        left: -12% !important;
-    }
-
-    .responsive-svg {
-        transform: scale(0.78) !important;
     }
 }
 
@@ -158,15 +20,6 @@ body, html {
     background: #f0f0f0; /* Color de fondo */
     z-index: 1001 !important;
     position: relative;
-}
-
-/* Estilo para el contenedor de la elipse */
-.ellipse-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: rotate(-2deg) translate(0%, -50%);
-
 }
 
 /* Animación de la elipse que se forma poco a poco */
@@ -211,10 +64,8 @@ img.logo {
     font-style: normal;
 }
 
-#section1 h1 span {
-    position: relative;
-    z-index: 1;
-    color: #6d6968; /* Color del texto */
+.colorDiferente {
+    fill: #6d6968; /* Color del texto */
 }
 
 #section1 p {
