@@ -112,9 +112,24 @@
     }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 351px) {
     #section1 h1 {
         font-size: 60.9px !important;
+    }
+
+    .ellipse-container {
+        top: 75% !important;
+        left: -5% !important;
+    }
+
+    .responsive-svg {
+        transform: scale(0.77) !important;
+    }
+}
+
+@media (max-width: 320px) {
+    #section1 h1 {
+        font-size: 57.9px !important;
     }
 
     .ellipse-container {
