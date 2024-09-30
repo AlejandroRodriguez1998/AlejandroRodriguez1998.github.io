@@ -525,10 +525,6 @@ img.logo {
     transition: transform 0.3s;
 }
   
-#section7 .card:hover {
-    transform: rotate(0);
-}
-  
 #section7 .card .text-content {
     color: #f9fafb;
 }
@@ -575,7 +571,7 @@ img.logo {
 }
   
 #section7 .card:hover .icon-large {
-    transform: scale(1.25);
+    transform: scale(1.05);
 }
   
 #section7 .stroke-primary {
