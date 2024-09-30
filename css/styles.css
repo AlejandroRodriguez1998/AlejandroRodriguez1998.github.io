@@ -16,7 +16,7 @@ body, html {
     min-height: 100vh;
 }
 
-#section1 {
+#presentacion {
     background: #f0f0f0;
     z-index: 1001 !important;
     position: relative;
@@ -52,7 +52,7 @@ img.logo {
 }
 
 
-#section1 h1 {
+#presentacion h1 {
     position: relative;
     color: rgb(0,0,1);
     font-kerning: none;
@@ -66,7 +66,7 @@ img.logo {
     fill: #6d6968;
 }
 
-#section1 p {
+#presentacion p {
     font-family: 'Georgia', serif; 
     font-size: 1.2em; 
     line-height: 1.8; 
@@ -123,16 +123,16 @@ img.logo {
     height: 100%;
 }
 
-#section1 a {
+#presentacion a {
     color: rgb(0,0,1);
 }
 
-#section1 a:hover, 
-#section1 a:focus {
+#presentacion a:hover, 
+#presentacion a:focus {
     color: #6d6968;
 }
   
-#section2 {
+#sobreMi {
     background-color: #AFAFAF;
     position: relative;
 }
@@ -232,7 +232,7 @@ img.logo {
     font-style: normal;
 }
 
-#section2 p {
+#sobreMi p {
     font-family: 'Georgia', serif; 
     font-size: 1.2em; 
     line-height: 1.5; 
@@ -272,7 +272,7 @@ img.logo {
     margin-top: 20px !important;
 }
 
-#section3 h1 {
+#intereses h1 {
     color: rgb(0,0,1);
     font-kerning: none;
     font-size: 400%;
@@ -281,7 +281,7 @@ img.logo {
     font-style: normal;
 }
 
-#section3 p {
+#intereses p {
     font-family: 'Georgia', serif; 
     font-size: 1.2em; 
     line-height: 1.5; 
@@ -289,12 +289,17 @@ img.logo {
     margin-top: 15px; 
 }
 
+#intereses h6 {
+    font-family: 'Georgia', serif; 
+    font-weight: bold; 
+}
+
 .img-intereses{
     height: 20%;
     width: 20%;
 }
 
-#section4 h1 {
+#formacion h1 {
     color: rgb(0,0,1);
     font-kerning: none;
     font-size: 400%;
@@ -303,11 +308,11 @@ img.logo {
     font-style: normal;
 }
 
-#section4 p, span {
+#formacion p, #formacion span {
     font-family: 'Georgia', serif;
 }
 
-#section4 h4, h5 {
+#formacion h4 {
     font-family: 'Georgia', serif;
     font-weight: bold;
 }
@@ -333,7 +338,7 @@ img.logo {
     background-color: #6d6968 !important;
 }
 
-#section5 h1 {
+#habilidades h1 {
     color: rgb(0,0,1);
     font-kerning: none;
     font-size: 400%;
@@ -403,7 +408,7 @@ img.logo {
     height: 94px;
 }
 
-#section6 h1 {
+#portafolio h1 {
     color: rgb(0,0,1);
     font-kerning: none;
     font-size: 400%;
@@ -412,11 +417,11 @@ img.logo {
     font-style: normal;
 }
 
-#section6 p {
+#portafolio p {
     font-family: 'Georgia', serif;
 }
 
-#section6 h5 {
+#portafolio h5 {
     font-family: 'Georgia', serif;
     font-weight: bold;
 }
@@ -501,7 +506,7 @@ img.logo {
     font-size: 100%;
 }  
 
-#section7 h1 {
+#contacto h1 {
     color: rgb(0,0,1);
     font-kerning: none;
     font-size: 400%;
@@ -510,11 +515,11 @@ img.logo {
     font-style: normal;
 }
 
-#section7 p, strong {
+#contacto p, #contacto strong {
     font-family: 'Georgia', serif;
 }
 
-#section7 .card {
+#contacto .card {
     position: relative;
     overflow: hidden;
     border: 4px solid rgb(0,0,1);
@@ -529,21 +534,21 @@ img.logo {
     transition: transform 0.3s;
 }
   
-#section7 .card .text-content {
+#contacto .card .text-content {
     color: #f9fafb;
 }
   
-#section7 .card .title {
+#contacto .card .title {
     font-family: "Kalam", cursive;
     font-size: 2.8rem;
 }
   
-#section7 .card .subtitle {
+#contacto .card .subtitle {
     font-family: "Kalam", cursive;
     font-size: 1rem;
 }
   
-#section7 .download-btn {
+#contacto .download-btn {
     display: flex;
     align-items: center;
     gap: 0.75rem;
@@ -556,16 +561,16 @@ img.logo {
     transition: background-color 0.3s, color 0.3s;
 }
   
-#section7 .download-btn:hover {
+#contacto .download-btn:hover {
     background-color: #8b8b8b;
 }
   
-#section7 .icon {
+#contacto .icon {
     width: 1.5rem;
     height: 1.5rem;
 }
   
-#section7 .icon-large {
+#contacto .icon-large {
     position: absolute;
     bottom: -0.125rem;
     right: -5rem;
@@ -574,16 +579,16 @@ img.logo {
     transition: transform 0.5s;
 }
   
-#section7 .card:hover .icon-large {
+#contacto .card:hover .icon-large {
     transform: scale(1.05);
 }
   
-#section7 .stroke-primary {
+#contacto .stroke-primary {
     fill: #f9fafb;
     stroke: rgb(0,0,1);
 }
   
-#section7 .stroke-secondary {
+#contacto .stroke-secondary {
     fill: #f9fafb;
     stroke: #AFAFAF;
 }
@@ -612,11 +617,3 @@ img.logo {
     margin-bottom: 0.5rem; 
 }
 
-.footer .fab, .footer .fas {
-    font-size: 1.2rem; 
-}
-
-.footer .mx-2 {
-    margin-left: 1rem;
-    margin-right: 1rem;
-}
