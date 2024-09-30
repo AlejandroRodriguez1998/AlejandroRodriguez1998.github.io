@@ -1,21 +1,17 @@
 const menuButton = document.getElementById('menuButton');
 
-// Abre el menú lateral
 menuButton.addEventListener('click', () => {
     sideMenu.style.right = '0';
 });
 
-// Cierra el menú lateral
 closeMenu.addEventListener('click', () => {
     sideMenu.style.right = '-300px';
 });
 
 document.addEventListener('click', function(event) {
-    // Verificar si el clic fue dentro del menú o en el botón de menú
     const isClickInsideMenu = sideMenu.contains(event.target);
     const isClickOnMenuButton = menuButton.contains(event.target);
 
-    // Si el clic no fue en el menú ni en el botón, cerramos el menú
     if (!isClickInsideMenu && !isClickOnMenuButton) {
         sideMenu.style.right = '-300px';
     }
@@ -40,7 +36,6 @@ function updateCustomCarousel() {
     const itemWidth = track.querySelector('.mi-carousel-item').offsetWidth;
     const visibleItems = window.innerWidth < 768 ? 1 : 3;
 
-    // Ajustar el bucle infinito correctamente sin incluir ítems vacíos
     if (customIndex >= items.length - visibleItems + 1) {
         customIndex = 0;  // Si llega al final, vuelve al principio
     } else if (customIndex < 0) {
@@ -53,7 +48,7 @@ function updateCustomCarousel() {
 function nextCustomSlide() {
     const track = document.getElementById('miCarouselTrack');
     const items = Array.from(track.querySelectorAll('.mi-carousel-item'))
-        .filter(item => item.innerHTML.trim() !== ''); // Solo contar los que no están vacíos
+        .filter(item => item.innerHTML.trim() !== ''); 
     const visibleItems = window.innerWidth < 768 ? 1 : 3;
 
     // Aumenta el índice y si llega al último, vuelve al primero
@@ -65,7 +60,7 @@ function nextCustomSlide() {
 function prevCustomSlide() {
     const track = document.getElementById('miCarouselTrack');
     const items = Array.from(track.querySelectorAll('.mi-carousel-item'))
-        .filter(item => item.innerHTML.trim() !== ''); // Solo contar los que no están vacíos
+        .filter(item => item.innerHTML.trim() !== ''); 
     const visibleItems = window.innerWidth < 768 ? 1 : 3;
 
     // Disminuye el índice y si está en el primero, vuelve al último
@@ -175,7 +170,7 @@ function setPositionByIndex() {
     const itemWidth = track.querySelector('.mi-carousel-item').offsetWidth;
     currentTranslate = customIndex * -itemWidth;
     prevTranslate = currentTranslate;
-    track.style.transition = 'transform 0.5s ease-out'; // Añadir transición suave
+    track.style.transition = 'transform 0.5s ease-out';
     setSliderPosition();
 }
 

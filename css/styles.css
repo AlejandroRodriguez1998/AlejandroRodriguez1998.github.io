@@ -12,43 +12,41 @@ body, html {
 }
 
 .fullscreen-section {
-    background-color: #f8f8f8; /* Ajusta el color de fondo si lo deseas */
+    background-color: #f8f8f8; 
     min-height: 100vh;
 }
 
 #section1 {
-    background: #f0f0f0; /* Color de fondo */
+    background: #f0f0f0;
     z-index: 1001 !important;
     position: relative;
 }
 
-/* Animación de la elipse que se forma poco a poco */
 svg ellipse {
     fill: none;
-    stroke: rgb(25,25,25); /* Color de la elipse */
+    stroke: rgb(25,25,25); 
     stroke-width: 2;
     stroke-dasharray: 829.6; /* La longitud del trazo */
     stroke-dashoffset: 829.6; /* Inicialmente la elipse está invisible */
-    animation: drawEllipse 5s ease-in-out infinite; /* Animación para que se dibuje y desdibuje */
+    animation: drawEllipse 5s ease-in-out infinite; 
 }
 
 @keyframes drawEllipse {
     0% {
-        stroke-dashoffset: 829.6; /* Elipse invisible */
+        stroke-dashoffset: 829.6; 
     }
     50% {
-        stroke-dashoffset: 0; /* Elipse completamente dibujada */
+        stroke-dashoffset: 0; 
     }
     75% {
-        stroke-dashoffset: 0; /* Elipse se mantiene dibujada */
+        stroke-dashoffset: 0; 
     }
 
     100% {
-        stroke-dashoffset: 829.6; /* Elipse desaparece */
+        stroke-dashoffset: 829.6; 
     }
 }
 
-/* Estilos adicionales */
 img.logo {
     width: 80px;
 }
@@ -65,17 +63,17 @@ img.logo {
 }
 
 .colorDiferente {
-    fill: #6d6968; /* Color del texto */
+    fill: #6d6968;
 }
 
 #section1 p {
-    font-family: 'Georgia', serif; /* Usa una fuente serif similar */
-    font-size: 1.2em; /* Ajusta el tamaño de la fuente */
-    line-height: 1.8; /* Aumenta el interlineado para mayor legibilidad */
-    color: #333; /* Color del texto en tono oscuro */
-    text-align: center; /* Centra el texto */
-    margin-top: 30px; /* Espacio entre el párrafo y el título */
-    max-width: 700px; /* Limita el ancho para que no sea muy largo */
+    font-family: 'Georgia', serif; 
+    font-size: 1.2em; 
+    line-height: 1.8; 
+    color: #333; 
+    text-align: center; 
+    margin-top: 30px; 
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -139,7 +137,6 @@ img.logo {
     position: relative;
 }
 
-/* Botón flotante oculto inicialmente */
 .floating-button {
     position: fixed;
     top: 4.5%;
@@ -166,6 +163,11 @@ img.logo {
     transition: right 0.3s ease;
     padding: 20px;
     z-index: 1002;
+}
+
+#sideMenu h4 a:hover, 
+#sideMenu h4 a:focus {
+    color: #6d6968;
 }
 
 #sideMenu a {
@@ -231,35 +233,35 @@ img.logo {
 }
 
 #section2 p {
-    font-family: 'Georgia', serif; /* Usa una fuente serif similar */
-    font-size: 1.2em; /* Ajusta el tamaño de la fuente */
-    line-height: 1.5; /* Aumenta el interlineado para mayor legibilidad */
-    color: #333; /* Color del texto en tono oscuro */
-    text-align:justify; /* Centra el texto */
-    margin-top: 15px; /* Espacio entre el párrafo y el título */
-    max-width: 700px; /* Limita el ancho para que no sea muy largo */
+    font-family: 'Georgia', serif; 
+    font-size: 1.2em; 
+    line-height: 1.5; 
+    color: #333; 
+    text-align:justify;
+    margin-top: 15px;
+    max-width: 700px; 
     margin-left: auto;
     margin-right: auto;
 }
 
 .circle {
-    width: 120px; /* Tamaño del círculo */
-    height: 120px; /* Tamaño del círculo */
-    border-radius: 50%; /* Hace que el div sea un círculo */
-    background-color: #f5f5f5; /* Color de fondo del círculo */
+    width: 120px; 
+    height: 120px; 
+    border-radius: 50%; 
+    background-color: #f5f5f5; 
     display: flex;
-    flex-direction: column; /* Coloca los elementos en columna */
-    justify-content: center; /* Centra verticalmente */
-    align-items: center; /* Centra horizontalmente */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     margin: 10px;
-    padding: 15px 0; /* Añade espacio interior al círculo */
+    padding: 15px 0;
 }
 
 .circle img {
-    width: 50px; /* Ajusta el tamaño del icono */
+    width: 50px; 
     height: 50px;
-    margin-bottom: 10%; /* Añade espacio entre la imagen y el texto */
+    margin-bottom: 10%;
     margin-top: 50% !important;
 }
 
@@ -280,11 +282,11 @@ img.logo {
 }
 
 #section3 p {
-    font-family: 'Georgia', serif; /* Usa una fuente serif similar */
-    font-size: 1.2em; /* Ajusta el tamaño de la fuente */
-    line-height: 1.5; /* Aumenta el interlineado para mayor legibilidad */
-    color: #333; /* Color del texto en tono oscuro */
-    margin-top: 15px; /* Espacio entre el párrafo y el título */
+    font-family: 'Georgia', serif; 
+    font-size: 1.2em; 
+    line-height: 1.5; 
+    color: #333; 
+    margin-top: 15px; 
 }
 
 .img-intereses{
@@ -372,16 +374,6 @@ img.logo {
     font-family: 'Georgia', serif;
 }
 
-.progress {
-    height: 18px;
-    margin-bottom: 10px;
-}
-
-.progress-bar {
-    font-size: 14px;
-    line-height: 25px;
-}
-
 .skills-icon {
     display: flex;
     flex-direction: column;
@@ -395,8 +387,20 @@ img.logo {
 
 }
 
+.skills-icon-middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+    position: relative;
+    padding: 5px;
+    flex: 0 0 15.333%;
+}
+
 .tamanioIcon img {
-    height: 96px;
+    height: 94px;
 }
 
 #section6 h1 {
@@ -585,19 +589,19 @@ img.logo {
 }
 
 .footer {
-    background-color: #333; /* Fondo oscuro para el footer */
-    color: #f8f8f8; /* Texto claro */
+    background-color: #333; 
+    color: #f8f8f8; 
     font-family: 'Georgia', serif;
 }
 
 .footer a {
-    color: #f8f8f8; /* Color de los enlaces */
+    color: #f8f8f8; 
     text-decoration: none;
     transition: color 0.3s ease-in-out;
 }
 
 .footer a:hover {
-    color: #6d6968; /* Color de hover para los enlaces */
+    color: #6d6968; 
 }
 
 .footer i {
@@ -605,11 +609,11 @@ img.logo {
 }
 
 .footer p {
-    margin-bottom: 0.5rem; /* Ajusta el espaciado entre los párrafos */
+    margin-bottom: 0.5rem; 
 }
 
 .footer .fab, .footer .fas {
-    font-size: 1.2rem; /* Tamaño de los íconos */
+    font-size: 1.2rem; 
 }
 
 .footer .mx-2 {
