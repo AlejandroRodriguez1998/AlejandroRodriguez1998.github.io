@@ -174,7 +174,7 @@ img.logo {
     color: #333;
     text-decoration: none;
     font-size: 18px;
-    margin-bottom: 2px;
+    margin-bottom: 5px;
 }
 
 .side-menu a:hover {
@@ -194,7 +194,7 @@ img.logo {
     left: 0;
     display: block;
     border-radius: 28px;
-    background: rgba(255, 171, 157, 0.5);
+    background: rgba(175, 175, 175, 0.5);
     width: 56px;
     height: 56px;
     transition: all 0.3s ease;
@@ -224,7 +224,7 @@ img.logo {
 }
 .cta:hover:before {
     width: 100%;
-    background: #ffab9d;
+    background: #AFAFAF ;
 }
 .cta:hover svg {
     transform: translateX(0);
