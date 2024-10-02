@@ -221,9 +221,8 @@ img.logo {
 
 .floating-button {
     position: fixed;
-    top: 5%;
-    right: 0.5%;
-    transform: translateY(-50%);
+    top: 0.8%;
+    right: 1%;
     background-color: #6d6968;;
     color: white;
     font-size: 18px;
