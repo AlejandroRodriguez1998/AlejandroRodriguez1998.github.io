@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <div class="container-fluid fullscreen-section" id="presentacion">
+    <div class="container-fluid fullscreen-section section" id="presentacion">
         <div class="row justify-content-center align-items-center text-center min-vh-100">
             <div class="col-lg-8 col-md-10">
                 <div class="logo-container mb-4">
@@ -33,7 +33,7 @@
                 
                 <h2>
                     <a class="text-decoration-none mx-3" href="https://github.com/AlejandroRodriguez1998" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
-                    <a class="text-decoration-none mx-3" href="https://www.linkedin.com/in/alejandro-paniagua-rodriguez-58a42b169/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+                    <a class="text-decoration-none mx-3" href="https://www.linkedin.com/in/alejandropaniaguarodriguez" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
                     <a class="text-decoration-none mx-3" href="mailto:alexcr31@gmail.com"><i class="fa-solid fa-envelope"></i></a>
                 </h2>
                 
@@ -44,10 +44,10 @@
         </div>
     </div>
 
-    <div class="container-fluid fullscreen-section" id="sobreMi">
-        <div class="floating-button" id="menuButton"><i class="fa-solid fa-bars"></i></div>
+    <div class="container-fluid fullscreen-section section" id="sobreMi">
+        <div class="floating-button d-block d-md-none" id="menuButton"><i class="fa-solid fa-bars"></i></div>
         <div class="container">
-            <div class="row align-items-center py-5">
+            <div class="row justify-content-center align-items-center text-center min-vh-100">
                 <div class="col-md-7">
                     <h2 class="text-center sobreMi">Sobre mí</h2>
 
@@ -94,12 +94,34 @@
         </div>
     </div>
 
+    <div class="floating-menu d-none d-md-block">
+        <div class="menu-buttons">
+            <button class="scroll-btn" id="scroll-up">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+        </div>
+        <div class="menu-dots">
+            <a href="#presentacion" class="dot" id="dot-presentacion" data-tooltip="Presentación"></a>
+            <a href="#sobreMi" class="dot" id="dot-sobreMi" data-tooltip="Sobre Mí"></a>
+            <a href="#intereses" class="dot" id="dot-intereses" data-tooltip="Intereses"></a>
+            <a href="#formacion" class="dot" id="dot-formacion" data-tooltip="Formación"></a>
+            <a href="#habilidades" class="dot" id="dot-habilidades" data-tooltip="Habilidades"></a>
+            <a href="#portafolio" class="dot" id="dot-portafolio" data-tooltip="Portafolio"></a>
+            <a href="#contacto" class="dot" id="dot-contacto" data-tooltip="Contacto"></a>
+        </div>
+        <div class="menu-buttons">
+            <button class="scroll-btn" id="scroll-down">
+                <i class="fas fa-arrow-down"></i>
+            </button>
+        </div>
+    </div>
+    
     <div class="side-menu" id="sideMenu">
         <button type="button" class="btn-close" id="closeMenu" aria-label="Close"></button>
 
         <h4 class="text-center d-flex justify-content-center mb-2">
             <a class="text-decoration-none mx-3" href="https://github.com/AlejandroRodriguez1998" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
-            <a class="text-decoration-none mx-3" href="https://www.linkedin.com/in/alejandro-paniagua-rodriguez-58a42b169/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+            <a class="text-decoration-none mx-3" href="https://www.linkedin.com/in/alejandropaniaguarodriguez" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
             <a class="text-decoration-none mx-3" href="mailto:alexcr31@gmail.com"><i class="fa-solid fa-envelope"></i></a>
         </h4>
 
@@ -147,7 +169,7 @@
         </a>
     </div>
 
-    <div class="py-3" id="intereses">
+    <div class="py-3 section" id="intereses">
         <div class="container">
             <h1 class="text-center pt-5">Intereses</h1>
             <p>Un ingeniero informático puede desarrollar una amplia gama de funciones y adaptarse a diferentes retos profesionales. ¡Explora los perfiles que más capturan mi interés y motivan mi carrera!</p>
@@ -221,7 +243,7 @@
         </div>
     </div>
 
-    <div class="py-3" id="formacion">
+    <div class="py-3 section" id="formacion">
         <div class="container">
             <h1 class="text-center pt-5">Formación</h1>
             <div class="row">
@@ -319,7 +341,7 @@
 
     </div>
 
-    <div class="py-3" id="habilidades">
+    <div class="py-3 section" id="habilidades">
         <div class="container">
             <h1 class="text-center pt-5">Habilidades</h1>
             <div class="row pt-2">
@@ -458,7 +480,7 @@
         </div>
     </div>
 
-    <div class="py-3" id="portafolio">
+    <div class="py-3 section" id="portafolio">
         <div class="container">
             <h1 class="text-center pt-5 mb-0">Portafolio</h1>
 
@@ -473,9 +495,9 @@
                             </div>
                             <h5 class="mt-1">Lyxn Notes</h5>
                             <p class="mb-1">Aplicación hecha en Ruby on Rails para llevar notas y compartirlas.</p>
-                            <p class="mb-1">2023 - 2023</p>
+                            <p class="mb-1">2024 - 2024</p>
                             <button id="add-to-cart">
-                                <a class="text-decoration-none font-monospace" href="https://github.com/AlejandroRodriguez1998/Lynx_note" target="_blank" rel="noopener noreferrer">Ver más</a>
+                                <a class="text-decoration-none font-monospace" href="https://github.com/AlejandroRodriguez1998/Lynx_note" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
                             </button>
                         </div>
                     </div>
@@ -488,7 +510,7 @@
                             <p class="mb-1">Aplicación para buscar las mejores ofertas en videojuegos.</p>
                             <p class="mb-1">2023 - 2023</p>
                             <button id="add-to-cart">
-                                <a class="text-decoration-none font-monospace" href="https://github.com/AitorMillan/TheGameBazar" target="_blank" rel="noopener noreferrer">Ver más</a>
+                                <a class="text-decoration-none font-monospace" href="https://github.com/AitorMillan/TheGameBazar" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
                             </button>
                         </div>
                     </div>
@@ -501,7 +523,7 @@
                             <p class="mb-1">Aplicación para aprender sobre diseño de microservicios en ZeroIce.</p>
                             <p class="mb-1">2023 - 2023</p>
                             <button id="add-to-cart">
-                                <a class="text-decoration-none font-monospace" href="https://github.com/AlejandroRodriguez1998/IceDrive" target="_blank" rel="noopener noreferrer">Ver más</a>
+                                <a class="text-decoration-none font-monospace" href="https://github.com/AlejandroRodriguez1998/IceDrive" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
                             </button>
                         </div>
                     </div>
@@ -514,7 +536,7 @@
                             <p class="mb-1">Aplicación en Windows formada por combates y una Pokédex.</p>
                             <p class="mb-1">2022 - 2022</p>
                             <button id="add-to-cart">
-                                <a class="text-decoration-none font-monospace" href="https://github.com/AlejandroRodriguez1998/IPOkemon" target="_blank" rel="noopener noreferrer">Ver más</a>
+                                <a class="text-decoration-none font-monospace" href="https://github.com/AlejandroRodriguez1998/IPOkemon" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
                             </button>
                         </div>
                     </div>
@@ -527,7 +549,7 @@
                             <p class="mb-1">Pequeño juego con el Pokémon Electrode hecho con WPF & UWP.</p>
                             <p class="mb-1">2022 - 2022</p>
                             <button id="add-to-cart">
-                                <a class="text-decoration-none font-monospace" href="https://github.com/AlejandroRodriguez1998/PokemonWPF-UWP" target="_blank" rel="noopener noreferrer">Ver más</a>
+                                <a class="text-decoration-none font-monospace" href="https://github.com/AlejandroRodriguez1998/PokemonWPF-UWP" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
                             </button>
                         </div>
                     </div>
@@ -540,7 +562,7 @@
                             <p class="mb-1">Gestión de pacientes con enfermedades infectocontagiosas.</p>
                             <p class="mb-1">2021 - 2021</p>
                             <button id="add-to-cart">
-                                <a class="text-decoration-none font-monospace" href="https://github.com/jcalzadog/ISO2-2122-BC.02" target="_blank" rel="noopener noreferrer">Ver más</a>
+                                <a class="text-decoration-none font-monospace" href="https://github.com/jcalzadog/ISO2-2122-BC.02" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
                             </button>
                         </div>
                     </div>
@@ -553,7 +575,7 @@
                             <p class="mb-1">Trabajo de fin de grado del Grado Superior DAW.</p>
                             <p class="mb-1">2019 - 2019</p>
                             <button id="add-to-cart">
-                                <a class="text-decoration-none font-monospace" href="https://github.com/AlejandroRodriguez1998/DAW-Proyecto" target="_blank" rel="noopener noreferrer">Ver más</a>
+                                <a class="text-decoration-none font-monospace" href="https://github.com/AlejandroRodriguez1998/DAW-Proyecto" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
                             </button>
                         </div>
                     </div>
@@ -566,7 +588,7 @@
                             <p class="mb-1">Pequeña página donde se reúnen todos los diseños hechos en la FP.</p>
                             <p class="mb-1">2019 - 2019</p>
                             <button id="add-to-cart">
-                                <a class="text-decoration-none font-monospace" href="https://alejandrorodriguez1998.github.io/DAW-Interfaces/" target="_blank" rel="noopener noreferrer">Ver más</a>
+                                <a class="text-decoration-none font-monospace" href="https://alejandrorodriguez1998.github.io/DAW-Interfaces/" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
                             </button>
                         </div>
                     </div>
@@ -579,7 +601,7 @@
                             <p class="mb-1">Pequeño proyecto para entender todo el DOM que contiene una página.</p>
                             <p class="mb-1">2019 - 2019</p>
                             <button id="add-to-cart">
-                                <a class="text-decoration-none font-monospace" href="https://alejandrorodriguez1998.github.io/DAW-UT09-Ajax/" target="_blank" rel="noopener noreferrer">Ver más</a>
+                                <a class="text-decoration-none font-monospace" href="https://alejandrorodriguez1998.github.io/DAW-UT09-Ajax/" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
                             </button>
                         </div>
                     </div>
@@ -590,7 +612,7 @@
         </div>
     </div>
 
-    <div class="py-3" id="contacto">
+    <div class="py-3 section" id="contacto">
         <div class="container">
             <h1 class="text-center pt-5">Contacto</h1>
 
@@ -617,10 +639,10 @@
                 <div class="col-md-6 col-12 d-flex justify-content-md-start justify-content-center mt-md-0 mt-2">
                     <div class="contact-info d-flex flex-column justify-content-center">
                         <div class="d-flex align-items-center mb-3">
-                            <i class="fa-brands fa-github fa-2x me-3"></i>
+                            <i class="fa-brands fa-linkedin fa-2x me-3"></i>
                             <div>
-                                <strong>GitHub</strong><br>
-                                <a href="https://github.com/AlejandroRodriguez1998" target="_blank" rel="noopener noreferrer" class="text-decoration-none font-monospace">AlejandroRodriguez1998</a>
+                                <strong>LinkedIn</strong><br>
+                                <a href="https://www.linkedin.com/in/alejandropaniaguarodriguez" target="_blank" rel="noopener noreferrer" class="text-decoration-none font-monospace">Alejandro Paniagua Rodriguez</a>
                             </div>
                         </div>
                         <div class="d-flex align-items-center mb-3">
@@ -632,10 +654,10 @@
                             </div>
                         </div>
                         <div class="d-flex align-items-center mb-3">
-                            <i class="fa-brands fa-linkedin fa-2x me-3"></i>
+                            <i class="fa-brands fa-github fa-2x me-3"></i>
                             <div>
-                                <strong>LinkedIn</strong><br>
-                                <a href="https://www.linkedin.com/in/alejandro-paniagua-rodriguez-58a42b169/" target="_blank" rel="noopener noreferrer" class="text-decoration-none font-monospace">Alejandro Paniagua Rodriguez</a>
+                                <strong>GitHub</strong><br>
+                                <a href="https://github.com/AlejandroRodriguez1998" target="_blank" rel="noopener noreferrer" class="text-decoration-none font-monospace">AlejandroRodriguez1998</a>
                             </div>
                         </div>
                     </div>

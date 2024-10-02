@@ -17,6 +17,47 @@ document.addEventListener('click', function(event) {
     }
 });
 
+document.getElementById('scroll-up').addEventListener('click', function() {
+    window.scrollBy({
+        top: -window.innerHeight, // Scroll hacia arriba el tamaño de una pantalla
+        behavior: 'smooth'
+    });
+});
+
+document.getElementById('scroll-down').addEventListener('click', function() {
+    window.scrollBy({
+        top: window.innerHeight, // Scroll hacia abajo el tamaño de una pantalla
+        behavior: 'smooth'
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('.section');
+    const dots = document.querySelectorAll('.dot');
+
+    window.addEventListener('scroll', function() {
+        let currentSection = '';
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+
+            // Si el scroll está dentro de la sección
+            if (pageYOffset >= sectionTop - sectionHeight / 3 && pageYOffset < sectionTop + sectionHeight - sectionHeight / 3) {
+                currentSection = section.getAttribute('id');
+            }
+        });
+
+        // Agregar o quitar la clase 'active' a los dots
+        dots.forEach(dot => {
+            dot.classList.remove('active');
+            if (dot.id === `dot-${currentSection}`) {
+                dot.classList.add('active'); 
+            }
+        });
+    });
+});
+
 let customIndex = 0;
 let autoSlideInterval;
 let isDragging = false;
@@ -91,18 +132,9 @@ items.forEach((item, index) => {
     const itemImage = item.querySelector('img');
     itemImage.addEventListener('dragstart', (e) => e.preventDefault()); // Evitar que la imagen interfiera con el drag
 
-    // Mousedown o Touchstart
     item.addEventListener('touchstart', touchStart(index)); 
-    item.addEventListener('mousedown', touchStart(index));  
-
-    // Mousemove o Touchmove
     item.addEventListener('touchmove', touchMove);
-    item.addEventListener('mousemove', touchMove);
-
-    // Mouseup o Touchend
     item.addEventListener('touchend', touchEnd);
-    item.addEventListener('mouseup', touchEnd);
-    item.addEventListener('mouseleave', touchEnd);
 });
 
 function touchStart(index) {
