@@ -157,12 +157,25 @@ img.logo {
 
 .dot {
     position: relative;
-    width: 10px;
-    height: 10px;
+    width: 18px; /* Tamaño ajustado para contener el icono */
+    height: 18px; /* Tamaño ajustado para contener el icono */
     background-color: #ccc;
     border-radius: 50%;
+    display: flex; /* Utilizamos flex para centrar el contenido */
+    align-items: center; /* Alineación vertical */
+    justify-content: center; /* Alineación horizontal */
     margin: 8px 0;
     transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.dot i {
+    color: black; /* Color del icono */
+    font-size: 10px; /* Ajusta el tamaño del icono según sea necesario */
+}
+
+.dot.active i {
+    color: #fff; /* Color del icono activo */
 }
 
 .dot.active {
@@ -204,7 +217,6 @@ img.logo {
 .scroll-btn {
     background-color: transparent;
     border: 1px solid #3c3744;
-    padding: 5px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -318,7 +330,7 @@ img.logo {
     font-size: 1.2em; 
     line-height: 1.5; 
     color: #333; 
-    text-align:justify;
+    text-align: start;
     margin-top: 15px;
     max-width: 700px; 
     margin-left: auto;
