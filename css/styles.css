@@ -27,6 +27,17 @@ body, html {
     height: 100%;
 }
 
+h6 {
+    word-wrap: break-word;
+    white-space: normal;
+    hyphens: auto;
+}
+
+p {
+    word-wrap: break-word;
+    white-space: normal;
+}
+
 .fullscreen-section {
     background-color: #f8f8f8; 
     min-height: 100vh;
@@ -353,6 +364,7 @@ img.logo {
     max-width: 700px; 
     margin-left: auto;
     margin-right: auto;
+    letter-spacing: 0.3px; 
 }
 
 .circle {
