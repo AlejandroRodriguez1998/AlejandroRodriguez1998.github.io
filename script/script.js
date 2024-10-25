@@ -1,22 +1,26 @@
+
+// Menu movil
 const menuButton = document.getElementById('menuButton');
 
-menuButton.addEventListener('click', () => {
-    sideMenu.style.right = '0';
+menuButton.addEventListener('click', () => { // Cuando hacemos click
+    sideMenu.style.right = '0'; // Se muestra
 });
 
-closeMenu.addEventListener('click', () => {
-    sideMenu.style.right = '-300px';
+closeMenu.addEventListener('click', () => { // Volvemos a hacer click
+    sideMenu.style.right = '-300px'; // Se oculta
 });
 
+// Para si hacemos click fuera de la barra lateral
 document.addEventListener('click', function(event) {
     const isClickInsideMenu = sideMenu.contains(event.target);
     const isClickOnMenuButton = menuButton.contains(event.target);
 
     if (!isClickInsideMenu && !isClickOnMenuButton) {
-        sideMenu.style.right = '-300px';
+        sideMenu.style.right = '-300px'; // Se oculta
     }
 });
 
+// Boton para hacer scroll hacia arriba
 document.getElementById('scroll-up').addEventListener('click', function() {
     window.scrollBy({
         top: -window.innerHeight, // Scroll hacia arriba el tamaño de una pantalla
@@ -24,6 +28,7 @@ document.getElementById('scroll-up').addEventListener('click', function() {
     });
 });
 
+// Boton para hacer scroll hacia abajo
 document.getElementById('scroll-down').addEventListener('click', function() {
     window.scrollBy({
         top: window.innerHeight, // Scroll hacia abajo el tamaño de una pantalla
@@ -31,51 +36,54 @@ document.getElementById('scroll-down').addEventListener('click', function() {
     });
 });
 
+// Cambiar el color del header al hacer scroll
 document.addEventListener('DOMContentLoaded', function() {
+    // Cogemos las secciones que contengan en la clase 'section'
     const sections = document.querySelectorAll('.section');
-    const dots = document.querySelectorAll('.dot');
+    const dots = document.querySelectorAll('.dot'); // Cogemos los dots
+    // Cogemos el boton para hacer scroll hacia abajo
+    const scrollButton = document.getElementById('scroll-down'); 
 
+    // Al hacer scroll
     window.addEventListener('scroll', function() {
         let currentSection = '';
-
+        
+        // Detectar la sección actual
         sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
+            const sectionTop = section.offsetTop; // Posición de la sección
+            const sectionHeight = section.clientHeight; // Altura de la sección
 
-            // Si el scroll está dentro de la sección
-            if (pageYOffset >= sectionTop - sectionHeight / 3 && pageYOffset < sectionTop + sectionHeight - sectionHeight / 3) {
+            // Si el scroll está entre la tercera parte de la sección
+            if (scrollY >= sectionTop - sectionHeight / 3 && scrollY < sectionTop + sectionHeight - sectionHeight / 3) {
                 currentSection = section.getAttribute('id');
             }
         });
+
+        // Ocultar o mostrar el botón de scroll hacia arriba
+        currentSection === 'contacto' ? scrollButton.style.display = 'none' : scrollButton.style.display = 'block';
 
         // Agregar o quitar la clase 'active' a los dots
         dots.forEach(dot => {
             dot.classList.remove('active');
             if (dot.id === `dot-${currentSection}`) {
-                dot.classList.add('active'); 
+                dot.classList.add('active');
             }
         });
     });
 });
 
+// Carrusel de imágenes
 let customIndex = 0;
 let autoSlideInterval;
-let isDragging = false;
-let startPos = 0;
-let currentTranslate = 0;
-let prevTranslate = 0;
-let animationID = 0;
-let currentIndex = 0;
 
 function updateCustomCarousel() {
-    const track = document.getElementById('miCarouselTrack');
-    
-    // Filtramos los ítems visibles (no vacíos)
+    const track = document.getElementById('miCarouselTrack'); 
     const items = Array.from(track.querySelectorAll('.mi-carousel-item'))
-        .filter(item => item.innerHTML.trim() !== ''); // Solo tener en cuenta ítems que no están vacíos
-    
+        .filter(item => item.innerHTML.trim() !== ''); // Filtramos ítems no vacíos
     const itemWidth = track.querySelector('.mi-carousel-item').offsetWidth;
-    const visibleItems = window.innerWidth < 768 ? 1 : 3;
+    
+    // Modificamos visibleItems para que sea 1 en móvil, 2 en tablet, 3 en escritorio
+    const visibleItems = window.innerWidth < 768 ? 1 : window.innerWidth < 992 ? 2 : 3;
 
     if (customIndex >= items.length - visibleItems + 1) {
         customIndex = 0;  // Si llega al final, vuelve al principio
@@ -83,6 +91,7 @@ function updateCustomCarousel() {
         customIndex = items.length - visibleItems;  // Si está al principio, ir al final
     }
 
+    // Mover el carrusel
     track.style.transform = `translateX(${-customIndex * itemWidth}px)`;
 }
 
@@ -90,9 +99,8 @@ function nextCustomSlide() {
     const track = document.getElementById('miCarouselTrack');
     const items = Array.from(track.querySelectorAll('.mi-carousel-item'))
         .filter(item => item.innerHTML.trim() !== ''); 
-    const visibleItems = window.innerWidth < 768 ? 1 : 3;
+    const visibleItems = window.innerWidth < 768 ? 1 : window.innerWidth < 992 ? 2 : 3;
 
-    // Aumenta el índice y si llega al último, vuelve al primero
     customIndex = (customIndex + 1) % (items.length - visibleItems + 1);
     updateCustomCarousel();
     resetAutoSlideInterval();
@@ -102,9 +110,8 @@ function prevCustomSlide() {
     const track = document.getElementById('miCarouselTrack');
     const items = Array.from(track.querySelectorAll('.mi-carousel-item'))
         .filter(item => item.innerHTML.trim() !== ''); 
-    const visibleItems = window.innerWidth < 768 ? 1 : 3;
+    const visibleItems = window.innerWidth < 768 ? 1 : window.innerWidth < 992 ? 2 : 3;
 
-    // Disminuye el índice y si está en el primero, vuelve al último
     customIndex = (customIndex - 1 + (items.length - visibleItems + 1)) % (items.length - visibleItems + 1);
     updateCustomCarousel();
     resetAutoSlideInterval();
@@ -119,10 +126,17 @@ window.addEventListener('resize', updateCustomCarousel);
 
 window.onload = function() {
     updateCustomCarousel();
-    resetAutoSlideInterval();
+    resetAutoSlideInterval(); 
 };
 
 // Eventos de arrastrar y deslizar
+
+let isDragging = false;
+let startPos = 0;
+let currentTranslate = 0;
+let prevTranslate = 0;
+let animationID = 0;
+let currentIndex = 0;
 
 const track = document.getElementById('miCarouselTrack');
 let items = Array.from(track.children)

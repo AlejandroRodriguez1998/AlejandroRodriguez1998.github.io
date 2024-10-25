@@ -1,8 +1,25 @@
 @media (max-width: 768px) {
-    .mi-carousel-item {
-        flex: 0 0 100% !important; 
+    .mi-carousel-button.prev {
+        left: 1px !important;
+    }
+
+    .mi-carousel-button.next {
+        right: 1px !important;
     }
 }
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .mi-carousel-item {
+        width: 50% !important; /* Ancho 50% en pantallas de tablet (dos ítems visibles) */
+    }
+}
+
+@media (min-width: 992px) {
+    .mi-carousel-item {
+        width: 33.33% !important; /* Ancho 33.33% en pantallas grandes (tres ítems visibles) */
+    }
+}
+
 
 body, html {
     margin: 0;
@@ -256,6 +273,7 @@ img.logo {
     transition: right 0.3s ease;
     padding: 20px;
     z-index: 1002;
+    overflow: auto;
 }
 
 #sideMenu h4 a:hover, 
@@ -338,8 +356,8 @@ img.logo {
 }
 
 .circle {
-    width: 120px; 
-    height: 120px; 
+    width: 100px; 
+    height: 100px; 
     border-radius: 50%; 
     background-color: #f5f5f5; 
     display: flex;
@@ -355,7 +373,7 @@ img.logo {
     width: 50px; 
     height: 50px;
     margin-bottom: 10%;
-    margin-top: 50% !important;
+    margin-top: 54% !important;
 }
 
 .circle p {
@@ -501,7 +519,7 @@ img.logo {
     height: 94px;
 }
 
-#portafolio h1 {
+#portfolio h1 {
     color: rgb(0,0,1);
     font-kerning: none;
     font-size: 400%;
@@ -510,11 +528,11 @@ img.logo {
     font-style: normal;
 }
 
-#portafolio p {
+#portfolio p {
     font-family: 'Georgia', serif;
 }
 
-#portafolio h5 {
+#portfolio h5 {
     font-family: 'Georgia', serif;
     font-weight: bold;
 }
@@ -534,11 +552,11 @@ img.logo {
 }
 
 .mi-carousel-item {
-    flex: 0 0 33.33%; /* 3 elementos en pantallas grandes */
+    flex: 0 0 auto; /* Asegura que los ítems no se reduzcan */
+    width: 100%;    /* Ancho completo por defecto (para móvil) */
     box-sizing: border-box;
     padding: 10px;
 }
-
 .mi-project-card {
     border: 1px solid #ddd;
     padding: 20px;
@@ -562,15 +580,15 @@ img.logo {
 }
 
 .mi-carousel-button.prev {
-    left: 1px;
+    left: -11px;
 }
 
 .mi-carousel-button.next {
-    right: 1px;
+    right: -11px;
 }
 
 .ticket-sales-container {
-    margin: 20px;
+    margin: auto;
     margin-top: 10px;
     border: 1px solid #000;
     max-width: 332px;

@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    <!--Sesion de carta de presentacion-->
     <div class="container-fluid fullscreen-section section" id="presentacion">
         <div class="row justify-content-center align-items-center text-center min-vh-100">
             <div class="col-lg-8 col-md-10">
@@ -44,43 +45,8 @@
         </div>
     </div>
 
-    <div class="floating-button d-block d-md-none" id="menuButton"><i class="fa-solid fa-bars"></i></div>
-    <div class="floating-menu d-none d-md-block">
-        <div class="menu-buttons">
-            <button class="scroll-btn" id="scroll-up">
-                <i class="fas fa-arrow-up"></i>
-            </button>
-        </div>
-        <div class="menu-dots">
-            <a href="#presentacion" class="dot" id="dot-presentacion" data-tooltip="Presentación">
-                <i class="fa-solid fa-house"></i>
-            </a>
-            <a href="#sobreMi" class="dot" id="dot-sobreMi" data-tooltip="Sobre Mí">
-              <i class="fa-solid fa-user"></i>
-            </a>
-            <a href="#intereses" class="dot" id="dot-intereses" data-tooltip="Intereses">
-                <i class="fa-solid fa-screwdriver-wrench"></i>
-            </a>
-            <a href="#formacion" class="dot" id="dot-formacion" data-tooltip="Formación">
-                <i class="fa-solid fa-brain"></i>
-            </a>
-            <a href="#habilidades" class="dot" id="dot-habilidades" data-tooltip="Habilidades">
-                <i class="fa-solid fa-book"></i>
-            </a>
-            <a href="#portafolio" class="dot" id="dot-portafolio" data-tooltip="Portafolio">
-                <i class="fa-solid fa-medal"></i>
-            </a>
-            <a href="#contacto" class="dot" id="dot-contacto" data-tooltip="Contacto">
-                <i class="fa-solid fa-phone-flip"></i>
-            </a>
-        </div>
-        <div class="menu-buttons">
-            <button class="scroll-btn" id="scroll-down">
-                <i class="fas fa-arrow-down"></i>
-            </button>
-        </div>
-    </div>
-    
+    <!--Menu en version movil-->
+    <div class="floating-button d-block d-lg-none" id="menuButton"><i class="fa-solid fa-bars"></i></div>
     <div class="side-menu" id="sideMenu">
         <button type="button" class="btn-close" id="closeMenu" aria-label="Close"></button>
 
@@ -120,11 +86,11 @@
             </div>
             <span class="text_button">Habilidades</span>
         </a>
-        <a href="#portafolio" class="button">
+        <a href="#portfolio" class="button">
             <div class="icon_cont">
             <span class="icon"><i class="fa-solid fa-arrow-right"></i></span>
             </div>
-            <span class="text_button">Portafolio</span>
+            <span class="text_button">Portfolio</span>
         </a>
         <a href="#contacto" class="button">
             <div class="icon_cont">
@@ -133,61 +99,138 @@
             <span class="text_button">Contacto</span>
         </a>
     </div>
+    
+    <!--Menu en version escritorio-->
+    <div class="floating-menu d-none d-lg-block">
+        <div class="menu-buttons">
+            <button class="scroll-btn" id="scroll-up">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+        </div>
+        <div class="menu-dots">
+            <a href="#presentacion" class="dot" id="dot-presentacion" data-tooltip="Presentación">
+                <i class="fa-solid fa-house"></i>
+            </a>
+            <a href="#sobreMi" class="dot" id="dot-sobreMi" data-tooltip="Sobre Mí">
+              <i class="fa-solid fa-user"></i>
+            </a>
+            <a href="#intereses" class="dot" id="dot-intereses" data-tooltip="Intereses">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+            </a>
+            <a href="#formacion" class="dot" id="dot-formacion" data-tooltip="Formación">
+                <i class="fa-solid fa-brain"></i>
+            </a>
+            <a href="#habilidades" class="dot" id="dot-habilidades" data-tooltip="Habilidades">
+                <i class="fa-solid fa-book"></i>
+            </a>
+            <a href="#portfolio" class="dot" id="dot-portfolio" data-tooltip="Portfolio">
+                <i class="fa-solid fa-medal"></i>
+            </a>
+            <a href="#contacto" class="dot" id="dot-contacto" data-tooltip="Contacto">
+                <i class="fa-solid fa-phone-flip"></i>
+            </a>
+        </div>
+        <div class="menu-buttons">
+            <button class="scroll-btn" id="scroll-down">
+                <i class="fas fa-arrow-down"></i>
+            </button>
+        </div>
+    </div>
 
-    <div class="py-3 section" id="sobreMi">
+    <!--Seccion sobre mi-->
+    <div class="py-5 section" id="sobreMi">
         <div class="container">
             <div class="row justify-content-center align-items-center text-center min-vh-100">
                 <div class="col-md-7">
                     <h2 class="text-center sobreMi">Sobre mí</h2>
 
+                    <!--Imagen en version movil-->
                     <div class="image-content d-block d-md-none text-center">
                         <img src="images/mia.jpg" alt="Alejandro Paniagua Rodriguez" class="img-fluid rounded-circle shadow" style="width: 250px;">
                     </div>
 
                     <p>Soy una persona curiosa y con muchas ganas de aprender, siempre en busca de nuevos retos que me permitan crecer tanto profesional como personalmente. Aunque me considero introvertido, tengo una gran capacidad para concentrarme en los detalles y trabajar con dedicación. Mi inquietud por mejorar constantemente me impulsa a seguir aprendiendo nuevas tecnologías y a desarrollar mis habilidades en el mundo laboral. Estoy siempre dispuesto a asumir responsabilidades y aportar lo mejor de mí en cada proyecto.</p>
         
-                    <div class="row text-center mt-4">
-                        <div class="col-6 col-md-6 col-lg-3 mb-3">
-                            <div class="circle bg-light mx-auto text-center">
-                                <img src="images/icon1.png" alt="Proactividad" class="img-fluid">
-                                <p class="mt-2">Proactividad</p>
+                    <!--Valores en version movil e escritorio-->
+                    <div class="d-block d-md-none d-lg-block">
+                        <div class="row text-center mt-4">
+                            <div class="col-6 col-md-6 col-lg-3 mb-3">
+                                <div class="circle bg-light mx-auto text-center">
+                                    <img src="images/icon1.png" alt="Proactividad" class="img-fluid">
+                                    <p class="mt-2">Proactividad</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-6 col-md-6 col-lg-3 mb-3">
-                            <div class="circle bg-light mx-auto">
-                                <img src="images/icon2.png" alt="Organización" class="img-fluid">
-                                <p class="mt-2">Organización</p>
+                            <div class="col-6 col-md-6 col-lg-3 mb-3">
+                                <div class="circle bg-light mx-auto">
+                                    <img src="images/icon2.png" alt="Organización" class="img-fluid">
+                                    <p class="mt-2">Organización</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-6 col-md-6 col-lg-3 mb-3">
-                            <div class="circle bg-light mx-auto">
-                                <img src="images/icon3.png" alt="Equipo" class="img-fluid">
-                                <p class="mt-2">Equipo</p>
+                            <div class="col-6 col-md-6 col-lg-3 mb-3">
+                                <div class="circle bg-light mx-auto">
+                                    <img src="images/icon3.png" alt="Equipo" class="img-fluid">
+                                    <p class="mt-2">Equipo</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-6 col-md-6 col-lg-3 mb-3">
-                            <div class="circle bg-light mx-auto">
-                                <img src="images/icon4.png" alt="Versatilidad" class="img-fluid">
-                                <p class="mt-2">Versatilidad</p>
+                            <div class="col-6 col-md-6 col-lg-3 mb-3">
+                                <div class="circle bg-light mx-auto">
+                                    <img src="images/icon4.png" alt="Versatilidad" class="img-fluid">
+                                    <p class="mt-2">Versatilidad</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
+                <!--Imagen en version escritorio y tablet-->
                 <div class="col-md-5 text-center">
                     <div class="image-content d-none d-md-block">
                         <img src="images/mia.jpg" alt="Alejandro Paniagua Rodriguez" class="img-fluid rounded-circle shadow" style="width: 300px;">
+                    </div>
+                </div>
+
+                <!--Valores en version tablet-->
+                <div class="d-none d-md-block d-lg-none">
+                    <div class="col-12">
+                        <div class="row text-center">
+                            <div class="col-3">
+                                <div class="circle bg-light mx-auto text-center">
+                                    <img src="images/icon1.png" alt="Proactividad" class="img-fluid">
+                                    <p class="mt-2">Proactividad</p>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="circle bg-light mx-auto">
+                                    <img src="images/icon2.png" alt="Organización" class="img-fluid">
+                                    <p class="mt-2">Organización</p>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="circle bg-light mx-auto">
+                                    <img src="images/icon3.png" alt="Equipo" class="img-fluid">
+                                    <p class="mt-2">Equipo</p>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="circle bg-light mx-auto">
+                                    <img src="images/icon4.png" alt="Versatilidad" class="img-fluid">
+                                    <p class="mt-2">Versatilidad</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!--Seccion de intereses-->
     <div class="py-3 section" id="intereses">
         <div class="container">
             <h1 class="text-center pt-5">Intereses</h1>
             <p>Un ingeniero informático puede desarrollar una amplia gama de funciones y adaptarse a diferentes retos profesionales. ¡Explora los perfiles que más capturan mi interés y motivan mi carrera!</p>
 
+            <!--Intereses en columna-->
             <div class="row g-4">
                 <div class="col-6 col-md-3">
                     <div class="card text-center p-3 shadow-sm h-100">
@@ -257,6 +300,7 @@
         </div>
     </div>
 
+    <!--Seccion de formacion-->
     <div class="py-3 section" id="formacion">
         <div class="container">
             <h1 class="text-center pt-5">Formación</h1>
@@ -355,6 +399,7 @@
 
     </div>
 
+    <!--Seccion de habilidades-->
     <div class="py-3 section" id="habilidades">
         <div class="container">
             <h1 class="text-center pt-5">Habilidades</h1>
@@ -380,7 +425,6 @@
 
                     </div>
                 </div>
-        
                 <!-- Segunda caja de habilidades -->
                 <div class="col-md-6">
                     <div class="skills-box">
@@ -403,6 +447,7 @@
 
                     </div>
                 </div>
+                <!-- Tercera caja de habilidades -->
                 <div class="col-12">
                     <div class="skills-box">
                         <div class="skills-title">Frameworks</div>
@@ -429,6 +474,7 @@
 
                     </div>
                 </div>
+                <!-- Cuarta caja de habilidades -->
                 <div class="col-md-6">
                     <div class="skills-box">
                         <div class="skills-title">Entornos</div>
@@ -460,6 +506,7 @@
 
                     </div>
                 </div>
+                <!-- Quinta caja de habilidades -->
                 <div class="col-md-6">
                     <div class="skills-box">
                         <div class="skills-title">Otras</div>
@@ -494,16 +541,17 @@
         </div>
     </div>
 
-    <div class="py-3 section" id="portafolio">
+    <!--Seccion de portfolio-->
+    <div class="py-3 section" id="portfolio">
         <div class="container">
-            <h1 class="text-center pt-5 mb-0">Portafolio</h1>
+            <h1 class="text-center pt-5 mb-0">Portfolio</h1>
 
             <div class="mi-carousel-container mt-3">
                 <button class="mi-carousel-button prev" onclick="prevCustomSlide()">&#10094;</button>
                 <div class="mi-carousel-track" id="miCarouselTrack">
+                    <!--Primer item-->
                     <div class="mi-carousel-item">
                         <div class="mi-project-card ticket-sales-container">
-                            
                             <div class="banner-image-container">
                                 <img src="images/LyxnNotes.png" alt="LyxnNotes">
                             </div>
@@ -515,6 +563,7 @@
                             </button>
                         </div>
                     </div>
+                    <!--Segundo item-->
                     <div class="mi-carousel-item">
                         <div class="mi-project-card ticket-sales-container">
                             <div class="banner-image-container">
@@ -528,6 +577,7 @@
                             </button>
                         </div>
                     </div>
+                    <!--item-->
                     <div class="mi-carousel-item">
                         <div class="mi-project-card ticket-sales-container">
                             <div class="banner-image-container">
@@ -541,6 +591,7 @@
                             </button>
                         </div>
                     </div>
+                    <!--item-->
                     <div class="mi-carousel-item">
                         <div class="mi-project-card ticket-sales-container">
                             <div class="banner-image-container">
@@ -554,6 +605,7 @@
                             </button>
                         </div>
                     </div>
+                    <!--item-->
                     <div class="mi-carousel-item">
                         <div class="mi-project-card ticket-sales-container">
                             <div class="banner-image-container">
@@ -567,6 +619,7 @@
                             </button>
                         </div>
                     </div>
+                    <!--item-->
                     <div class="mi-carousel-item">
                         <div class="mi-project-card ticket-sales-container">
                             <div class="banner-image-container">
@@ -580,6 +633,7 @@
                             </button>
                         </div>
                     </div>
+                    <!--item-->
                     <div class="mi-carousel-item">
                         <div class="mi-project-card ticket-sales-container">
                             <div class="banner-image-container">
@@ -593,6 +647,7 @@
                             </button>
                         </div>
                     </div>
+                    <!--item-->
                     <div class="mi-carousel-item">
                         <div class="mi-project-card ticket-sales-container">
                             <div class="banner-image-container">
@@ -606,6 +661,7 @@
                             </button>
                         </div>
                     </div>
+                    <!--item-->
                     <div class="mi-carousel-item">
                         <div class="mi-project-card ticket-sales-container">
                             <div class="banner-image-container">
@@ -626,6 +682,7 @@
         </div>
     </div>
 
+    <!--Seccion de contacto-->
     <div class="py-3 section" id="contacto">
         <div class="container">
             <h1 class="text-center pt-5">Contacto</h1>
@@ -633,7 +690,6 @@
             <p class="text-center">Si tienes alguna pregunta o quieres trabajar conmigo, ¡no dudes en contactarme!</p>
 
             <div class="row">
-                
                 <div class="col-md-6 col-12 d-flex justify-content-md-end justify-content-center">
                     <div class="card">
                         <div class="text-content">
@@ -680,6 +736,7 @@
         </div>
     </div>
 </body>
+<!--Footer-->
 <footer class="footer mt-5 py-4">
     <div class="container">
         <div class="row text-center">
@@ -715,7 +772,6 @@
         </div>
     </div>
 </footer>
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="script/script.js"></script>
