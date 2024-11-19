@@ -140,12 +140,18 @@ img.logo {
     height: 100%;
 }
 
-#presentacion a {
+.data-container a,
+.data-container a:hover,
+.data-container a:focus {
+    color: #333 !important;
+}
+
+#presentacion h2 a {
     color: rgb(0,0,1);
 }
 
-#presentacion a:hover, 
-#presentacion a:focus {
+#presentacion h2 a:hover, 
+#presentacion h2 a:focus {
     color: #6d6968;
 }
   
