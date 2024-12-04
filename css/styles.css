@@ -69,7 +69,7 @@ img.logo {
 }
 
 
-#presentacion h1 {
+#presentacion h2 {
     position: relative;
     color: rgb(0,0,1);
     font-kerning: none;
@@ -146,12 +146,12 @@ img.logo {
     color: #333 !important;
 }
 
-#presentacion h2 a {
+#presentacion h3 a {
     color: rgb(0,0,1);
 }
 
-#presentacion h2 a:hover, 
-#presentacion h2 a:focus {
+#presentacion h3 a:hover, 
+#presentacion h3 a:focus {
     color: #6d6968;
 }
   
@@ -393,7 +393,7 @@ img.logo {
     margin-top: 20px !important;
 }
 
-#intereses h1 {
+#intereses h2 {
     color: rgb(0,0,1);
     font-kerning: none;
     font-size: 400%;
@@ -420,7 +420,7 @@ img.logo {
     width: 20%;
 }
 
-#formacion h1 {
+#formacion h2 {
     color: rgb(0,0,1);
     font-kerning: none;
     font-size: 400%;
@@ -459,7 +459,7 @@ img.logo {
     background-color: #6d6968 !important;
 }
 
-#habilidades h1 {
+#habilidades h2 {
     color: rgb(0,0,1);
     font-kerning: none;
     font-size: 400%;
@@ -529,7 +529,7 @@ img.logo {
     height: 94px;
 }
 
-#portfolio h1 {
+#portfolio h2 {
     color: rgb(0,0,1);
     font-kerning: none;
     font-size: 400%;
@@ -627,7 +627,7 @@ img.logo {
     font-size: 100%;
 }  
 
-#contacto h1 {
+#contacto h2 {
     color: rgb(0,0,1);
     font-kerning: none;
     font-size: 400%;
