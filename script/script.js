@@ -129,6 +129,39 @@ window.onload = function() {
     resetAutoSlideInterval(); 
 };
 
+// Función para pausar el temporizador
+function pauseAutoSlide() {
+    clearInterval(autoSlideInterval);
+}
+
+// Función para reanudar el temporizador
+function resumeAutoSlide() {
+    resetAutoSlideInterval();
+}
+
+// Seleccionar todas las tarjetas del carrusel
+const carouselItems = document.querySelectorAll('.mi-carousel-item');
+
+// Pausar el temporizador al entrar con el ratón
+carouselItems.forEach(item => {
+    item.addEventListener('mouseenter', pauseAutoSlide);
+    item.addEventListener('mouseleave', resumeAutoSlide);
+});
+
+// Manejar clicks en las tabs para dispositivos móviles
+const tabs = document.querySelectorAll('.nav-tabs button');
+
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        pauseAutoSlide(); // Pausar el temporizador al hacer clic en una tab
+
+        // Reanudar el temporizador después de un pequeño retraso
+        setTimeout(() => {
+            resumeAutoSlide();
+        }, 5000); // Reanudar después de 5 segundos
+    });
+});
+
 // Eventos de arrastrar y deslizar
 
 let isDragging = false;

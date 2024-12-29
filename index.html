@@ -647,11 +647,84 @@
                     <div class="mi-carousel-item">
                         <div class="mi-project-card ticket-sales-container">
                             <div class="banner-image-container">
+                                <img src="images/ShareList.png" alt="shareList" loading="lazy">
+                            </div>
+                            <h5 class="mt-1">Share List</h5>
+                            
+                            <!-- Tabs -->
+                            <ul class="nav nav-tabs" id="shareListTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info-shareList" type="button" role="tab" aria-controls="info" aria-selected="true">Info</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="tech-tab" data-bs-toggle="tab" data-bs-target="#tech-shareList" type="button" role="tab" aria-controls="tech" aria-selected="false">Tecnología</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="links-tab" data-bs-toggle="tab" data-bs-target="#links-shareList" type="button" role="tab" aria-controls="links" aria-selected="false">Enlaces</button>
+                                </li>
+                            </ul>
+                            
+                            <!-- Contenido de las Tabs -->
+                            <div class="tab-content mt-2" id="shareListTabsContent">
+                                <div class="tab-pane fade show active" id="info-shareList" role="tabpanel" aria-labelledby="info-tab">
+                                    <p class="mb-1">Aplicación web para crear listas de la compra y poder compartirlas.</p>
+                                    <p class="mb-1">2024 - 2025</p>
+                                </div>
+                                <div class="tab-pane fade" id="tech-shareList" role="tabpanel" aria-labelledby="tech-tab">
+                                    <p>Java, Maven, Spring Boot, TypeScript, Angular, Bootstrap, MySQL, .</p>
+                                </div>
+                                <div class="tab-pane fade" id="links-shareList" role="tabpanel" aria-labelledby="links-tab">
+                                    <div class="d-flex justify-content-center gap-3 my-4">
+                                        <a target="_blank" rel="noopener noreferrer" class="text-black">
+                                            <i class="fab fa-youtube fa-1x"> Tour aplicacion</i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button id="add-to-cart">
+                                <a class="text-decoration-none font-monospace" href="https://github.com/AlejandroRodriguez1998/ShareList-Frontend" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mi-carousel-item">
+                        <div class="mi-project-card ticket-sales-container">
+                            <div class="banner-image-container">
                                 <img src="images/Apasa.png" alt="Apasa" loading="lazy">
                             </div>
                             <h5 class="mt-1">Apasa</h5>
-                            <p class="mb-1">Solución e-commerce para una protectora de animales en Ciudad Real.</p>
-                            <p class="mb-1">2024 - 2024</p>
+                            
+                            <!-- Tabs -->
+                            <ul class="nav nav-tabs" id="apasaTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info-apasa" type="button" role="tab" aria-controls="info" aria-selected="true">Info</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="tech-tab" data-bs-toggle="tab" data-bs-target="#tech-apasa" type="button" role="tab" aria-controls="tech" aria-selected="false">Tecnología</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="links-tab" data-bs-toggle="tab" data-bs-target="#links-apasa" type="button" role="tab" aria-controls="links" aria-selected="false">Enlaces</button>
+                                </li>
+                            </ul>
+                            
+                            <!-- Contenido de las Tabs -->
+                            <div class="tab-content mt-2" id="apasaTabsContent">
+                                <div class="tab-pane fade show active" id="info-apasa" role="tabpanel" aria-labelledby="info-tab">
+                                    <p class="mb-1">Solución e-commerce para una protectora de animales en Ciudad Real.</p>
+                                    <p class="mb-1">2024 - 2024</p>
+                                </div>
+                                <div class="tab-pane fade" id="tech-apasa" role="tabpanel" aria-labelledby="tech-tab">
+                                    <p>WordPress, WooCommerce, PHP, JavaScript, MariaDB, Xampp, Estrategias de SEO.</p>
+                                </div>
+                                <div class="tab-pane fade" id="links-apasa" role="tabpanel" aria-labelledby="links-tab">
+                                    <div class="d-flex justify-content-center gap-3 my-4">
+                                        <a href="https://www.youtube.com/watch?v=iaJD3wuegnM&feature=youtu.be" target="_blank" rel="noopener noreferrer" class="text-black">
+                                            <i class="fab fa-youtube fa-1x"> Tour aplicacion</i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
                             <button id="add-to-cart">
                                 <a class="text-decoration-none font-monospace" href="https://github.com/AlejandroRodriguez1998/Apasa" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
                             </button>
@@ -663,8 +736,38 @@
                                 <img src="images/CakeKaraoke.png" alt="CakeKaraoke" loading="lazy">
                             </div>
                             <h5 class="mt-1">Cake Karaoke</h5>
-                            <p class="mb-1">Aplicación hecha en Node.js para la creación de un karaoke.</p>
-                            <p class="mb-1">2024 - 2024</p>
+
+                            <!-- Tabs -->
+                            <ul class="nav nav-tabs" id="cakeKaraokeTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info-cakeKaraoke" type="button" role="tab" aria-controls="info" aria-selected="true">Info</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="tech-tab" data-bs-toggle="tab" data-bs-target="#tech-cakeKaraoke" type="button" role="tab" aria-controls="tech" aria-selected="false">Tecnología</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="links-tab" data-bs-toggle="tab" data-bs-target="#links-cakeKaraoke" type="button" role="tab" aria-controls="links" aria-selected="false">Enlaces</button>
+                                </li>
+                            </ul>
+                            
+                            <!-- Contenido de las Tabs -->
+                            <div class="tab-content mt-2" id="cakeKaraokeTabsContent">
+                                <div class="tab-pane fade show active" id="info-cakeKaraoke" role="tabpanel" aria-labelledby="info-tab">
+                                    <p class="mb-1">Aplicación hecha en Node.js para la creación de un karaoke.</p>
+                                    <p class="mb-1">2024 - 2024</p>
+                                </div>
+                                <div class="tab-pane fade" id="tech-cakeKaraoke" role="tabpanel" aria-labelledby="tech-tab">
+                                    <p>TypeScript, Node.js con Express, Bootstrap, Sqlite, APIs del navegador.</p>
+                                </div>
+                                <div class="tab-pane fade" id="links-cakeKaraoke" role="tabpanel" aria-labelledby="links-tab">
+                                    <div class="d-flex justify-content-center gap-3 my-4">
+                                        <a href="https://www.youtube.com/watch?v=4CfopNRgKFo&feature=youtu.be" target="_blank" rel="noopener noreferrer" class="text-black">
+                                            <i class="fab fa-youtube fa-1x"> Tour aplicacion</i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
                             <button id="add-to-cart">
                                 <a class="text-decoration-none font-monospace" href="https://github.com/Josel02/Karaoke" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
                             </button>
@@ -677,8 +780,38 @@
                                 <img src="images/LyxnNotes.png" alt="LyxnNotes" loading="lazy">
                             </div>
                             <h5 class="mt-1">Lyxn Notes</h5>
-                            <p class="mb-1">Aplicación hecha en Ruby on Rails para llevar notas y compartirlas.</p>
-                            <p class="mb-1">2024 - 2024</p>
+
+                            <!-- Tabs -->
+                            <ul class="nav nav-tabs" id="lyxnNotesTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info-lyxnNotes" type="button" role="tab" aria-controls="info" aria-selected="true">Info</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="tech-tab" data-bs-toggle="tab" data-bs-target="#tech-lyxnNotes" type="button" role="tab" aria-controls="tech" aria-selected="false">Tecnología</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="links-tab" data-bs-toggle="tab" data-bs-target="#links-lyxnNotes" type="button" role="tab" aria-controls="links" aria-selected="false">Enlaces</button>
+                                </li>
+                            </ul>
+                            
+                            <!-- Contenido de las Tabs -->
+                            <div class="tab-content mt-2" id="lyxnNotesTabsContent">
+                                <div class="tab-pane fade show active" id="info-lyxnNotes" role="tabpanel" aria-labelledby="info-tab">
+                                    <p class="mb-1">Aplicación hecha en Ruby on Rails para llevar notas y compartirlas.</p>
+                                    <p class="mb-1">2024 - 2024</p>
+                                </div>
+                                <div class="tab-pane fade" id="tech-lyxnNotes" role="tabpanel" aria-labelledby="tech-tab">
+                                    <p>Ruby, Ruby On Rails, MongoDB, Bootstrap, HTML, JavaScript.</p>
+                                </div>
+                                <div class="tab-pane fade" id="links-lyxnNotes" role="tabpanel" aria-labelledby="links-tab">
+                                    <div class="d-flex justify-content-center gap-3 my-4">
+                                        <a target="_blank" rel="noopener noreferrer" class="text-black">
+                                            <i class="fab fa-youtube fa-1x"> Tour aplicacion</i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
                             <button id="add-to-cart">
                                 <a class="text-decoration-none font-monospace" href="https://github.com/AlejandroRodriguez1998/Lynx_note" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
                             </button>
@@ -691,8 +824,38 @@
                                 <img src="images/theGameBazar.png" alt="TheGameBazar" loading="lazy">
                             </div>
                             <h5 class="mt-1">The Game Bazar</h5>
-                            <p class="mb-1">Aplicación para buscar las mejores ofertas en videojuegos.</p>
-                            <p class="mb-1">2023 - 2023</p>
+
+                            <!-- Tabs -->
+                            <ul class="nav nav-tabs" id="gameBazarTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info-gameBazar" type="button" role="tab" aria-controls="info" aria-selected="true">Info</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="tech-tab" data-bs-toggle="tab" data-bs-target="#tech-gameBazar" type="button" role="tab" aria-controls="tech" aria-selected="false">Tecnología</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="links-tab" data-bs-toggle="tab" data-bs-target="#links-gameBazar" type="button" role="tab" aria-controls="links" aria-selected="false">Enlaces</button>
+                                </li>
+                            </ul>
+                            
+                            <!-- Contenido de las Tabs -->
+                            <div class="tab-content mt-2" id="gameBazarTabsContent">
+                                <div class="tab-pane fade show active" id="info-gameBazar" role="tabpanel" aria-labelledby="info-tab">
+                                    <p class="mb-1">Aplicación para buscar las mejores ofertas en videojuegos.</p>
+                                    <p class="mb-1">2023 - 2023</p>
+                                </div>
+                                <div class="tab-pane fade" id="tech-gameBazar" role="tabpanel" aria-labelledby="tech-tab">
+                                    <p>Python, Flask, MySQL, Bootstrap, HTML, JavaScript.</p>
+                                </div>
+                                <div class="tab-pane fade" id="links-gameBazar" role="tabpanel" aria-labelledby="links-tab">
+                                    <div class="d-flex justify-content-center gap-3 my-4">
+                                        <a target="_blank" rel="noopener noreferrer" class="text-black">
+                                            <i class="fab fa-youtube fa-1x"> Tour aplicacion</i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
                             <button id="add-to-cart">
                                 <a class="text-decoration-none font-monospace" href="https://github.com/AitorMillan/TheGameBazar" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
                             </button>
@@ -705,8 +868,28 @@
                                 <img src="images/icedrive.png" alt="IceDrive" loading="lazy">
                             </div>
                             <h5 class="mt-1">IceDrive</h5>
-                            <p class="mb-1">Aplicación para aprender sobre diseño de microservicios en ZeroIce.</p>
-                            <p class="mb-1">2023 - 2023</p>
+
+                            <!-- Tabs -->
+                            <ul class="nav nav-tabs" id="iceDriveTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info-iceDrive" type="button" role="tab" aria-controls="info" aria-selected="true">Info</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="tech-tab" data-bs-toggle="tab" data-bs-target="#tech-iceDrive" type="button" role="tab" aria-controls="tech" aria-selected="false">Tecnología</button>
+                                </li>
+                            </ul>
+                            
+                            <!-- Contenido de las Tabs -->
+                            <div class="tab-content mt-2" id="iceDriveTabsContent">
+                                <div class="tab-pane fade show active" id="info-iceDrive" role="tabpanel" aria-labelledby="info-tab">
+                                    <p class="mb-1">Aplicación para aprender sobre diseño de microservicios en ZeroIce.</p>
+                                    <p class="mb-1">2023 - 2023</p>
+                                </div>
+                                <div class="tab-pane fade" id="tech-iceDrive" role="tabpanel" aria-labelledby="tech-tab">
+                                    <p>Python, Ice, ZeroIce, IceStrom, Linux.</p>
+                                </div>
+                            </div>
+
                             <button id="add-to-cart">
                                 <a class="text-decoration-none font-monospace" href="https://github.com/AlejandroRodriguez1998/IceDrive" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
                             </button>
@@ -719,8 +902,38 @@
                                 <img src="images/ipoPokemon.png" alt="IPOkemon" loading="lazy">
                             </div>
                             <h5 class="mt-1">IPOkemon</h5>
-                            <p class="mb-1">Aplicación en Windows formada por combates y una Pokédex.</p>
-                            <p class="mb-1">2022 - 2022</p>
+
+                            <!-- Tabs -->
+                            <ul class="nav nav-tabs" id="ipoPokemonTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info-ipoPokemon" type="button" role="tab" aria-controls="info" aria-selected="true">Info</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="tech-tab" data-bs-toggle="tab" data-bs-target="#tech-ipoPokemon" type="button" role="tab" aria-controls="tech" aria-selected="false">Tecnología</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="links-tab" data-bs-toggle="tab" data-bs-target="#links-ipoPokemon" type="button" role="tab" aria-controls="links" aria-selected="false">Enlaces</button>
+                                </li>
+                            </ul>
+                            
+                            <!-- Contenido de las Tabs -->
+                            <div class="tab-content mt-2" id="ipoPokemonTabsContent">
+                                <div class="tab-pane fade show active" id="info-ipoPokemon" role="tabpanel" aria-labelledby="info-tab">
+                                    <p class="mb-1">Aplicación en Windows formada por combates y una Pokédex.</p>
+                                    <p class="mb-1">2022 - 2022</p>
+                                </div>
+                                <div class="tab-pane fade" id="tech-ipoPokemon" role="tabpanel" aria-labelledby="tech-tab">
+                                    <p>UWP, WPF, XAML, C#, Visual Studio, Expression Blend.</p>
+                                </div>
+                                <div class="tab-pane fade" id="links-ipoPokemon" role="tabpanel" aria-labelledby="links-tab">
+                                    <div class="d-flex justify-content-center gap-3 my-4">
+                                        <a href="https://www.youtube.com/watch?v=zUldjKksEeQ&feature=youtu.be" target="_blank" rel="noopener noreferrer" class="text-black">
+                                            <i class="fab fa-youtube fa-1x"> Tour aplicacion</i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
                             <button id="add-to-cart">
                                 <a class="text-decoration-none font-monospace" href="https://github.com/AlejandroRodriguez1998/IPOkemon" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
                             </button>
@@ -733,8 +946,38 @@
                                 <img src="images/pokemon.png" alt="Pokemon" loading="lazy">
                             </div>
                             <h5 class="mt-1">Pokémon</h5>
-                            <p class="mb-1">Pequeño juego con el Pokémon Electrode hecho con WPF & UWP.</p>
-                            <p class="mb-1">2022 - 2022</p>
+
+                            <!-- Tabs -->
+                            <ul class="nav nav-tabs" id="pokemonTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info-pokemon" type="button" role="tab" aria-controls="info" aria-selected="true">Info</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="tech-tab" data-bs-toggle="tab" data-bs-target="#tech-pokemon" type="button" role="tab" aria-controls="tech" aria-selected="false">Tecnología</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="links-tab" data-bs-toggle="tab" data-bs-target="#links-pokemon" type="button" role="tab" aria-controls="links" aria-selected="false">Enlaces</button>
+                                </li>
+                            </ul>
+                            
+                            <!-- Contenido de las Tabs -->
+                            <div class="tab-content mt-2" id="pokemonTabsContent">
+                                <div class="tab-pane fade show active" id="info-pokemon" role="tabpanel" aria-labelledby="info-tab">
+                                    <p class="mb-1">Pequeño juego con el Pokémon Electrode hecho con WPF & UWP.</p>
+                                    <p class="mb-1">2022 - 2022</p>
+                                </div>
+                                <div class="tab-pane fade" id="tech-pokemon" role="tabpanel" aria-labelledby="tech-tab">
+                                    <p>UWP, WPF, XAML, C#, Visual Studio, Expression Blend.</p>
+                                </div>
+                                <div class="tab-pane fade" id="links-pokemon" role="tabpanel" aria-labelledby="links-tab">
+                                    <div class="d-flex justify-content-center gap-3 my-4">
+                                        <a href="https://www.youtube.com/watch?v=w7AGnbyIQUc&feature=youtu.be" target="_blank" rel="noopener noreferrer" class="text-black">
+                                            <i class="fab fa-youtube fa-1x"> Tour aplicacion</i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
                             <button id="add-to-cart">
                                 <a class="text-decoration-none font-monospace" href="https://github.com/AlejandroRodriguez1998/PokemonWPF-UWP" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
                             </button>
@@ -747,8 +990,38 @@
                                 <img src="images/gepi.png" alt="GEPI" loading="lazy">
                             </div>
                             <h5 class="mt-1">G E P I</h5>
-                            <p class="mb-1">Gestión de pacientes con enfermedades infectocontagiosas.</p>
-                            <p class="mb-1">2021 - 2021</p>
+
+                            <!-- Tabs -->
+                            <ul class="nav nav-tabs" id="gepiTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info-gepi" type="button" role="tab" aria-controls="info" aria-selected="true">Info</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="tech-tab" data-bs-toggle="tab" data-bs-target="#tech-gepi" type="button" role="tab" aria-controls="tech" aria-selected="false">Tecnología</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="links-tab" data-bs-toggle="tab" data-bs-target="#links-gepi" type="button" role="tab" aria-controls="links" aria-selected="false">Enlaces</button>
+                                </li>
+                            </ul>
+                            
+                            <!-- Contenido de las Tabs -->
+                            <div class="tab-content mt-2" id="gepiTabsContent">
+                                <div class="tab-pane fade show active" id="info-gepi" role="tabpanel" aria-labelledby="info-tab">
+                                    <p class="mb-1">Gestión de pacientes con enfermedades infectocontagiosas.</p>
+                                    <p class="mb-1">2021 - 2021</p>
+                                </div>
+                                <div class="tab-pane fade" id="tech-gepi" role="tabpanel" aria-labelledby="tech-tab">
+                                    <p>Markdown, Git, Java, Maven, JUnit, NetBeans, MySQL.</p>
+                                </div>
+                                <div class="tab-pane fade" id="links-gepi" role="tabpanel" aria-labelledby="links-tab">
+                                    <div class="d-flex justify-content-center gap-3 my-4">
+                                        <a href="https://github.com/jcalzadog/ISO2-2122-BC.02/wiki" target="_blank" rel="noopener noreferrer" class="text-black">
+                                            <i class="fa-solid fa-book fa-1x"> Wiki aplicacion</i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
                             <button id="add-to-cart">
                                 <a class="text-decoration-none font-monospace" href="https://github.com/jcalzadog/ISO2-2122-BC.02" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
                             </button>
@@ -761,8 +1034,38 @@
                                 <img src="images/veterinariaPandawa.png" alt="veterinariaPandawa" loading="lazy">
                             </div>
                             <h5 class="mt-1">Veterinaria Pandawa</h5>
-                            <p class="mb-1">Trabajo de fin de grado del Grado Superior DAW.</p>
-                            <p class="mb-1">2019 - 2019</p>
+
+                            <!-- Tabs -->
+                            <ul class="nav nav-tabs" id="pandawaTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info-pandawa" type="button" role="tab" aria-controls="info" aria-selected="true">Info</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="tech-tab" data-bs-toggle="tab" data-bs-target="#tech-pandawa" type="button" role="tab" aria-controls="tech" aria-selected="false">Tecnología</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="links-tab" data-bs-toggle="tab" data-bs-target="#links-pandawa" type="button" role="tab" aria-controls="links" aria-selected="false">Enlaces</button>
+                                </li>
+                            </ul>
+                            
+                            <!-- Contenido de las Tabs -->
+                            <div class="tab-content mt-2" id="pandawaTabsContent">
+                                <div class="tab-pane fade show active" id="info-pandawa" role="tabpanel" aria-labelledby="info-tab">
+                                    <p class="mb-1">Trabajo de fin de grado del Grado Superior DAW.</p>
+                                    <p class="mb-1">2019 - 2019</p>
+                                </div>
+                                <div class="tab-pane fade" id="tech-pandawa" role="tabpanel" aria-labelledby="tech-tab">
+                                    <p>HTML, CSS, JavaScript, PHP, MariaDB, Bootstrap, jQuery, DOM.</p>
+                                </div>
+                                <div class="tab-pane fade" id="links-pandawa" role="tabpanel" aria-labelledby="links-tab">
+                                    <div class="d-flex justify-content-center gap-3 my-4">
+                                        <a href="https://github.com/AlejandroRodriguez1998/DAW-Proyecto/wiki" target="_blank" rel="noopener noreferrer" class="text-black">
+                                            <i class="fa-solid fa-book fa-1x"> Wiki aplicacion</i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
                             <button id="add-to-cart">
                                 <a class="text-decoration-none font-monospace" href="https://github.com/AlejandroRodriguez1998/DAW-Proyecto" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
                             </button>
@@ -775,8 +1078,38 @@
                                 <img src="images/diseñoInterfaces.png" alt="diseñoInterfaces" loading="lazy">
                             </div>
                             <h5 class="mt-1">Diseño de Interfaces</h5>
-                            <p class="mb-1">Pequeña página donde se reúnen todos los diseños hechos en la FP.</p>
-                            <p class="mb-1">2019 - 2019</p>
+
+                            <!-- Tabs -->
+                            <ul class="nav nav-tabs" id="disInterTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info-disInter" type="button" role="tab" aria-controls="info" aria-selected="true">Info</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="tech-tab" data-bs-toggle="tab" data-bs-target="#tech-disInter" type="button" role="tab" aria-controls="tech" aria-selected="false">Tecnología</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="links-tab" data-bs-toggle="tab" data-bs-target="#links-disInter" type="button" role="tab" aria-controls="links" aria-selected="false">Enlaces</button>
+                                </li>
+                            </ul>
+                            
+                            <!-- Contenido de las Tabs -->
+                            <div class="tab-content mt-2" id="disInterTabsContent">
+                                <div class="tab-pane fade show active" id="info-disInter" role="tabpanel" aria-labelledby="info-tab">
+                                    <p class="mb-1">Pequeña página donde se reúnen todos los diseños hechos en la FP.</p>
+                                    <p class="mb-1">2019 - 2019</p>
+                                </div>
+                                <div class="tab-pane fade" id="tech-disInter" role="tabpanel" aria-labelledby="tech-tab">
+                                    <p>HTML, CSS, Bootstrap.</p>
+                                </div>
+                                <div class="tab-pane fade" id="links-disInter" role="tabpanel" aria-labelledby="links-tab">
+                                    <div class="d-flex justify-content-center gap-3 my-4">
+                                        <a href="https://alejandrorodriguez1998.github.io/DAW-Interfaces/" target="_blank" rel="noopener noreferrer" class="text-black">
+                                            <i class="fa-solid fa-globe fa-1x"> Tour aplicacion</i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
                             <button id="add-to-cart">
                                 <a class="text-decoration-none font-monospace" href="https://alejandrorodriguez1998.github.io/DAW-Interfaces/" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
                             </button>
@@ -789,10 +1122,40 @@
                                 <img src="images/pandaStreaming.png" alt="pandaStreaming" loading="lazy">
                             </div>
                             <h5 class="mt-1">Panda Streaming</h5>
-                            <p class="mb-1">Pequeño proyecto para entender todo el DOM que contiene una página.</p>
-                            <p class="mb-1">2019 - 2019</p>
+
+                            <!-- Tabs -->
+                            <ul class="nav nav-tabs" id="pandaTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info-panda" type="button" role="tab" aria-controls="info" aria-selected="true">Info</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="tech-tab" data-bs-toggle="tab" data-bs-target="#tech-panda" type="button" role="tab" aria-controls="tech" aria-selected="false">Tecnología</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="links-tab" data-bs-toggle="tab" data-bs-target="#links-panda" type="button" role="tab" aria-controls="links" aria-selected="false">Enlaces</button>
+                                </li>
+                            </ul>
+                            
+                            <!-- Contenido de las Tabs -->
+                            <div class="tab-content mt-2" id="pandaTabsContent">
+                                <div class="tab-pane fade show active" id="info-panda" role="tabpanel" aria-labelledby="info-tab">
+                                    <p class="mb-1">Pequeño proyecto para entender todo el DOM que contiene una página.</p>
+                                    <p class="mb-1">2019 - 2019</p>
+                                </div>
+                                <div class="tab-pane fade" id="tech-panda" role="tabpanel" aria-labelledby="tech-tab">
+                                    <p>HTML, CSS, Bootstrap, JavaScript, DOM, BOM, IndexDB.</p>
+                                </div>
+                                <div class="tab-pane fade" id="links-panda" role="tabpanel" aria-labelledby="links-tab">
+                                    <div class="d-flex justify-content-center gap-3 my-4">
+                                        <a href="https://alejandrorodriguez1998.github.io/DAW-UT09-Ajax/" target="_blank" rel="noopener noreferrer" class="text-black">
+                                            <i class="fa-solid fa-globe fa-1x"> Tour aplicacion</i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
                             <button id="add-to-cart">
-                                <a class="text-decoration-none font-monospace" href="https://alejandrorodriguez1998.github.io/DAW-UT09-Ajax/" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+                                <a class="text-decoration-none font-monospace" href="https://github.com/AlejandroRodriguez1998/DAW-UT09-Ajax" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
                             </button>
                         </div>
                     </div>

@@ -564,6 +564,7 @@ img.logo {
 .mi-carousel-item {
     flex: 0 0 auto; /* Asegura que los ítems no se reduzcan */
     width: 100%;    /* Ancho completo por defecto (para móvil) */
+    height: 500px;
     box-sizing: border-box;
     padding: 10px;
 }
@@ -590,7 +591,7 @@ img.logo {
 }
 
 .mi-carousel-button.prev {
-    left: -11px;
+    left: -10px;
 }
 
 .mi-carousel-button.next {
@@ -625,7 +626,22 @@ img.logo {
     box-shadow: 4px 4px #000000;
     font-family: Sans-serif;
     font-size: 100%;
-}  
+} 
+
+.nav-link {
+    color: rgb(0,0,1);
+    font-kerning: none;
+    font-size: 15px;
+    font-family: "Kalam", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.nav-link:hover {
+    color: #6d6968;
+}
+
+
 
 #contacto h2 {
     color: rgb(0,0,1);
