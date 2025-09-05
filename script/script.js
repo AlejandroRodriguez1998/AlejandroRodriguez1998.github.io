@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setActive(current);
 
     // 👇 Aquí controlas el menú móvil
-    if (window.scrollY === 0) {
+    if (window.scrollY === 0 ) {
       menuButton.style.opacity = '0';   // invisible
       menuButton.style.pointerEvents = 'none'; // no clickeable
     } else {
