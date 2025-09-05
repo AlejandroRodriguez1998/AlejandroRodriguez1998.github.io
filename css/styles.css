@@ -65,7 +65,7 @@ svg ellipse {
 }
 
 img.logo {
-    width: 80px;
+    width: 100px;
 }
 
 
@@ -640,8 +640,6 @@ img.logo {
 .nav-link:hover {
     color: #6d6968;
 }
-
-
 
 #contacto h2 {
     color: rgb(0,0,1);

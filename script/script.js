@@ -36,40 +36,57 @@ document.getElementById('scroll-down').addEventListener('click', function() {
     });
 });
 
-// Cambiar el color del header al hacer scroll
-document.addEventListener('DOMContentLoaded', function() {
-    // Cogemos las secciones que contengan en la clase 'section'
-    const sections = document.querySelectorAll('.section');
-    const dots = document.querySelectorAll('.dot'); // Cogemos los dots
-    // Cogemos el boton para hacer scroll hacia abajo
-    const scrollButton = document.getElementById('scroll-down'); 
+// Cambiar el color del header al hacer scroll (y activar dots)
+document.addEventListener('DOMContentLoaded', function () {
+  const sections = Array.from(document.querySelectorAll('.section'));
+  const dots = document.querySelectorAll('.dot');
+  const scrollButton = document.getElementById('scroll-down');
+  const menuButton = document.getElementById('menuButton'); // botón flotante del menú móvil
 
-    // Al hacer scroll
-    window.addEventListener('scroll', function() {
-        let currentSection = '';
-        
-        // Detectar la sección actual
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop; // Posición de la sección
-            const sectionHeight = section.clientHeight; // Altura de la sección
 
-            // Si el scroll está entre la tercera parte de la sección
-            if (scrollY >= sectionTop - sectionHeight / 3 && scrollY < sectionTop + sectionHeight - sectionHeight / 3) {
-                currentSection = section.getAttribute('id');
-            }
-        });
+  function setActive(sectionId) {
+    dots.forEach(d => d.classList.remove('active'));
+    const active = document.getElementById(`dot-${sectionId}`);
+    if (active) active.classList.add('active');
+    if (scrollButton) scrollButton.style.display = (sectionId === 'contacto') ? 'none' : 'block';
+  }
 
-        // Ocultar o mostrar el botón de scroll hacia arriba
-        currentSection === 'contacto' ? scrollButton.style.display = 'none' : scrollButton.style.display = 'block';
+  window.addEventListener('scroll', function () {
+    const viewportMid = window.innerHeight / 2;
 
-        // Agregar o quitar la clase 'active' a los dots
-        dots.forEach(dot => {
-            dot.classList.remove('active');
-            if (dot.id === `dot-${currentSection}`) {
-                dot.classList.add('active');
-            }
-        });
+    // Elegimos la sección cuyo centro esté más cerca del centro del viewport
+    let current = sections[0]?.id || '';
+    let best = Number.POSITIVE_INFINITY;
+
+    sections.forEach(sec => {
+      const r = sec.getBoundingClientRect();
+      const center = r.top + r.height / 2;
+      const d = Math.abs(center - viewportMid);
+      if (d < best) {
+        best = d;
+        current = sec.id;
+      }
     });
+
+    // Fallback: si estamos abajo del todo, fuerza la última sección
+    const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 1;
+    if (atBottom && sections.length) current = sections[sections.length - 1].id;
+
+    setActive(current);
+
+    // 👇 Aquí controlas el menú móvil
+    if (window.scrollY === 0) {
+      menuButton.style.opacity = '0';   // invisible
+      menuButton.style.pointerEvents = 'none'; // no clickeable
+    } else {
+      menuButton.style.opacity = '1';
+      menuButton.style.pointerEvents = 'auto';
+    }
+
+  }, { passive: true });
+
+  // Ejecuta una vez al cargar para ajustar el estado inicial
+  window.dispatchEvent(new Event('scroll'));
 });
 
 // Carrusel de imágenes
