@@ -641,6 +641,110 @@ img.logo {
     color: #6d6968;
 }
 
+#noticias h2 {
+    color: rgb(0,0,1);
+    font-kerning: none;
+    font-size: 400%;
+    font-family: "Kalam", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* From Uiverse.io by Yaya12085 */ 
+.card-articulos {
+  box-sizing: border-box;
+  display: flex;
+  max-width: 700px;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.081);
+}
+
+.date-time-container-articulos {
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  padding: 0.5rem;
+}
+
+.date-time-articulos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  grid-gap: 1rem;
+  gap: 1rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: rgba(17, 24, 39, 1);
+}
+
+.separator-articulos {
+  width: 1px;
+  flex: 1 1 0%;
+  background-color: rgba(17, 24, 39, 0.1);
+}
+
+.content-articulos {
+  display: flex;
+  flex: 1 1 0%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.image-articulos {
+  display: block;
+  margin: 0 auto;              /* Centra horizontalmente */
+  width: 80%;                  /* Ajusta el tamaño relativo */
+  max-width: 400px;            /* Tamaño máximo */
+  height: auto;                /* Mantiene proporciones */
+  border-radius: 10px;         /* Bordes suaves (opcional) */
+  object-fit: cover;           /* Evita deformación */
+}
+
+.infos-articulos {
+  border-left: 1px solid rgba(17, 24, 39, 0.1);
+  padding: 1rem;
+}
+
+.title-articulos {
+  display: block;
+  text-align: center;
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(17, 24, 39, 1);
+  margin-top: 1rem;
+}
+
+.description-articulos {
+  text-align: center;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  font-family: 'Georgia', serif;
+  line-height: 1.4rem;
+  color: rgba(55, 65, 81, 1);
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+  display: block;     
+}
+
+.action-articulos {
+  display: block;
+  background-color: #8b8b8b;
+  padding: 0.75rem 1.25rem;
+  text-align: center;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: white;
+  transition: all .15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.action-articulos:hover {
+  background-color: #AFAFAF;
+}
+
 #contacto h2 {
     color: rgb(0,0,1);
     font-kerning: none;
