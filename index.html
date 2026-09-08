@@ -414,7 +414,7 @@
                                 <div class="card-body pt-0 m-0">
                                     <h5 class="mb-0">Grado en Ingeniería Informática</h5>
                                     <div class="badge text-bg-primary text-wrap my-1" style="width: 8rem;">
-                                        <span>2019 - 2026</span>
+                                        2019 - 2026
                                     </div>
                                     <p>Ingeniería Informática en la rama Tecnologías de la Información en la Universidad de Castilla-La Mancha en Ciudad Real.</p>
                                 </div>
@@ -697,95 +697,65 @@
         <div class="container">
             <h2 class="text-center pt-5 mb-0">Portfolio</h2>
 
-            <div class="mi-carousel-container mt-3">
-                <button class="mi-carousel-button prev" onclick="prevCustomSlide()">&#10094;</button>
-                <div class="mi-carousel-track" id="miCarouselTrack">
-                    <div class="mi-carousel-item">
-                        <div class="mi-project-card ticket-sales-container">
-                            <div class="banner-image-container">
-                                <img src="images/balance.png" alt="balance" loading="lazy">
-                            </div>
-                            <h5 class="mt-1">Pareja Balance</h5>
-                            
-                            <!-- Tabs -->
-                            <ul class="nav nav-tabs" id="balanceTabs" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info-balance" type="button" role="tab" aria-controls="info" aria-selected="true">Info</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="tech-tab" data-bs-toggle="tab" data-bs-target="#tech-balance" type="button" role="tab" aria-controls="tech" aria-selected="false">Tecnología</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="links-tab" data-bs-toggle="tab" data-bs-target="#links-balance" type="button" role="tab" aria-controls="links" aria-selected="false">Enlaces</button>
-                                </li>
-                            </ul>
-                            
-                            <!-- Contenido de las Tabs -->
-                            <div class="tab-content mt-2" id="balanceTabsContent">
-                                <div class="tab-pane fade show active" id="info-balance" role="tabpanel" aria-labelledby="info-tab">
-                                    <p class="mb-1">Aplicación web progresiva diseñada para gestionar los gastos en pareja.</p>
-                                    <p class="mb-1">2025 - 2026</p>
-                                </div>
-                                <div class="tab-pane fade" id="tech-balance" role="tabpanel" aria-labelledby="tech-tab">
-                                    <p>TypeScript, Next.js, Bootstrap, Firebase (Backend y BBDD), Vercel, PWA.</p>
-                                </div>
-                                <div class="tab-pane fade" id="links-balance" role="tabpanel" aria-labelledby="links-tab">
-                                    <div class="d-flex justify-content-center gap-3 my-4">
-                                        <a href="https://pareja-balance.vercel.app" target="_blank" rel="noopener noreferrer" class="text-black">
-                                            <i class="fa-solid fa-globe fa-1x"> Tour aplicacion</i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <button id="add-to-cart">
-                                <a class="text-decoration-none font-monospace" href="https://github.com/AlejandroRodriguez1998/pareja-balance" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
-                            </button>
-                        </div>
+            <div class="portfolio-group featured-projects-grid">
+                <div class="mi-project-card ticket-sales-container featured-project-card featured-project-card-main">
+                    <div class="banner-image-container">
+                        <img src="images/TFG_esi.png" alt="Proyecto TFG de iluminación inteligente" loading="lazy">
                     </div>
-                    <div class="mi-carousel-item">
-                        <div class="mi-project-card ticket-sales-container">
-                            <div class="banner-image-container">
-                                <img src="images/agenda.png" alt="agenda" loading="lazy">
-                            </div>
-                            <h5 class="mt-1">Agenda Académica</h5>
-                            
-                            <!-- Tabs -->
-                            <ul class="nav nav-tabs" id="agendaTabs" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info-agenda" type="button" role="tab" aria-controls="info" aria-selected="true">Info</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="tech-tab" data-bs-toggle="tab" data-bs-target="#tech-agenda" type="button" role="tab" aria-controls="tech" aria-selected="false">Tecnología</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="links-tab" data-bs-toggle="tab" data-bs-target="#links-agenda" type="button" role="tab" aria-controls="links" aria-selected="false">Enlaces</button>
-                                </li>
-                            </ul>
-                            
-                            <!-- Contenido de las Tabs -->
-                            <div class="tab-content mt-2" id="agendaTabsContent">
-                                <div class="tab-pane fade show active" id="info-agenda" role="tabpanel" aria-labelledby="info-tab">
-                                    <p class="mb-1">Aplicación web progresiva diseñada para gestionar la vida académica.</p>
-                                    <p class="mb-1">2025 - 2025</p>
-                                </div>
-                                <div class="tab-pane fade" id="tech-agenda" role="tabpanel" aria-labelledby="tech-tab">
-                                    <p>TypeScript, Next.js, Bootstrap, Firebase (Backend y BBDD), Vercel, PWA.</p>
-                                </div>
-                                <div class="tab-pane fade" id="links-agenda" role="tabpanel" aria-labelledby="links-tab">
-                                    <div class="d-flex justify-content-center gap-3 my-4">
-                                        <a href="https://agenda-topaz-two.vercel.app" target="_blank" rel="noopener noreferrer" class="text-black">
-                                            <i class="fa-solid fa-globe fa-1x"> Tour aplicacion</i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <button id="add-to-cart">
-                                <a class="text-decoration-none font-monospace" href="https://github.com/AlejandroRodriguez1998/Agenda" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
-                            </button>
-                        </div>
+                    <h5 class="mt-1">Plataforma IoT</h5>
+                    <span class="project-badge"><i class="fa-solid fa-star" aria-hidden="true"></i> Proyecto destacado</span>
+                    <p class="mb-1">Rediseño arquitectónico de una plataforma de iluminación inteligente.</p>
+                    <p class="project-date mb-1">2025 - 2026</p>
+                    <div class="featured-tech-list" aria-label="Tecnologías principales del TFG">
+                        <span><i class="fa-brands fa-angular" aria-hidden="true"></i> Angular</span>
+                        <span><i class="fa-brands fa-python" aria-hidden="true"></i> Flask</span>
+                        <span><i class="fa-solid fa-cubes" aria-hidden="true"></i> K3s</span>
                     </div>
+                    <button class="project-info-button" type="button" data-bs-toggle="modal" data-bs-target="#tfgModal"><i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Más info</button>
+                </div>
+
+                <div class="mi-project-card ticket-sales-container featured-project-card">
+                    <div class="banner-image-container">
+                        <img src="images/balance.png" alt="Pareja Balance" loading="lazy">
+                    </div>
+                    <h5 class="mt-1">Pareja Balance</h5>
+                    <span class="project-badge project-badge-personal"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Proyecto personal</span>
+                    <p class="mb-1">Aplicación web progresiva diseñada para gestionar los gastos en pareja.</p>
+                    <p class="project-date mb-1">2025 - 2026</p>
+                    <div class="featured-tech-list" aria-label="Tecnologías principales de Pareja Balance">
+                        <span><i class="fa-solid fa-code" aria-hidden="true"></i> TypeScript</span>
+                        <span><i class="fa-brands fa-react" aria-hidden="true"></i> Next.js</span>
+                        <span><i class="fa-solid fa-fire" aria-hidden="true"></i> Firebase</span>
+                    </div>
+                    <button class="project-info-button" type="button" data-bs-toggle="modal" data-bs-target="#balanceModal"><i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Más info</button>
+                </div>
+
+                <div class="mi-project-card ticket-sales-container featured-project-card">
+                    <div class="banner-image-container">
+                        <img src="images/agenda.png" alt="Agenda Académica" loading="lazy">
+                    </div>
+                    <h5 class="mt-1">Agenda Académica</h5>
+                    <span class="project-badge project-badge-personal"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Proyecto personal</span>
+                    <p class="mb-1">Aplicación web progresiva diseñada para gestionar la vida académica.</p>
+                    <p class="project-date mb-1">2025 - 2025</p>
+                    <div class="featured-tech-list" aria-label="Tecnologías principales de Agenda Académica">
+                        <span><i class="fa-solid fa-code" aria-hidden="true"></i> TypeScript</span>
+                        <span><i class="fa-brands fa-react" aria-hidden="true"></i> Next.js</span>
+                        <span><i class="fa-solid fa-fire" aria-hidden="true"></i> Firebase</span>
+                    </div>
+                    <button class="project-info-button" type="button" data-bs-toggle="modal" data-bs-target="#agendaModal"><i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Más info</button>
+                </div>
+            </div>
+
+            <div class="portfolio-group portfolio-group-secondary">
+                <div class="more-projects-title">
+                    <span>Más proyectos</span>
+                    <span aria-hidden="true">↓</span>
+                </div>
+
+                <div class="mi-carousel-container" data-carousel="projects">
+                    <button class="mi-carousel-button prev" type="button" onclick="prevCustomSlide('miCarouselTrack')" aria-label="Proyecto anterior">&#10094;</button>
+                    <div class="mi-carousel-track" id="miCarouselTrack">
                     <div class="mi-carousel-item">
                         <div class="mi-project-card ticket-sales-container">
                             <div class="banner-image-container">
@@ -1292,9 +1262,106 @@
                         </div>
                     </div>
                 </div>
-                <button class="mi-carousel-button next" onclick="nextCustomSlide()">&#10095;</button>
+                    <button class="mi-carousel-button next" type="button" onclick="nextCustomSlide('miCarouselTrack')" aria-label="Proyecto siguiente">&#10095;</button>
+                </div>
             </div>
 
+        </div>
+    </div>
+
+    <div class="modal fade project-modal" id="tfgModal" tabindex="-1" aria-labelledby="tfgModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="tfgModalLabel">TFG - Plataforma IoT</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <img class="project-modal-image" src="images/TFG_esi.png" alt="Proyecto TFG de iluminación inteligente" loading="lazy">
+                    <p>Rediseño arquitectónico de una plataforma de iluminación inteligente desarrollado como Trabajo de Fin de Grado.</p>
+                    <p>El proyecto parte de una plataforma IoT real para sistemas de iluminación de emergencia y se centra en mejorar su arquitectura, rendimiento y capacidad de funcionamiento en entornos Edge. El objetivo es reorganizar la solución para que sea más mantenible, escalable y preparada para despliegues distribuidos.</p>
+                    <p>La propuesta trabaja sobre comunicación entre servicios, despliegue en contenedores, persistencia de datos de monitorización y una capa web que permite operar la plataforma de forma clara.</p>
+                    <h4>Tecnologías principales</h4>
+                    <div class="modal-tech-list">
+                        <span><i class="fa-brands fa-angular" aria-hidden="true"></i> Angular</span>
+                        <span><i class="fa-brands fa-python" aria-hidden="true"></i> Flask</span>
+                        <span><i class="fa-brands fa-python" aria-hidden="true"></i> Python</span>
+                        <span><i class="fa-solid fa-cubes" aria-hidden="true"></i> K3s</span>
+                        <span><i class="fa-solid fa-chart-line" aria-hidden="true"></i> InfluxDB</span>
+                        <span><i class="fa-brands fa-docker" aria-hidden="true"></i> Docker</span>
+                        <span><i class="fa-solid fa-cloud" aria-hidden="true"></i> Edge</span>
+                        <span><i class="fa-solid fa-network-wired" aria-hidden="true"></i> IoT</span>
+                    </div>
+                    <h4>Enlaces</h4>
+                    <p class="mb-0">Por privacidad de la empresa, no se puede publicar ni facilitar acceso al proyecto.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade project-modal" id="balanceModal" tabindex="-1" aria-labelledby="balanceModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="balanceModalLabel">Pareja Balance</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <img class="project-modal-image" src="images/balance.png" alt="Pareja Balance" loading="lazy">
+                    <p>Aplicación web progresiva diseñada para gestionar los gastos compartidos en pareja.</p>
+                    <p>La aplicación busca resolver una necesidad cotidiana: registrar gastos, consultar balances y mantener una visión clara de quién ha pagado cada cosa. Está planteada como una herramienta sencilla, directa y accesible desde cualquier dispositivo.</p>
+                    <p>El proyecto combina una interfaz web moderna con persistencia en Firebase y despliegue en Vercel, priorizando una experiencia rápida y usable en móvil.</p>
+                    <p>2025 - 2026</p>
+                    <h4>Tecnología</h4>
+                    <div class="modal-tech-list">
+                        <span><i class="fa-solid fa-code" aria-hidden="true"></i> TypeScript</span>
+                        <span><i class="fa-brands fa-react" aria-hidden="true"></i> Next.js</span>
+                        <span><i class="fa-brands fa-bootstrap" aria-hidden="true"></i> Bootstrap</span>
+                        <span><i class="fa-solid fa-fire" aria-hidden="true"></i> Firebase</span>
+                        <span><i class="fa-solid fa-database" aria-hidden="true"></i> BBDD</span>
+                        <span><i class="fa-solid fa-cloud" aria-hidden="true"></i> Vercel</span>
+                        <span><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i> PWA</span>
+                    </div>
+                    <h4>Enlaces</h4>
+                    <div class="modal-link-list">
+                        <a href="https://pareja-balance.vercel.app" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-globe" aria-hidden="true"></i> Tour aplicación</a>
+                        <a href="https://github.com/AlejandroRodriguez1998/pareja-balance" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i> Ver proyecto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade project-modal" id="agendaModal" tabindex="-1" aria-labelledby="agendaModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="agendaModalLabel">Agenda Académica</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <img class="project-modal-image" src="images/agenda.png" alt="Agenda Académica" loading="lazy">
+                    <p>Aplicación web progresiva diseñada para gestionar la vida académica.</p>
+                    <p>El proyecto está orientado a organizar clases, tareas y exámenes desde una interfaz sencilla. Su objetivo es reducir la fricción de planificación diaria y concentrar la información académica importante en una única herramienta.</p>
+                    <p>La aplicación se apoya en tecnologías web modernas, persistencia en Firebase y despliegue en Vercel, con enfoque PWA para facilitar el uso desde distintos dispositivos.</p>
+                    <p>2025 - 2025</p>
+                    <h4>Tecnología</h4>
+                    <div class="modal-tech-list">
+                        <span><i class="fa-solid fa-code" aria-hidden="true"></i> TypeScript</span>
+                        <span><i class="fa-brands fa-react" aria-hidden="true"></i> Next.js</span>
+                        <span><i class="fa-brands fa-bootstrap" aria-hidden="true"></i> Bootstrap</span>
+                        <span><i class="fa-solid fa-fire" aria-hidden="true"></i> Firebase</span>
+                        <span><i class="fa-solid fa-database" aria-hidden="true"></i> BBDD</span>
+                        <span><i class="fa-solid fa-cloud" aria-hidden="true"></i> Vercel</span>
+                        <span><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i> PWA</span>
+                    </div>
+                    <h4>Enlaces</h4>
+                    <div class="modal-link-list">
+                        <a href="https://agenda-topaz-two.vercel.app" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-globe" aria-hidden="true"></i> Tour aplicación</a>
+                        <a href="https://github.com/AlejandroRodriguez1998/Agenda" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i> Ver proyecto</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
