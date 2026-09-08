@@ -184,6 +184,7 @@ function getLinkIcon(link) {
     const text = link.textContent.toLowerCase();
 
     if (href.includes('youtube') || href.includes('youtu.be')) return 'fa-brands fa-youtube';
+    if (href.includes('github.io')) return 'fa-solid fa-globe';
     if (href.includes('github')) return 'fa-brands fa-github';
     if (text.includes('wiki')) return 'fa-solid fa-book';
     if (text.includes('tour') || text.includes('pagina') || text.includes('página')) return 'fa-solid fa-globe';
