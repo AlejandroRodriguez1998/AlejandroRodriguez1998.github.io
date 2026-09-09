@@ -286,7 +286,12 @@ const translations = {
         'Abrir GitHub de Alejandro Paniagua Rodríguez': 'Open Alejandro Paniagua Rodríguez GitHub',
         'Abrir LinkedIn de Alejandro Paniagua Rodríguez': 'Open Alejandro Paniagua Rodríguez LinkedIn',
         'Enviar email a Alejandro Paniagua Rodríguez': 'Email Alejandro Paniagua Rodríguez',
-        'Abrir portfolio de Alejandro Paniagua Rodríguez': 'Open Alejandro Paniagua Rodríguez portfolio'
+        'Abrir portfolio de Alejandro Paniagua Rodríguez': 'Open Alejandro Paniagua Rodríguez portfolio',
+        'Página no encontrada - Alejandro Paniagua Rodríguez': 'Page not found - Alejandro Paniagua Rodríguez',
+        'La página que buscas no existe en el portfolio de Alejandro Paniagua Rodríguez.': 'The page you are looking for does not exist in Alejandro Paniagua Rodríguez portfolio.',
+        'Página no encontrada': 'Page not found',
+        'La ruta que has intentado abrir no existe o se ha movido.': 'The route you tried to open does not exist or has moved.',
+        'Acciones disponibles': 'Available actions'
     }
 };
 
