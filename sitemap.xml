@@ -15,6 +15,11 @@
         <priority>0.80</priority>
     </url>
     <url>
+        <loc>https://alejandrorodriguez1998.github.io/cv/</loc>
+        <lastmod>2026-09-09T00:00:00+00:00</lastmod>
+        <priority>0.90</priority>
+    </url>
+    <url>
         <loc>https://alejandrorodriguez1998.github.io/DAW-Interfaces/</loc>
         <lastmod>2024-10-14T14:46:11+00:00</lastmod>
         <priority>0.80</priority>

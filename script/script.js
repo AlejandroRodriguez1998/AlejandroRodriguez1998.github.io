@@ -2,16 +2,22 @@
 // Menu movil
 const menuButton = document.getElementById('menuButton');
 
-menuButton.addEventListener('click', () => { // Cuando hacemos click
-    sideMenu.style.right = '0'; // Se muestra
-});
+if (menuButton && typeof sideMenu !== 'undefined') {
+    menuButton.addEventListener('click', () => { // Cuando hacemos click
+        sideMenu.style.right = '0'; // Se muestra
+    });
+}
 
-closeMenu.addEventListener('click', () => { // Volvemos a hacer click
-    sideMenu.style.right = '-300px'; // Se oculta
-});
+if (typeof closeMenu !== 'undefined' && typeof sideMenu !== 'undefined') {
+    closeMenu.addEventListener('click', () => { // Volvemos a hacer click
+        sideMenu.style.right = '-300px'; // Se oculta
+    });
+}
 
 // Para si hacemos click fuera de la barra lateral
 document.addEventListener('click', function(event) {
+    if (!menuButton || typeof sideMenu === 'undefined') return;
+
     const isClickInsideMenu = sideMenu.contains(event.target);
     const isClickOnMenuButton = menuButton.contains(event.target);
 
@@ -45,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const sections = Array.from(document.querySelectorAll('.section'));
   const dots = document.querySelectorAll('.dot');
   const scrollButton = document.getElementById('scroll-down');
-  const menuButton = document.getElementById('menuButton'); // botón flotante del menú móvil
+    const menuButton = document.getElementById('menuButton'); // botón flotante del menú móvil
 
 
   function setActive(sectionId) {
@@ -79,12 +85,14 @@ document.addEventListener('DOMContentLoaded', function () {
     setActive(current);
 
     // 👇 Aquí controlas el menú móvil
-    if (window.scrollY === 0 ) {
-      menuButton.style.opacity = '0';   // invisible
-      menuButton.style.pointerEvents = 'none'; // no clickeable
-    } else {
-      menuButton.style.opacity = '1';
-      menuButton.style.pointerEvents = 'auto';
+    if (menuButton) {
+      if (window.scrollY === 0 ) {
+        menuButton.style.opacity = '0';   // invisible
+        menuButton.style.pointerEvents = 'none'; // no clickeable
+      } else {
+        menuButton.style.opacity = '1';
+        menuButton.style.pointerEvents = 'auto';
+      }
     }
 
   }, { passive: true });
@@ -213,6 +221,8 @@ const translations = {
         'Agradecimientos:': 'Credits:',
         'Cerrar': 'Close',
         'Selector de idioma': 'Language selector',
+        'Controles del currículum': 'Resume controls',
+        'Información de contacto y resumen': 'Contact information and summary',
         'Controles del carrusel de proyectos': 'Project carousel controls',
         'Rediseño arquitectónico de una plataforma de iluminación inteligente desarrollado como Trabajo de Fin de Grado.': 'Architectural redesign of an intelligent lighting platform developed as a final degree project.',
         'El proyecto se desarrolló sobre una plataforma IoT real en producción para sistemas de iluminación de emergencia y se centra en mejorar su arquitectura, rendimiento y capacidad de funcionamiento en entornos Edge. El objetivo fue reorganizar la solución para mejorar su mantenibilidad y rendimiento, adaptándola a las restricciones propias de entornos Edge y preparando su arquitectura para despliegues distribuidos.': 'The project was developed on a real production IoT platform for emergency lighting systems and focuses on improving its architecture, performance, and ability to operate in Edge environments. The goal was to reorganize the solution to improve maintainability and performance, adapt it to Edge constraints, and prepare its architecture for distributed deployments.',
@@ -233,7 +243,50 @@ const translations = {
         'La aplicación se apoya en tecnologías web modernas, persistencia en Firebase y despliegue en Vercel, con enfoque PWA para facilitar el uso desde distintos dispositivos.': 'The application relies on modern web technologies, Firebase persistence, and Vercel deployment, with a PWA approach to make it easier to use across devices.',
         'Paniagua Rodriguez': 'Paniagua Rodriguez',
         'LinkedIn': 'LinkedIn',
-        'GitHub': 'GitHub'
+        'GitHub': 'GitHub',
+        'Currículum de Alejandro Paniagua Rodríguez': 'Alejandro Paniagua Rodríguez resume',
+        'Currículum web de Alejandro Paniagua Rodríguez, ingeniero informático y desarrollador Full-Stack.': 'Web resume of Alejandro Paniagua Rodríguez, computer engineer and Full-Stack developer.',
+        'Volver al portfolio': 'Back to portfolio',
+        'Imprimir / Guardar PDF': 'Print / Save PDF',
+        'Fotografía de Alejandro Paniagua Rodríguez': 'Photo of Alejandro Paniagua Rodríguez',
+        'Desarrollador Full-Stack': 'Full-Stack Developer',
+        'Ciudad Real, España': 'Ciudad Real, Spain',
+        'Perfil': 'Profile',
+        'Experiencia': 'Experience',
+        'Educación': 'Education',
+        'Idiomas': 'Languages',
+        'Español: Nativo': 'Spanish: Native',
+        'Inglés: B1': 'English: B1',
+        'Habilidades': 'Skills',
+        'Destrezas personales': 'Personal strengths',
+        'Proactivo': 'Proactive',
+        'Organizativo': 'Organized',
+        'Trabajo en equipo': 'Teamwork',
+        'Portfolio profesional con proyectos destacados de ingeniería informática, desarrollo web, aplicaciones progresivas, IoT y análisis de datos.': 'Professional portfolio with featured projects in computer engineering, web development, progressive applications, IoT, and data analysis.',
+        'Ingeniero Informático y desarrollador Full-Stack con experiencia en Angular, Python, Flask, Next.js, IoT y Edge Computing.': 'Computer Engineer and Full-Stack developer with experience in Angular, Python, Flask, Next.js, IoT, and Edge Computing.',
+        'Web y Frontend': 'Web and Frontend',
+        'Backend y datos': 'Backend and data',
+        'Herramientas y entornos': 'Tools and environments',
+        'Desarrollador web': 'Web developer',
+        'Contribución al lanzamiento de nuevas funcionalidades y mejora del rendimiento de plataformas existentes. Trabajo con Angular, Python, Flask, K3s, Docker, InfluxDB, PostgreSQL y Git.': 'Contributed to the release of new features and performance improvements in existing platforms. Work with Angular, Python, Flask, K3s, Docker, InfluxDB, PostgreSQL, and Git.',
+        'Beca de colaboración': 'Collaboration scholarship',
+        'Colaborador en el proyecto Smart ESI, aplicando conocimientos tecnológicos relacionados con la domotización de la universidad. Herramientas: Home Assistant y Trello.': 'Contributor to the Smart ESI project, applying technical knowledge related to university automation. Tools: Home Assistant and Trello.',
+        'Prácticas como programador web': 'Web programmer internship',
+        'Prácticas del Grado Superior en IECISA, creando aplicaciones web dinámicas y aprendiendo sobre un panel de control web. Herramientas: Joomla, PHP, HTML, CSS, JavaScript y AJAX.': 'Higher Vocational Training internship at IECISA, creating dynamic web applications and learning about a web control panel. Tools: Joomla, PHP, HTML, CSS, JavaScript, and AJAX.',
+        'Grado en Ingeniería Informática, rama Tecnologías de la Información, en la Universidad de Castilla-La Mancha en Ciudad Real.': 'Computer Engineering degree, Information Technologies branch, at the University of Castilla-La Mancha in Ciudad Real.',
+        'Grado Superior de Formación Profesional en el instituto Maestre de Calatrava en Ciudad Real.': 'Higher Vocational Training degree at Maestre de Calatrava institute in Ciudad Real.',
+        'Curso de Angular en Udemy de unas 35.5 horas orientado al desarrollo de aplicaciones web y móviles en Angular.': 'Angular course on Udemy lasting around 35.5 hours, focused on building web and mobile applications with Angular.',
+        'Curso organizado por la Escuela Superior de Informática en la Universidad de Castilla-La Mancha.': 'Course organized by the School of Computer Science at the University of Castilla-La Mancha.',
+        'B1 en Inglés': 'B1 English',
+        'Curso online de inglés B1 de unas 200-300 horas.': 'Online B1 English course lasting around 200-300 hours.',
+        '2025 - Actualidad': '2025 - Present',
+        'Cambiar idioma a inglés': 'Change language to English',
+        'Change language to Spanish': 'Cambiar idioma a español',
+        'Imprimir o guardar currículum como PDF': 'Print or save resume as PDF',
+        'Abrir GitHub de Alejandro Paniagua Rodríguez': 'Open Alejandro Paniagua Rodríguez GitHub',
+        'Abrir LinkedIn de Alejandro Paniagua Rodríguez': 'Open Alejandro Paniagua Rodríguez LinkedIn',
+        'Enviar email a Alejandro Paniagua Rodríguez': 'Email Alejandro Paniagua Rodríguez',
+        'Abrir portfolio de Alejandro Paniagua Rodríguez': 'Open Alejandro Paniagua Rodríguez portfolio'
     }
 };
 
@@ -271,6 +324,16 @@ function applyLanguage(language) {
     document.documentElement.lang = language;
 
     applyLanguageToElement(document.body, language);
+
+    if (!document.documentElement.dataset.titleOriginal) {
+        document.documentElement.dataset.titleOriginal = document.title;
+    }
+    document.title = translateText(document.documentElement.dataset.titleOriginal, language);
+
+    document.querySelectorAll('meta[name="description"]').forEach(meta => {
+        if (!meta.dataset.contentOriginal) meta.dataset.contentOriginal = meta.getAttribute('content');
+        meta.setAttribute('content', translateText(meta.dataset.contentOriginal, language));
+    });
 
     document.querySelectorAll('[data-tooltip]').forEach(element => {
         if (!element.dataset.tooltipOriginal) element.dataset.tooltipOriginal = element.dataset.tooltip;
@@ -892,4 +955,8 @@ window.addEventListener('load', () => {
     document.querySelectorAll('.mi-carousel-track').forEach(initializeCarousel);
     initializeLanguageSwitcher();
     applyLanguage(currentLanguage);
+
+    document.querySelectorAll('[data-print-cv]').forEach(button => {
+        button.addEventListener('click', () => window.print());
+    });
 });
