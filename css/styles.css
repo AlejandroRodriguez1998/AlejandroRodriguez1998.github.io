@@ -1203,7 +1203,7 @@ img.logo {
 
 .cv-grid {
     display: grid;
-    grid-template-columns: 58mm 1fr;
+    grid-template-columns: 62mm 1fr;
     gap: 10mm;
     padding-top: 8mm;
 }
@@ -1421,7 +1421,7 @@ img.logo {
         min-height: 297mm;
         height: 297mm;
         margin: 0;
-        padding: 12mm 14mm 10mm;
+        padding: 13mm 14mm 10mm;
         border: 0;
         box-shadow: none;
         overflow: hidden;
@@ -1429,22 +1429,51 @@ img.logo {
 
     .cv-header {
         display: grid !important;
-        grid-template-columns: 31mm 1fr;
+        grid-template-columns: 34mm 1fr;
         text-align: left;
-        padding-bottom: 5mm;
+        gap: 10mm;
+        padding-bottom: 7mm;
     }
 
     .cv-grid {
         display: grid !important;
-        grid-template-columns: 55mm 1fr;
-        gap: 8mm;
-        padding-top: 6mm;
+        grid-template-columns: 60mm 1fr;
+        gap: 7mm;
+        padding-top: 8mm;
     }
 
     .cv-sidebar {
         padding-right: 6mm;
         border-right: 1.5px solid #000;
         margin-top: 0;
+    }
+
+    .cv-sidebar .cv-section {
+        margin-bottom: 3.8mm;
+    }
+
+    .cv-sidebar .cv-item,
+    .cv-sidebar .cv-item.compact {
+        margin-bottom: 2.6mm;
+    }
+
+    .cv-sidebar .cv-section h2 {
+        margin-bottom: 1.8mm;
+    }
+
+    .cv-sidebar .cv-section p,
+    .cv-sidebar .cv-section li,
+    .cv-sidebar .cv-section a {
+        font-size: 8.2pt;
+        line-height: 1.2;
+    }
+
+    .cv-sidebar .cv-section p {
+        margin-bottom: 1.35mm;
+    }
+
+    .cv-sidebar .cv-date {
+        font-size: 8pt !important;
     }
 
     .cv-main {
@@ -1456,51 +1485,51 @@ img.logo {
     }
 
     .cv-section {
-        margin-bottom: 4.2mm;
+        margin-bottom: 5.4mm;
         page-break-inside: avoid;
         break-inside: avoid;
     }
 
     .cv-section h2 {
-        margin-bottom: 2mm;
-        font-size: 12.5pt;
+        margin-bottom: 2.5mm;
+        font-size: 13.2pt;
     }
 
     .cv-section h3 {
-        font-size: 9.2pt;
+        font-size: 9.8pt;
     }
 
     .cv-section p,
     .cv-section li,
     .cv-section a {
-        font-size: 8.15pt;
-        line-height: 1.22;
+        font-size: 8.8pt;
+        line-height: 1.32;
     }
 
     .cv-section p {
-        margin-bottom: 1.7mm;
+        margin-bottom: 2.1mm;
     }
 
     .cv-heading h1 {
-        font-size: 27pt;
+        font-size: 29pt;
     }
 
     .cv-heading p {
-        font-size: 15pt;
+        font-size: 16pt;
     }
 
     .cv-photo {
-        width: 31mm;
-        height: 31mm;
+        width: 34mm;
+        height: 34mm;
         box-shadow: none;
     }
 
     .cv-date {
-        font-size: 8.1pt !important;
+        font-size: 8.7pt !important;
     }
 
     .cv-item {
-        margin-bottom: 2.8mm;
+        margin-bottom: 3.6mm;
     }
 
     a {
