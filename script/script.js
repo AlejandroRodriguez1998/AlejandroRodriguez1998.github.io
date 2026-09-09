@@ -95,6 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Carrusel de proyectos
 const carousels = {};
+const dynamicProjectModals = new Map();
 
 function getInitialLanguage() {
     const savedLanguage = localStorage.getItem('portfolioLanguage');
@@ -143,7 +144,9 @@ const translations = {
         'Estudios': 'Studies',
         'Cursos': 'Courses',
         'Experiencia laboral': 'Work experience',
-        'Otras': 'Other',
+        'Otras': 'Other qualifications',
+        'Actualidad': 'Present',
+        '2025 - Actualidad': '2025 - Present',
         'Grado en Ingeniería Informática': 'Degree in Computer Engineering',
         'Ingeniería Informática en la rama Tecnologías de la Información en la Universidad de Castilla-La Mancha en Ciudad Real.': 'Computer Engineering degree focused on Information Technologies at the University of Castilla-La Mancha in Ciudad Real.',
         'Desarrollo de Aplicaciones Web': 'Web Application Development',
@@ -191,10 +194,10 @@ const translations = {
         'Tecnologías': 'Technologies',
         'Enlaces': 'Links',
         'Pendiente de completar.': 'Pending completion.',
-        'Por privacidad de la empresa, no se puede publicar ni facilitar acceso al proyecto.': 'Due to company privacy, the project cannot be published or accessed.',
+        'Por privacidad de la empresa, no se puede publicar ni facilitar acceso al proyecto.': 'Due to company confidentiality, the project cannot be published or accessed.',
         'Ver proyecto': 'View project',
         'Ver código': 'View code',
-        'Muro de noticias': 'News wall',
+        'Muro de noticias': 'News',
         'Asistencia a presentación de proyecto e-commerce': 'Attendance at e-commerce project presentation',
         'Asistencia a la presentación de la solución web e-commerce desarrollada en la asignatura de Comercio Electrónico de la Escuela Superior de Informática (ESI) de Ciudad Real, realizada en colaboración con la Asociación IKER, entidad sin ánimo de lucro dedicada al apoyo a la investigación del liposarcoma mixoide.': 'Attendance at the presentation of the e-commerce web solution developed in the E-commerce course at the School of Computer Science (ESI) in Ciudad Real, in collaboration with IKER Association, a non-profit organization supporting research into myxoid liposarcoma.',
         'Leer post': 'Read post',
@@ -207,17 +210,25 @@ const translations = {
         'Correo de contacto': 'Contact email',
         'Diseñado y desarrollado por el autor': 'Designed and developed by the author',
         '© 2024 · Diseñado y desarrollado por el autor': '© 2024 · Designed and developed by the author',
-        'Agradecimientos:': 'Credits:'
-        ,
+        'Agradecimientos:': 'Credits:',
+        'Cerrar': 'Close',
+        'Selector de idioma': 'Language selector',
+        'Controles del carrusel de proyectos': 'Project carousel controls',
         'Rediseño arquitectónico de una plataforma de iluminación inteligente desarrollado como Trabajo de Fin de Grado.': 'Architectural redesign of an intelligent lighting platform developed as a final degree project.',
         'El proyecto se desarrolló sobre una plataforma IoT real en producción para sistemas de iluminación de emergencia y se centra en mejorar su arquitectura, rendimiento y capacidad de funcionamiento en entornos Edge. El objetivo fue reorganizar la solución para mejorar su mantenibilidad y rendimiento, adaptándola a las restricciones propias de entornos Edge y preparando su arquitectura para despliegues distribuidos.': 'The project was developed on a real production IoT platform for emergency lighting systems and focuses on improving its architecture, performance, and ability to operate in Edge environments. The goal was to reorganize the solution to improve maintainability and performance, adapt it to Edge constraints, and prepare its architecture for distributed deployments.',
-        'La propuesta trabaja sobre comunicación entre servicios, despliegue en contenedores, persistencia de datos de monitorización y una capa web que permite operar la plataforma de forma clara.': 'The proposal works on service communication, containerized deployment, monitoring data persistence, and a web layer that makes the platform easier to operate.',
+        'La propuesta trabaja sobre comunicación entre servicios, despliegue en contenedores, persistencia de datos de monitorización y una capa web que permite operar la plataforma de forma clara.': 'The proposed solution covers inter-service communication, containerized deployment, monitoring data persistence, and a web layer for operating the platform.',
         'Tecnologías principales y áreas de aplicación': 'Main technologies and application areas',
         'Aplicación web progresiva diseñada para gestionar los gastos compartidos en pareja.': 'Progressive web app designed to manage shared expenses as a couple.',
         'La aplicación busca resolver una necesidad cotidiana: registrar gastos, consultar balances y mantener una visión clara de quién ha pagado cada cosa. Está planteada como una herramienta sencilla, directa y accesible desde cualquier dispositivo.': 'The application addresses an everyday need: recording expenses, checking balances, and keeping a clear view of who paid for each item. It is designed as a simple, direct tool accessible from any device.',
-        'El proyecto combina una interfaz web moderna con persistencia en Firebase y despliegue en Vercel, priorizando una experiencia rápida y usable en móvil.': 'The project combines a modern web interface with Firebase persistence and Vercel deployment, prioritizing a fast and usable mobile experience.',
+        'El proyecto combina una interfaz web moderna con persistencia en Firebase y despliegue en Vercel, priorizando una experiencia rápida y usable en móvil.': 'The project combines a modern web interface with Firebase persistence and Vercel deployment, prioritizing a fast and user-friendly mobile experience.',
         'Tecnología': 'Technology',
         'Tour aplicación': 'App tour',
+        'Tour aplicacion': 'App tour',
+        'Wiki aplicacion': 'App wiki',
+        'APIs del navegador': 'Browser APIs',
+        'Estrategias de SEO': 'SEO strategies',
+        'BBDD': 'Database',
+        'Firebase (Backend y BBDD)': 'Firebase (Backend and database)',
         'El proyecto está orientado a organizar clases, tareas y exámenes desde una interfaz sencilla. Su objetivo es reducir la fricción de planificación diaria y concentrar la información académica importante en una única herramienta.': 'The project is aimed at organizing classes, tasks, and exams through a simple interface. Its goal is to reduce daily planning friction and bring important academic information together in one tool.',
         'La aplicación se apoya en tecnologías web modernas, persistencia en Firebase y despliegue en Vercel, con enfoque PWA para facilitar el uso desde distintos dispositivos.': 'The application relies on modern web technologies, Firebase persistence, and Vercel deployment, with a PWA approach to make it easier to use across devices.',
         'Paniagua Rodriguez': 'Paniagua Rodriguez',
@@ -240,12 +251,8 @@ function translateTextNode(node, language) {
     node.textContent = node.textContent.replace(node.textContent.trim(), translatedText);
 }
 
-function applyLanguage(language) {
-    currentLanguage = language;
-    localStorage.setItem('portfolioLanguage', language);
-    document.documentElement.lang = language;
-
-    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+function applyLanguageToElement(root, language) {
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
         acceptNode(node) {
             const parent = node.parentElement;
             if (!parent || ['SCRIPT', 'STYLE'].includes(parent.tagName)) return NodeFilter.FILTER_REJECT;
@@ -256,11 +263,26 @@ function applyLanguage(language) {
     const nodes = [];
     while (walker.nextNode()) nodes.push(walker.currentNode);
     nodes.forEach(node => translateTextNode(node, language));
+}
+
+function applyLanguage(language) {
+    currentLanguage = language;
+    localStorage.setItem('portfolioLanguage', language);
+    document.documentElement.lang = language;
+
+    applyLanguageToElement(document.body, language);
 
     document.querySelectorAll('[data-tooltip]').forEach(element => {
         if (!element.dataset.tooltipOriginal) element.dataset.tooltipOriginal = element.dataset.tooltip;
         element.dataset.tooltip = translateText(element.dataset.tooltipOriginal, language);
     });
+
+    document.querySelectorAll('[aria-label]').forEach(element => {
+        if (!element.dataset.ariaLabelOriginal) element.dataset.ariaLabelOriginal = element.getAttribute('aria-label');
+        element.setAttribute('aria-label', translateText(element.dataset.ariaLabelOriginal, language));
+    });
+
+    dynamicProjectModals.forEach(project => renderProjectModal(project));
 
     document.querySelectorAll('[data-language-toggle]').forEach(button => {
         button.textContent = button.dataset.languageLabel === 'full'
@@ -277,66 +299,150 @@ function initializeLanguageSwitcher() {
 }
 
 const projectModalDescriptions = {
-    'Share List': [
-        'Aplicación web pensada para crear listas de la compra y compartirlas con otras personas.',
-        'El proyecto trabaja un flujo completo de aplicación: gestión de usuarios, creación y organización de listas, persistencia en base de datos y una interfaz web preparada para usarse de forma cómoda desde distintos dispositivos.',
-        'A nivel técnico combina un backend Java con Spring Boot y Maven con un frontend Angular en TypeScript. Es uno de los proyectos donde se ve mejor la separación entre cliente, servidor y base de datos dentro de una aplicación web completa.'
-    ],
-    'Apasa': [
-        'Solución e-commerce desarrollada para una protectora de animales en Ciudad Real.',
-        'El objetivo del proyecto fue crear una presencia web funcional para una entidad real, con una estructura orientada a mostrar información, facilitar la navegación y apoyar la actividad de la asociación.',
-        'El trabajo combina WordPress, WooCommerce y PHP con una base de datos MariaDB. Además, incluye una parte importante de configuración, adaptación visual y aplicación de estrategias SEO para mejorar la visibilidad del sitio.'
-    ],
-    'Cake Karaoke': [
-        'Aplicación web creada para la asignatura de Multimedia, orientada a generar proyectos de karaoke a partir de una base musical, una letra y contenido audiovisual.',
-        'El sistema permite trabajar con la letra y la música para construir un archivo SRT sincronizado, que sirve como base para montar una experiencia de karaoke más completa. La aplicación también contempla la gestión de proyectos creados y una interfaz responsive con una estética pastelera.',
-        'Está desarrollada con Node.js y Express bajo una arquitectura MVC, usando TypeScript, Bootstrap, SQLite y APIs del navegador. El proyecto refuerza conceptos de multimedia, sincronización de contenido y estructura de aplicaciones web.'
-    ],
-    'Lyxn Notes': [
-        'Aplicación web de notas desarrollada en Ruby on Rails para gestionar notas, colecciones, amistades y contenido compartido entre usuarios.',
-        'El proyecto incluye dos modos principales: administración, desde donde se puede manejar la información global de la aplicación, y usuario, centrado en crear notas, organizar colecciones, compartir contenido y gestionar relaciones de amistad.',
-        'La aplicación trabaja autenticación, roles, operaciones CRUD, subida de imágenes y persistencia con MongoDB mediante Mongoid. Es un proyecto especialmente útil para mostrar lógica de negocio, modelos relacionados y una aplicación web con permisos diferenciados.'
-    ],
-    'The Game Bazar': [
-        'Aplicación web para buscar ofertas de videojuegos en distintas tiendas y consultar juegos en tendencia.',
-        'El proyecto integra fuentes externas para mostrar información útil al usuario: ofertas mediante la API de CheapShark y tendencias relacionadas con videojuegos usando la API de Twitch. La idea es centralizar datos dispersos y convertirlos en una experiencia de búsqueda más cómoda.',
-        'Fue un trabajo de Integración de Sistemas de Información donde el frontend se construyó con Angular y TypeScript, conectado a un backend en Spring Boot. Mi aportación se centró en la parte Front-End.'
-    ],
-    'IceDrive': [
-        'Servicio Blob desarrollado como práctica de Sistemas Distribuidos para aprender diseño de microservicios con ZeroC Ice.',
-        'El servicio implementa almacenamiento de blobs mediante identificadores hash, evita duplicados, permite enlazar y desenlazar contenido y elimina los datos cuando dejan de estar referenciados. También incorpora transferencias de datos y validación de usuario.',
-        'El proyecto trabaja descubrimiento de servicios, comunicación entre componentes, respuestas diferidas, pruebas automáticas e integración con IceStorm. Es una práctica centrada en arquitectura distribuida, cooperación entre servicios y robustez ante fallos.'
-    ],
-    'IPOkemon': [
-        'Aplicación de escritorio para Windows formada por una Pokédex y una parte de combates.',
-        'El proyecto se centra en la construcción de una interfaz rica para escritorio, trabajando navegación, pantallas visuales, interacción del usuario y organización de información de personajes.',
-        'Está desarrollado con WPF, UWP, XAML y C#, apoyándose en Visual Studio y Expression Blend. Es un proyecto orientado a Interacción Persona-Ordenador y diseño de interfaces para aplicaciones Windows.'
-    ],
-    'Pokémon': [
-        'Proyecto de Interacción Persona-Ordenador centrado en diseñar y construir una aplicación alrededor del Pokémon Electrode.',
-        'El trabajo se planteó siguiendo un enfoque inspirado en desarrollo rápido de aplicaciones y metodología ágil: primero se diseñó una versión en WPF y posteriormente se adaptó a UWP, manteniendo la funcionalidad pero cambiando el entorno técnico.',
-        'La aplicación sirve para practicar diseño visual, interacción en escritorio, empaquetado e instalación de aplicaciones Windows, además de tecnologías como XAML, C# y herramientas de diseño de Microsoft.'
-    ],
-    'G E P I': [
-        'Aplicación orientada a la gestión de pacientes con enfermedades infectocontagiosas.',
-        'El proyecto trabaja el modelado de información sensible, organización de funcionalidades y construcción de una solución académica con pruebas y documentación. La prioridad está en representar correctamente los flujos principales de gestión y consulta.',
-        'Se apoya en Java, Maven, JUnit, MySQL y NetBeans, además de Markdown y Git para documentación y control de versiones. Es un proyecto enfocado en fundamentos de ingeniería del software y trabajo estructurado en equipo.'
-    ],
-    'Veterinaria Pandawa': [
-        'Trabajo de fin de grado del Grado Superior DAW centrado en una web para una veterinaria ficticia.',
-        'El proyecto reúne varias piezas propias de una aplicación web clásica: páginas informativas, lógica de interacción, persistencia de datos y una estructura pensada para practicar el ciclo completo de desarrollo web aprendido en la FP.',
-        'Está construido con HTML, CSS, JavaScript, PHP, MariaDB, Bootstrap, jQuery y trabajo directo con DOM. Representa una etapa inicial importante porque combina frontend, backend y base de datos en un mismo proyecto.'
-    ],
-    'Diseño de Interfaces': [
-        'Página que reúne diseños y ejercicios realizados durante la FP, enfocada en practicar composición visual y construcción de interfaces.',
-        'El proyecto funciona como recopilatorio de propuestas, pantallas y pruebas de diseño, dando importancia a la presentación, estructura visual y adaptación básica a la web.',
-        'Está desarrollado con HTML, CSS y Bootstrap. Aunque es más sencillo técnicamente, muestra evolución en criterios de interfaz, maquetación y presentación de contenido.'
-    ],
-    'Panda Streaming': [
-        'Proyecto web creado para comprender y practicar el funcionamiento del DOM dentro de una página.',
-        'La aplicación se centra en manipulación de elementos, eventos del navegador, comportamiento dinámico y uso de APIs web. Sirve como ejercicio de base para entender cómo una interfaz cambia en respuesta a las acciones del usuario.',
-        'Está desarrollado con HTML, CSS, Bootstrap, JavaScript, DOM, BOM e IndexedDB. Es un proyecto académico temprano, útil para mostrar fundamentos de programación en navegador y almacenamiento local.'
-    ]
+    'Share List': {
+        es: [
+            'Aplicación web pensada para crear listas de la compra y compartirlas con otras personas.',
+            'El proyecto trabaja un flujo completo de aplicación: gestión de usuarios, creación y organización de listas, persistencia en base de datos y una interfaz web preparada para usarse de forma cómoda desde distintos dispositivos.',
+            'A nivel técnico combina un backend Java con Spring Boot y Maven con un frontend Angular en TypeScript. Es uno de los proyectos donde se ve mejor la separación entre cliente, servidor y base de datos dentro de una aplicación web completa.'
+        ],
+        en: [
+            'Web application designed to create shopping lists and share them with other people.',
+            'The project covers a complete application flow: user management, list creation and organization, database persistence, and a web interface designed to be comfortable to use across different devices.',
+            'Technically, it combines a Java backend with Spring Boot and Maven with an Angular frontend built in TypeScript. It is one of the projects that best shows the separation between client, server, and database in a complete web application.'
+        ]
+    },
+    'Apasa': {
+        es: [
+            'Solución e-commerce desarrollada para una protectora de animales en Ciudad Real.',
+            'El objetivo del proyecto fue crear una presencia web funcional para una entidad real, con una estructura orientada a mostrar información, facilitar la navegación y apoyar la actividad de la asociación.',
+            'El trabajo combina WordPress, WooCommerce y PHP con una base de datos MariaDB. Además, incluye una parte importante de configuración, adaptación visual y aplicación de estrategias SEO para mejorar la visibilidad del sitio.'
+        ],
+        en: [
+            'E-commerce solution developed for an animal shelter in Ciudad Real.',
+            'The goal was to create a functional web presence for a real organization, with a structure focused on presenting information, making navigation easier, and supporting the association’s activity.',
+            'The work combines WordPress, WooCommerce, and PHP with a MariaDB database. It also includes configuration, visual adaptation, and SEO strategies to improve the site’s visibility.'
+        ]
+    },
+    'Cake Karaoke': {
+        es: [
+            'Aplicación web creada para la asignatura de Multimedia, orientada a generar proyectos de karaoke a partir de una base musical, una letra y contenido audiovisual.',
+            'El sistema permite trabajar con la letra y la música para construir un archivo SRT sincronizado, que sirve como base para montar una experiencia de karaoke más completa. La aplicación también contempla la gestión de proyectos creados y una interfaz responsive con una estética pastelera.',
+            'Está desarrollada con Node.js y Express bajo una arquitectura MVC, usando TypeScript, Bootstrap, SQLite y APIs del navegador. El proyecto refuerza conceptos de multimedia, sincronización de contenido y estructura de aplicaciones web.'
+        ],
+        en: [
+            'Web application created for a Multimedia course, focused on generating karaoke projects from a music track, lyrics, and audiovisual content.',
+            'The system makes it possible to work with lyrics and music to build a synchronized SRT file, which serves as the basis for a fuller karaoke experience. The application also includes project management and a responsive interface with a bakery-inspired visual style.',
+            'It is built with Node.js and Express using an MVC architecture, TypeScript, Bootstrap, SQLite, and browser APIs. The project reinforces multimedia concepts, content synchronization, and web application structure.'
+        ]
+    },
+    'Lyxn Notes': {
+        es: [
+            'Aplicación web de notas desarrollada en Ruby on Rails para gestionar notas, colecciones, amistades y contenido compartido entre usuarios.',
+            'El proyecto incluye dos modos principales: administración, desde donde se puede manejar la información global de la aplicación, y usuario, centrado en crear notas, organizar colecciones, compartir contenido y gestionar relaciones de amistad.',
+            'La aplicación trabaja autenticación, roles, operaciones CRUD, subida de imágenes y persistencia con MongoDB mediante Mongoid. Es un proyecto especialmente útil para mostrar lógica de negocio, modelos relacionados y una aplicación web con permisos diferenciados.'
+        ],
+        en: [
+            'Notes web application built with Ruby on Rails to manage notes, collections, friendships, and shared content between users.',
+            'The project includes two main modes: administration, used to manage global application information, and user mode, focused on creating notes, organizing collections, sharing content, and managing friendships.',
+            'The application covers authentication, roles, CRUD operations, image uploads, and MongoDB persistence through Mongoid. It is especially useful for showing business logic, related models, and a web application with differentiated permissions.'
+        ]
+    },
+    'The Game Bazar': {
+        es: [
+            'Aplicación web para buscar ofertas de videojuegos en distintas tiendas y consultar juegos en tendencia.',
+            'El proyecto integra fuentes externas para mostrar información útil al usuario: ofertas mediante la API de CheapShark y tendencias relacionadas con videojuegos usando la API de Twitch. La idea es centralizar datos dispersos y convertirlos en una experiencia de búsqueda más cómoda.',
+            'Fue un trabajo de Integración de Sistemas de Información donde el frontend se construyó con Angular y TypeScript, conectado a un backend en Spring Boot. Mi aportación se centró en la parte Front-End.'
+        ],
+        en: [
+            'Web application for finding video game deals across different stores and checking trending games.',
+            'The project integrates external sources to show useful information to users: deals through the CheapShark API and video game trends through the Twitch API. The idea is to centralize scattered data and turn it into a more comfortable search experience.',
+            'It was an Information Systems Integration project where the frontend was built with Angular and TypeScript, connected to a Spring Boot backend. My contribution focused on the frontend.'
+        ]
+    },
+    'IceDrive': {
+        es: [
+            'Servicio Blob desarrollado como práctica de Sistemas Distribuidos para aprender diseño de microservicios con ZeroC Ice.',
+            'El servicio implementa almacenamiento de blobs mediante identificadores hash, evita duplicados, permite enlazar y desenlazar contenido y elimina los datos cuando dejan de estar referenciados. También incorpora transferencias de datos y validación de usuario.',
+            'El proyecto trabaja descubrimiento de servicios, comunicación entre componentes, respuestas diferidas, pruebas automáticas e integración con IceStorm. Es una práctica centrada en arquitectura distribuida, cooperación entre servicios y robustez ante fallos.'
+        ],
+        en: [
+            'Blob service developed as a Distributed Systems assignment to learn microservice design with ZeroC Ice.',
+            'The service implements blob storage using hash identifiers, avoids duplicates, allows content to be linked and unlinked, and deletes data once it is no longer referenced. It also includes data transfers and user validation.',
+            'The project covers service discovery, communication between components, deferred responses, automated tests, and IceStorm integration. It is a practice focused on distributed architecture, cooperation between services, and resilience to failures.'
+        ]
+    },
+    'IPOkemon': {
+        es: [
+            'Aplicación de escritorio para Windows formada por una Pokédex y una parte de combates.',
+            'El proyecto se centra en la construcción de una interfaz rica para escritorio, trabajando navegación, pantallas visuales, interacción del usuario y organización de información de personajes.',
+            'Está desarrollado con WPF, UWP, XAML y C#, apoyándose en Visual Studio y Expression Blend. Es un proyecto orientado a Interacción Persona-Ordenador y diseño de interfaces para aplicaciones Windows.'
+        ],
+        en: [
+            'Windows desktop application made up of a Pokédex and a battle section.',
+            'The project focuses on building a rich desktop interface, working on navigation, visual screens, user interaction, and organization of character information.',
+            'It is developed with WPF, UWP, XAML, and C#, using Visual Studio and Expression Blend. It is a project focused on Human-Computer Interaction and interface design for Windows applications.'
+        ]
+    },
+    'Pokémon': {
+        es: [
+            'Proyecto de Interacción Persona-Ordenador centrado en diseñar y construir una aplicación alrededor del Pokémon Electrode.',
+            'El trabajo se planteó siguiendo un enfoque inspirado en desarrollo rápido de aplicaciones y metodología ágil: primero se diseñó una versión en WPF y posteriormente se adaptó a UWP, manteniendo la funcionalidad pero cambiando el entorno técnico.',
+            'La aplicación sirve para practicar diseño visual, interacción en escritorio, empaquetado e instalación de aplicaciones Windows, además de tecnologías como XAML, C# y herramientas de diseño de Microsoft.'
+        ],
+        en: [
+            'Human-Computer Interaction project focused on designing and building an application around the Pokémon Electrode.',
+            'The work followed an approach inspired by rapid application development and agile methodology: first a WPF version was designed, and later it was adapted to UWP while keeping the functionality and changing the technical environment.',
+            'The application is useful for practicing visual design, desktop interaction, packaging and installation of Windows applications, and technologies such as XAML, C#, and Microsoft design tools.'
+        ]
+    },
+    'G E P I': {
+        es: [
+            'Aplicación orientada a la gestión de pacientes con enfermedades infectocontagiosas.',
+            'El proyecto trabaja el modelado de información sensible, organización de funcionalidades y construcción de una solución académica con pruebas y documentación. La prioridad está en representar correctamente los flujos principales de gestión y consulta.',
+            'Se apoya en Java, Maven, JUnit, MySQL y NetBeans, además de Markdown y Git para documentación y control de versiones. Es un proyecto enfocado en fundamentos de ingeniería del software y trabajo estructurado en equipo.'
+        ],
+        en: [
+            'Application focused on managing patients with infectious diseases.',
+            'The project works with sensitive information modeling, feature organization, and the construction of an academic solution with tests and documentation. The priority is to correctly represent the main management and consultation flows.',
+            'It uses Java, Maven, JUnit, MySQL, and NetBeans, together with Markdown and Git for documentation and version control. It is a project focused on software engineering fundamentals and structured teamwork.'
+        ]
+    },
+    'Veterinaria Pandawa': {
+        es: [
+            'Trabajo de fin de grado del Grado Superior DAW centrado en una web para una veterinaria ficticia.',
+            'El proyecto reúne varias piezas propias de una aplicación web clásica: páginas informativas, lógica de interacción, persistencia de datos y una estructura pensada para practicar el ciclo completo de desarrollo web aprendido en la FP.',
+            'Está construido con HTML, CSS, JavaScript, PHP, MariaDB, Bootstrap, jQuery y trabajo directo con DOM. Representa una etapa inicial importante porque combina frontend, backend y base de datos en un mismo proyecto.'
+        ],
+        en: [
+            'Final project for the Web Application Development degree, focused on a website for a fictional veterinary clinic.',
+            'The project brings together several parts of a classic web application: informational pages, interaction logic, data persistence, and a structure designed to practice the full web development cycle learned during vocational training.',
+            'It is built with HTML, CSS, JavaScript, PHP, MariaDB, Bootstrap, jQuery, and direct DOM work. It represents an important early stage because it combines frontend, backend, and database work in a single project.'
+        ]
+    },
+    'Diseño de Interfaces': {
+        es: [
+            'Página que reúne diseños y ejercicios realizados durante la FP, enfocada en practicar composición visual y construcción de interfaces.',
+            'El proyecto funciona como recopilatorio de propuestas, pantallas y pruebas de diseño, dando importancia a la presentación, estructura visual y adaptación básica a la web.',
+            'Está desarrollado con HTML, CSS y Bootstrap. Aunque es más sencillo técnicamente, muestra evolución en criterios de interfaz, maquetación y presentación de contenido.'
+        ],
+        en: [
+            'Page that brings together designs and exercises created during vocational training, focused on practicing visual composition and interface building.',
+            'The project works as a collection of proposals, screens, and design tests, with emphasis on presentation, visual structure, and basic web adaptation.',
+            'It is developed with HTML, CSS, and Bootstrap. Although technically simpler, it shows progress in interface criteria, layout, and content presentation.'
+        ]
+    },
+    'Panda Streaming': {
+        es: [
+            'Proyecto web creado para comprender y practicar el funcionamiento del DOM dentro de una página.',
+            'La aplicación se centra en manipulación de elementos, eventos del navegador, comportamiento dinámico y uso de APIs web. Sirve como ejercicio de base para entender cómo una interfaz cambia en respuesta a las acciones del usuario.',
+            'Está desarrollado con HTML, CSS, Bootstrap, JavaScript, DOM, BOM e IndexedDB. Es un proyecto académico temprano, útil para mostrar fundamentos de programación en navegador y almacenamiento local.'
+        ],
+        en: [
+            'Web project created to understand and practice how the DOM works within a page.',
+            'The application focuses on element manipulation, browser events, dynamic behavior, and web APIs. It serves as a foundational exercise to understand how an interface changes in response to user actions.',
+            'It is developed with HTML, CSS, Bootstrap, JavaScript, DOM, BOM, and IndexedDB. It is an early academic project, useful for showing browser programming fundamentals and local storage.'
+        ]
+    }
 };
 
 function getTechnologyIcon(technology) {
@@ -383,7 +489,7 @@ function createTechList(technologies, className) {
     technologies.forEach(technology => {
         const item = document.createElement('span');
         item.innerHTML = `<i class="${getTechnologyIcon(technology)}" aria-hidden="true"></i>`;
-        item.append(document.createTextNode(technology));
+        item.append(document.createTextNode(translateText(technology, currentLanguage)));
         techList.appendChild(item);
     });
 
@@ -410,7 +516,7 @@ function createModalLinkList(links, fallbackLink) {
         copy.target = link.target || '_blank';
         copy.rel = link.rel || 'noopener noreferrer';
         copy.innerHTML = `<i class="${getLinkIcon(link)}" aria-hidden="true"></i>`;
-        copy.append(document.createTextNode(link.textContent.trim()));
+        copy.append(document.createTextNode(translateText(link.textContent.trim(), currentLanguage)));
         linkList.appendChild(copy);
     });
 
@@ -420,20 +526,24 @@ function createModalLinkList(links, fallbackLink) {
         copy.target = fallbackLink.target || '_blank';
         copy.rel = fallbackLink.rel || 'noopener noreferrer';
         copy.innerHTML = `<i class="${getLinkIcon(fallbackLink)}" aria-hidden="true"></i>`;
-        copy.append(document.createTextNode(fallbackLink.textContent.trim()));
+        copy.append(document.createTextNode(translateText(fallbackLink.textContent.trim(), currentLanguage)));
         linkList.appendChild(copy);
     }
 
     return linkList;
 }
 
-function createProjectModal(project) {
-    const modal = document.createElement('div');
-    modal.className = 'modal fade project-modal';
-    modal.id = project.modalId;
-    modal.tabIndex = -1;
-    modal.setAttribute('aria-labelledby', `${project.modalId}Label`);
-    modal.setAttribute('aria-hidden', 'true');
+function getProjectDescriptions(project) {
+    if (project.localizedDescriptions) {
+        return project.localizedDescriptions[currentLanguage] || project.localizedDescriptions.es || [];
+    }
+
+    return project.description || [];
+}
+
+function renderProjectModal(project) {
+    const modal = document.getElementById(project.modalId);
+    if (!modal) return;
 
     const technologies = project.technologies.length
         ? createTechList(project.technologies, 'modal-tech-list').outerHTML
@@ -446,23 +556,36 @@ function createProjectModal(project) {
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title" id="${project.modalId}Label">${project.title}</h3>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    <h3 class="modal-title" id="${project.modalId}Label">${translateText(project.title, currentLanguage)}</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="${translateText('Cerrar', currentLanguage)}"></button>
                 </div>
                 <div class="modal-body">
                     <img class="project-modal-image" src="${project.imageSrc}" alt="${project.imageAlt}" loading="lazy">
-                    ${project.description.map(text => `<p>${text}</p>`).join('')}
-                    ${project.date ? `<p>${project.date}</p>` : ''}
-                    <h4>Tecnologías</h4>
+                    ${getProjectDescriptions(project).map(text => `<p>${text}</p>`).join('')}
+                    ${project.date ? `<p>${translateText(project.date, currentLanguage)}</p>` : ''}
+                    <h4>${translateText('Tecnologías', currentLanguage)}</h4>
                     ${technologies}
-                    <h4>Enlaces</h4>
+                    <h4>${translateText('Enlaces', currentLanguage)}</h4>
                     ${links}
                 </div>
             </div>
         </div>
     `;
 
+    applyLanguageToElement(modal, currentLanguage);
+}
+
+function createProjectModal(project) {
+    const modal = document.createElement('div');
+    modal.className = 'modal fade project-modal';
+    modal.id = project.modalId;
+    modal.tabIndex = -1;
+    modal.setAttribute('aria-labelledby', `${project.modalId}Label`);
+    modal.setAttribute('aria-hidden', 'true');
+
     document.body.appendChild(modal);
+    dynamicProjectModals.set(project.modalId, project);
+    renderProjectModal(project);
 }
 
 function enhanceCarouselProjectCards() {
@@ -532,7 +655,8 @@ function enhanceCarouselProjectCards() {
             title,
             imageSrc: image?.getAttribute('src') || '',
             imageAlt: image?.getAttribute('alt') || title,
-            description: projectModalDescriptions[title] || (description.length ? description : ['Pendiente de completar.']),
+            localizedDescriptions: projectModalDescriptions[title] || null,
+            description: description.length ? description : ['Pendiente de completar.'],
             date,
             technologies,
             links,
@@ -574,7 +698,12 @@ function renderCarouselIndicators(trackId = 'miCarouselTrack') {
         const dot = document.createElement('button');
         dot.type = 'button';
         dot.className = 'mi-carousel-dot';
-        dot.setAttribute('aria-label', `Ver grupo ${index + 1} de proyectos`);
+        dot.setAttribute(
+            'aria-label',
+            currentLanguage === 'es'
+                ? `Ver grupo ${index + 1} de proyectos`
+                : `View project group ${index + 1}`
+        );
         dot.addEventListener('click', () => {
             state.index = index;
             updateCustomCarousel(trackId);
