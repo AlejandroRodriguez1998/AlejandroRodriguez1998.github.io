@@ -20,21 +20,25 @@ document.addEventListener('click', function(event) {
     }
 });
 
-// Boton para hacer scroll hacia arriba
-document.getElementById('scroll-up').addEventListener('click', function() {
-    window.scrollBy({
-        top: -window.innerHeight, // Scroll hacia arriba el tamaño de una pantalla
-        behavior: 'smooth'
+const scrollUpButton = document.getElementById('scroll-up');
+if (scrollUpButton) {
+    scrollUpButton.addEventListener('click', function() {
+        window.scrollBy({
+            top: -window.innerHeight,
+            behavior: 'smooth'
+        });
     });
-});
+}
 
-// Boton para hacer scroll hacia abajo
-document.getElementById('scroll-down').addEventListener('click', function() {
-    window.scrollBy({
-        top: window.innerHeight, // Scroll hacia abajo el tamaño de una pantalla
-        behavior: 'smooth'
+const scrollDownButton = document.getElementById('scroll-down');
+if (scrollDownButton) {
+    scrollDownButton.addEventListener('click', function() {
+        window.scrollBy({
+            top: window.innerHeight,
+            behavior: 'smooth'
+        });
     });
-});
+}
 
 // Cambiar el color del header al hacer scroll (y activar dots)
 document.addEventListener('DOMContentLoaded', function () {
@@ -358,7 +362,7 @@ function enhanceCarouselProjectCards() {
 }
 
 function getVisibleItems() {
-    return window.innerWidth < 768 ? 1 : window.innerWidth < 992 ? 2 : 3;
+    return window.innerWidth < 768 ? 1 : window.innerWidth < 992 ? 2 : 4;
 }
 
 function getCarouselState(trackId = 'miCarouselTrack') {
@@ -370,6 +374,46 @@ function getCarouselItems(track) {
         .filter(item => item.innerHTML.trim() !== '');
 }
 
+function getCarouselPageCount(track) {
+    return Math.max(Math.ceil(getCarouselItems(track).length / getVisibleItems()), 1);
+}
+
+function getCarouselMaxIndex(track) {
+    return getCarouselPageCount(track) - 1;
+}
+
+function renderCarouselIndicators(trackId = 'miCarouselTrack') {
+    const state = getCarouselState(trackId);
+    const indicatorList = document.querySelector(`[data-indicators-for="${trackId}"]`);
+    if (!state || !indicatorList) return;
+
+    const pageCount = getCarouselPageCount(state.track);
+    indicatorList.innerHTML = '';
+
+    for (let index = 0; index < pageCount; index++) {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'mi-carousel-dot';
+        dot.setAttribute('aria-label', `Ver grupo ${index + 1} de proyectos`);
+        dot.addEventListener('click', () => {
+            state.index = index;
+            updateCustomCarousel(trackId);
+            resetAutoSlideInterval(trackId);
+        });
+        indicatorList.appendChild(dot);
+    }
+}
+
+function updateCarouselIndicators(trackId = 'miCarouselTrack') {
+    const state = getCarouselState(trackId);
+    const indicatorList = document.querySelector(`[data-indicators-for="${trackId}"]`);
+    if (!state || !indicatorList) return;
+
+    Array.from(indicatorList.children).forEach((dot, index) => {
+        dot.classList.toggle('active', index === state.index);
+    });
+}
+
 function updateCustomCarousel(trackId = 'miCarouselTrack') {
     const state = getCarouselState(trackId);
     if (!state) return;
@@ -379,23 +423,24 @@ function updateCustomCarousel(trackId = 'miCarouselTrack') {
     if (!firstItem) return;
 
     const itemWidth = firstItem.offsetWidth;
-    const maxIndex = Math.max(items.length - getVisibleItems(), 0);
+    const pageWidth = itemWidth * getVisibleItems();
+    const maxIndex = getCarouselMaxIndex(state.track);
 
     if (state.index > maxIndex) state.index = 0;
     if (state.index < 0) state.index = maxIndex;
 
-    state.currentTranslate = -state.index * itemWidth;
+    state.currentTranslate = -state.index * pageWidth;
     state.prevTranslate = state.currentTranslate;
     state.track.style.transition = 'transform 0.5s ease-in-out';
     state.track.style.transform = `translateX(${state.currentTranslate}px)`;
+    updateCarouselIndicators(trackId);
 }
 
 function nextCustomSlide(trackId = 'miCarouselTrack') {
     const state = getCarouselState(trackId);
     if (!state) return;
 
-    const items = getCarouselItems(state.track);
-    const maxIndex = Math.max(items.length - getVisibleItems(), 0);
+    const maxIndex = getCarouselMaxIndex(state.track);
     state.index = maxIndex === 0 ? 0 : (state.index + 1) % (maxIndex + 1);
     updateCustomCarousel(trackId);
     resetAutoSlideInterval(trackId);
@@ -405,8 +450,7 @@ function prevCustomSlide(trackId = 'miCarouselTrack') {
     const state = getCarouselState(trackId);
     if (!state) return;
 
-    const items = getCarouselItems(state.track);
-    const maxIndex = Math.max(items.length - getVisibleItems(), 0);
+    const maxIndex = getCarouselMaxIndex(state.track);
     state.index = maxIndex === 0 ? 0 : (state.index - 1 + maxIndex + 1) % (maxIndex + 1);
     updateCustomCarousel(trackId);
     resetAutoSlideInterval(trackId);
@@ -441,7 +485,7 @@ function setPositionByIndex(state) {
     const firstItem = state.track.querySelector('.mi-carousel-item');
     if (!firstItem) return;
 
-    state.currentTranslate = state.index * -firstItem.offsetWidth;
+    state.currentTranslate = state.index * -(firstItem.offsetWidth * getVisibleItems());
     state.prevTranslate = state.currentTranslate;
     state.track.style.transition = 'transform 0.5s ease-out';
     setSliderPosition(state);
@@ -505,10 +549,10 @@ function initializeCarousel(track) {
             state.isDragging = false;
 
             const movedBy = state.currentTranslate - state.prevTranslate;
-            const maxIndex = Math.max(getCarouselItems(state.track).length - getVisibleItems(), 0);
+            const maxIndex = getCarouselMaxIndex(state.track);
 
-            if (movedBy < -100 && state.currentIndex < maxIndex) state.index++;
-            if (movedBy > 100 && state.currentIndex > 0) state.index--;
+            if (movedBy < -100 && state.index < maxIndex) state.index++;
+            if (movedBy > 100 && state.index > 0) state.index--;
 
             setPositionByIndex(state);
             resetAutoSlideInterval(trackId);
@@ -522,12 +566,16 @@ function initializeCarousel(track) {
         });
     });
 
+    renderCarouselIndicators(trackId);
     updateCustomCarousel(trackId);
     resetAutoSlideInterval(trackId);
 }
 
 window.addEventListener('resize', () => {
-    Object.keys(carousels).forEach(updateCustomCarousel);
+    Object.keys(carousels).forEach(trackId => {
+        renderCarouselIndicators(trackId);
+        updateCustomCarousel(trackId);
+    });
 });
 
 window.addEventListener('load', () => {

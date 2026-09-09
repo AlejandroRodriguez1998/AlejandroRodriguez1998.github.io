@@ -141,69 +141,48 @@
     <div class="side-menu" id="sideMenu">
         <button type="button" class="btn-close" id="closeMenu" aria-label="Close"></button>
 
-        <h4 class="text-center d-flex justify-content-center mb-2">
+        <h4 class="side-socials text-center d-flex justify-content-center mb-3">
             <a class="text-decoration-none mx-3" href="https://github.com/AlejandroRodriguez1998" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
             <a class="text-decoration-none mx-3" href="https://www.linkedin.com/in/alejandropaniaguarodriguez" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
             <a class="text-decoration-none mx-3" href="mailto:alexcr31@gmail.com"><i class="fa-solid fa-envelope"></i></a>
         </h4>
 
         <a href="#presentacion" class="button">
-            <div class="icon_cont">
-            <span class="icon"><i class="fa-solid fa-arrow-right"></i></span>
-            </div>
+            <i class="fa-solid fa-house" aria-hidden="true"></i>
             <span class="text_button">Presentación</span>
         </a>
         <a href="#sobreMi" class="button">
-            <div class="icon_cont">
-            <span class="icon"><i class="fa-solid fa-arrow-right"></i></span>
-            </div>
+            <i class="fa-solid fa-user" aria-hidden="true"></i>
             <span class="text_button">Sobre mí</span>
         </a>
         <a href="#intereses" class="button">
-            <div class="icon_cont">
-            <span class="icon"><i class="fa-solid fa-arrow-right"></i></span>
-            </div>
+            <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
             <span class="text_button">Intereses</span>
         </a>
         <a href="#formacion" class="button">
-            <div class="icon_cont">
-            <span class="icon"><i class="fa-solid fa-arrow-right"></i></span>
-            </div>
+            <i class="fa-solid fa-brain" aria-hidden="true"></i>
             <span class="text_button">Formación</span>
         </a>
         <a href="#habilidades" class="button">
-            <div class="icon_cont">
-            <span class="icon"><i class="fa-solid fa-arrow-right"></i></span>
-            </div>
+            <i class="fa-solid fa-book" aria-hidden="true"></i>
             <span class="text_button">Habilidades</span>
         </a>
         <a href="#portfolio" class="button">
-            <div class="icon_cont">
-            <span class="icon"><i class="fa-solid fa-arrow-right"></i></span>
-            </div>
+            <i class="fa-solid fa-medal" aria-hidden="true"></i>
             <span class="text_button">Portfolio</span>
         </a>
         <a href="#muro" class="button">
-            <div class="icon_cont">
-            <span class="icon"><i class="fa-solid fa-arrow-right"></i></span>
-            </div>
+            <i class="fa-solid fa-pencil" aria-hidden="true"></i>
             <span class="text_button">Muro</span>
         </a>
         <a href="#contacto" class="button">
-            <div class="icon_cont">
-            <span class="icon"><i class="fa-solid fa-arrow-right"></i></span>
-            </div>
+            <i class="fa-solid fa-phone-flip" aria-hidden="true"></i>
             <span class="text_button">Contacto</span>
         </a>
     </div>
     
     <!--Menu en version escritorio-->
     <div class="floating-menu d-none d-lg-block">
-        <div class="menu-buttons">
-            <button class="scroll-btn" id="scroll-up">
-                <i class="fas fa-arrow-up"></i>
-            </button>
-        </div>
         <div class="menu-dots">
             <a href="#presentacion" class="dot" id="dot-presentacion" data-tooltip="Presentación">
                 <i class="fa-solid fa-house"></i>
@@ -229,11 +208,6 @@
             <a href="#contacto" class="dot" id="dot-contacto" data-tooltip="Contacto">
                 <i class="fa-solid fa-phone-flip"></i>
             </a>
-        </div>
-        <div class="menu-buttons">
-            <button class="scroll-btn" id="scroll-down">
-                <i class="fas fa-arrow-down"></i>
-            </button>
         </div>
     </div>
 
@@ -325,7 +299,7 @@
     </div>
 
     <!--Seccion de intereses-->
-    <div class="py-3 section" id="intereses">
+    <div class="content-section section" id="intereses">
         <div class="container">
             <h2 class="text-center pt-5">Intereses</h2>
             <p class="intereses-intro">Áreas que conectan con mi forma de entender la informática: crear soluciones útiles, cuidar la experiencia de usuario y seguir aprendiendo en entornos técnicos distintos.</p>
@@ -393,7 +367,7 @@
     </div>
 
     <!--Seccion de formacion-->
-    <div class="py-3 section" id="formacion">
+    <div class="content-section section" id="formacion">
         <div class="container">
             <h2 class="text-center pt-5">Formación</h2>
             <div class="row">
@@ -542,7 +516,7 @@
     </div>
 
     <!--Seccion de habilidades-->
-    <div class="py-3 section" id="habilidades">
+    <div class="content-section section" id="habilidades">
         <div class="container">
             <h2 class="text-center pt-5">Habilidades</h2>
             <div class="row pt-2">
@@ -684,7 +658,7 @@
     </div>
 
     <!--Seccion de portfolio-->
-    <div class="py-3 section" id="portfolio">
+    <div class="content-section section" id="portfolio">
         <div class="container">
             <h2 class="text-center pt-5 mb-0">Portfolio</h2>
 
@@ -745,7 +719,6 @@
                 </div>
 
                 <div class="mi-carousel-container" data-carousel="projects">
-                    <button class="mi-carousel-button prev" type="button" onclick="prevCustomSlide('miCarouselTrack')" aria-label="Proyecto anterior">&#10094;</button>
                     <div class="mi-carousel-track" id="miCarouselTrack">
                     <div class="mi-carousel-item">
                         <div class="mi-project-card ticket-sales-container">
@@ -1252,8 +1225,10 @@
                             </button>
                         </div>
                     </div>
-                </div>
-                    <button class="mi-carousel-button next" type="button" onclick="nextCustomSlide('miCarouselTrack')" aria-label="Proyecto siguiente">&#10095;</button>
+                    </div>
+                    <div class="mi-carousel-controls" aria-label="Controles del carrusel de proyectos">
+                        <div class="mi-carousel-indicators" data-indicators-for="miCarouselTrack"></div>
+                    </div>
                 </div>
             </div>
 
@@ -1357,11 +1332,11 @@
     </div>
 
     <!--Seccion de muro-->
-    <div class="py-3 mb-5 section" id="muro">
+    <div class="content-section section" id="muro">
         <div class="container">
             <h2 class="text-center pt-5">Muro de noticias</h2>
 
-            <div class="row justify-content-center g-4">
+            <div class="row justify-content-center g-4 pt-2">
                 <div class="col-12 col-lg-6">
                     <div class="card-articulos">
                         <div class="date-time-container-articulos">
@@ -1417,54 +1392,86 @@
                     </div>
                 </div>
             </div>
+
+            <div class="more-news-row">
+                <button class="more-news-trigger" type="button" data-bs-toggle="modal" data-bs-target="#moreNewsModal">
+                    <span>Más noticias</span>
+                    <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade project-modal news-modal" id="moreNewsModal" tabindex="-1" aria-labelledby="moreNewsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="moreNewsModalLabel">Más noticias</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="news-modal-list">
+                        <div class="news-empty-state">
+                            <i class="fa-regular fa-newspaper" aria-hidden="true"></i>
+                            <p class="mb-0">Todavía no tenemos disponibles más noticias.</p>
+                        </div>
+
+                        <!--<article class="news-modal-item">
+                            <img src="images/presentacionCEO.png" alt="Asistencia a presentación de proyecto e-commerce" loading="lazy">
+                            <div>
+                                <p class="news-modal-date">Dic 16 · 2025</p>
+                                <h4>Asistencia a presentación de proyecto e-commerce</h4>
+                                <p>Participación en la presentación de una solución web e-commerce desarrollada en el entorno académico de la Escuela Superior de Informática de Ciudad Real. El proyecto se realizó en colaboración con la Asociación IKER, una entidad sin ánimo de lucro dedicada al apoyo a la investigación del liposarcoma mixoide.</p>
+                                <a class="action-articulos text-decoration-none" href="https://www.linkedin.com/posts/alejandropaniaguarodriguez_ayer-tuve-el-placer-de-ser-invitado-de-la-activity-7407081301339545601-NfUW?utm_source=share&utm_medium=member_ios&rcm=ACoAACgbr3oBnWcUnsPuovRNq12mCTGavs4IsNw" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Leer post</a>
+                            </div>
+                        </article>-->
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <!--Seccion de contacto-->
-    <div class="py-3 mt-3 section" id="contacto">
+    <div class="content-section section" id="contacto">
         <div class="container">
             <h2 class="text-center pt-5">Contacto</h2>
 
             <p class="text-center">Si tienes alguna pregunta o quieres trabajar conmigo, ¡no dudes en contactarme!</p>
 
-            <div class="row">
-                <div class="col-md-6 col-12 d-flex justify-content-md-end justify-content-center">
-                    <div class="card">
+            <div class="row contacto-content">
+                <div class="col-md-auto col-12">
+                    <div class="contact-card">
                         <div class="text-content">
                             <span class="title">Alejandro</span>
                             <p class="subtitle">Paniagua Rodriguez</p>
                         </div>
-                        <a class="text-decoration-none" href="archivos/Curriculum vitae.pdf" target="_blank">
-                            <button class="download-btn">Descargar CV 
-                                <svg class="icon" height="100" preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100" width="100" x="0" xmlns="http://www.w3.org/2000/svg" y="0">
-                                <path d="M22.1,77.9a4,4,0,0,1,4-4H73.9a4,4,0,0,1,0,8H26.1A4,4,0,0,1,22.1,77.9ZM35.2,47.2a4,4,0,0,1,5.7,0L46,52.3V22.1a4,4,0,1,1,8,0V52.3l5.1-5.1a4,4,0,0,1,5.7,0,4,4,0,0,1,0,5.6l-12,12a3.9,3.9,0,0,1-5.6,0l-12-12A4,4,0,0,1,35.2,47.2Z" fill-rule="evenodd"></path>
-                                </svg>
-                            </button>
+                        <a class="download-btn text-decoration-none" href="archivos/Curriculum vitae.pdf" target="_blank">
+                            <span>Descargar CV</span>
+                            <i class="fa-solid fa-download" aria-hidden="true"></i>
                         </a>
                         <svg class="icon-large stroke-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path data-name="layer1" d="M 50.4 51 C 40.5 49.1 40 46 40 44 v -1.2 a 18.9 18.9 0 0 0 5.7 -8.8 h 0.1 c 3 0 3.8 -6.3 3.8 -7.3 s 0.1 -4.7 -3 -4.7 C 53 4 30 0 22.3 6 c -5.4 0 -5.9 8 -3.9 16 c -3.1 0 -3 3.8 -3 4.7 s 0.7 7.3 3.8 7.3 c 1 3.6 2.3 6.9 4.7 9 v 1.2 c 0 2 0.5 5 -9.5 6.8 S 2 62 2 62 h 60 a 14.6 14.6 0 0 0 -11.6 -11 z" stroke-miterlimit="10" stroke-width="5"></path></svg>
                         <svg class="icon-large stroke-secondary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path data-name="layer1" d="M 50.4 51 C 40.5 49.1 40 46 40 44 v -1.2 a 18.9 18.9 0 0 0 5.7 -8.8 h 0.1 c 3 0 3.8 -6.3 3.8 -7.3 s 0.1 -4.7 -3 -4.7 C 53 4 30 0 22.3 6 c -5.4 0 -5.9 8 -3.9 16 c -3.1 0 -3 3.8 -3 4.7 s 0.7 7.3 3.8 7.3 c 1 3.6 2.3 6.9 4.7 9 v 1.2 c 0 2 0.5 5 -9.5 6.8 S 2 62 2 62 h 60 a 14.6 14.6 0 0 0 -11.6 -11 z" stroke-miterlimit="10" stroke-width="2"></path></svg>
-                    </div>                            
+                    </div>
                 </div>
 
-                <div class="col-md-6 col-12 d-flex justify-content-md-start justify-content-center mt-md-0 mt-2">
-                    <div class="contact-info d-flex flex-column justify-content-center">
-                        <div class="d-flex align-items-center mb-3">
-                            <i class="fa-brands fa-linkedin fa-2x me-3"></i>
+                <div class="col-md-auto col-12 mt-md-0 mt-4">
+                    <div class="contact-info">
+                        <div class="contact-line">
+                            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
                             <div>
                                 <strong>LinkedIn</strong><br>
                                 <a href="https://www.linkedin.com/in/alejandropaniaguarodriguez" target="_blank" rel="noopener noreferrer" class="text-decoration-none font-monospace">Alejandro Paniagua Rodriguez</a>
                             </div>
                         </div>
-                        <div class="d-flex align-items-center mb-3">
-                            <i class="fa-solid fa-envelope fa-2x me-3"></i>
+                        <div class="contact-line">
+                            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
                             <div>
                                 <strong>Correo de contacto</strong><br>
                                 <a href="mailto:alexcr31@gmail.com" class="text-decoration-none font-monospace">alexcr31@gmail.com</a>
-                                <a href="mailto:alejandro.paniagua1@alu.uclm.es" class="text-decoration-none font-monospace d-block">alejandro.paniagua1@alu.uclm.es</a>
                             </div>
                         </div>
-                        <div class="d-flex align-items-center mb-3">
-                            <i class="fa-brands fa-github fa-2x me-3"></i>
+                        <div class="contact-line">
+                            <i class="fa-brands fa-github" aria-hidden="true"></i>
                             <div>
                                 <strong>GitHub</strong><br>
                                 <a href="https://github.com/AlejandroRodriguez1998" target="_blank" rel="noopener noreferrer" class="text-decoration-none font-monospace">AlejandroRodriguez1998</a>
@@ -1479,35 +1486,34 @@
     <!--Footer-->
     <footer class="footer mt-5 py-4">
         <div class="container">
-            <div class="row text-center">
-                <!-- Sección de derechos reservados -->
-                <div class="col-12 mb-1">
-                    <p class="mb-0">© 2024 Alejandro Paniagua Rodríguez</p>
-                    <p class="mb-0">Diseñado y desarrollado por el autor</p>
+            <div class="footer-inner">
+                <div class="footer-author">
+                    <p class="footer-name mb-0">Alejandro Paniagua Rodríguez</p>
+                    <p class="mb-0">© 2024 · Diseñado y desarrollado por el autor</p>
                 </div>
-                <!-- Sección de agradecimientos -->
-                <div class="col-12 mt-2">
-                    <p class="mb-1">Agradecimientos a:</p>
-                    <p>
-                        <a href="https://uiverse.io/" target="_blank" rel="noopener noreferrer" class="mx-2">
+
+                <div class="footer-credits">
+                    <span>Agradecimientos:</span>
+                    <div class="footer-links">
+                        <a href="https://uiverse.io/" target="_blank" rel="noopener noreferrer">
                             <i class="fas fa-bolt"></i> Uiverse
                         </a>
-                        <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer" class="mx-2">
+                        <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-bootstrap"></i> Bootstrap
                         </a>
-                        <a href="https://fontawesome.com/" target="_blank" rel="noopener noreferrer" class="mx-2">
+                        <a href="https://fontawesome.com/" target="_blank" rel="noopener noreferrer">
                             <i class="fas fa-font-awesome"></i> Font Awesome
                         </a>
-                        <a href="https://www.svgrepo.com/" target="_blank" rel="noopener noreferrer" class="mx-2">
+                        <a href="https://www.svgrepo.com/" target="_blank" rel="noopener noreferrer">
                             <i class="fas fa-vector-square"></i> SVG Repo
                         </a>
-                        <a href="https://fonts.google.com/" target="_blank" rel="noopener noreferrer" class="mx-2">
+                        <a href="https://fonts.google.com/" target="_blank" rel="noopener noreferrer">
                             <i class="fas fa-font"></i> Google Fonts
                         </a>
-                        <a href="https://www.flaticon.es/" target="_blank" rel="noopener noreferrer" class="mx-2">
+                        <a href="https://www.flaticon.es/" target="_blank" rel="noopener noreferrer">
                             <i class="fas fa-icons"></i> Flaticon
                         </a>
-                    </p>
+                    </div>
                 </div>
             </div>
         </div>
