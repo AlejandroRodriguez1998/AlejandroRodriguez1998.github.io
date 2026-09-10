@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/404.css">
 </head>
 <body class="not-found-page">
     <main class="not-found-section" aria-labelledby="notFoundTitle">
@@ -26,6 +27,7 @@
             <p class="not-found-code">404</p>
             <h1 id="notFoundTitle">Página no encontrada</h1>
             <p class="not-found-text">La ruta que has intentado abrir no existe o se ha movido.</p>
+            <p class="not-found-request" data-not-found-request>GET /ruta-no-encontrada → 404</p>
 
             <div class="not-found-actions" aria-label="Acciones disponibles">
                 <a href="./" class="not-found-button">
@@ -44,6 +46,7 @@
         </section>
     </main>
 
+    <script src="script/i18n.js"></script>
     <script src="script/script.js"></script>
 </body>
 </html>

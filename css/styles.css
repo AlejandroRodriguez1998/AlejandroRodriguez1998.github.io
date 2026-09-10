@@ -225,24 +225,24 @@ img.logo {
 }
 
 .language-switcher-desktop button {
-    min-width: 24px;
-    height: 22px;
-    padding: 0 4px;
-    font-size: 0.72rem;
+    min-width: 28px;
+    height: 25px;
+    padding: 0 5px;
+    font-size: 0.78rem;
 }
 
 .menu-dots {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 9px;
+    gap: 11px;
     margin: 0;
 }
 
 .dot {
     position: relative;
-    width: 20px; /* Tamaño ajustado para contener el icono */
-    height: 20px; /* Tamaño ajustado para contener el icono */
+    width: 24px; /* Tamaño ajustado para contener el icono */
+    height: 24px; /* Tamaño ajustado para contener el icono */
     background-color: #ffffff;
     border: 1px solid #000;
     border-radius: 50%;
@@ -257,7 +257,7 @@ img.logo {
 
 .dot i {
     color: black; /* Color del icono */
-    font-size: 10px; /* Ajusta el tamaño del icono según sea necesario */
+    font-size: 12px; /* Ajusta el tamaño del icono según sea necesario */
 }
 
 .dot.active i {
@@ -278,11 +278,11 @@ img.logo {
     transform: translateY(-50%); /* Centra verticalmente el tooltip */
     background-color: #ffffff; /* Fondo del tooltip */
     color: rgb(0,0,1); /* Color del texto */
-    padding: 4px 9px;
+    padding: 5px 10px;
     border: 1px solid #000;
     box-shadow: 2px 2px #000000;
     white-space: nowrap;
-    font-size: 12px;
+    font-size: 13px;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -387,16 +387,16 @@ img.logo {
 
 #sideMenu a.button {
     --active: 0;
-    padding: 6px 11px;
+    padding: 8px 13px;
     position: relative;
     display: flex;
     align-items: center;
-    gap: 0.65rem;
+    gap: 0.75rem;
     transform-origin: center;
     background-color: #ffffff;
     border: 1px solid #000;
     box-shadow: 2px 2px #000000;
-    margin-bottom: 10px;
+    margin-bottom: 11px;
     text-decoration: none;
     color:rgb(0,0,1);
     font-family: "Kalam", cursive;
@@ -408,9 +408,9 @@ img.logo {
 }
 
 #sideMenu a.button > i {
-    width: 18px;
+    width: 20px;
     text-align: center;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
   
 .icon_cont {
@@ -430,7 +430,7 @@ img.logo {
     position: relative;
     display: inline-block;
     padding-block: 0.35rem;
-    font-size: 1rem;
+    font-size: 1.06rem;
     font-weight: 600;
     color: rgb(0,0,1);
     font-family: "Kalam", cursive;
@@ -618,6 +618,19 @@ img.logo {
 
 #formacion p, #formacion span {
     font-family: 'Georgia', serif;
+}
+
+#formacion a {
+    color: rgb(0,0,1);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
+
+#formacion a:hover,
+#formacion a:focus {
+    color: #6d6968;
 }
 
 #formacion h4 {
@@ -1093,451 +1106,6 @@ img.logo {
     }
 }
 
-.cv-page {
-    min-height: 100%;
-    background-color: #f0f0f0;
-    color: rgb(0,0,1);
-    overflow-x: hidden;
-}
-
-.cv-page * {
-    box-sizing: border-box;
-}
-
-.cv-toolbar {
-    width: min(calc(100% - 32px), 210mm);
-    margin: 22px auto 18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    font-family: "Kalam", cursive;
-}
-
-.cv-toolbar-actions {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-}
-
-.cv-toolbar-link,
-.cv-print-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    min-height: 36px;
-    padding: 6px 12px;
-    background-color: #ffffff;
-    border: 1px solid #000;
-    box-shadow: 2px 2px #000000;
-    color: rgb(0,0,1);
-    text-decoration: none;
-    line-height: 1.15;
-}
-
-.cv-toolbar-link:hover,
-.cv-toolbar-link:focus,
-.cv-print-button:hover,
-.cv-print-button:focus {
-    color: #6d6968;
-}
-
-.cv-print-button {
-    font-family: "Kalam", cursive;
-}
-
-.cv-shell {
-    width: 100%;
-    padding: 0 16px 42px;
-    overflow-x: clip;
-}
-
-.cv-document {
-    width: min(calc(100% - 8px), 210mm);
-    min-height: 297mm;
-    margin: 0 auto;
-    padding: 15mm 15mm 13mm;
-    background-color: #ffffff;
-    border: 1px solid #000;
-    box-shadow: 8px 8px #000000;
-    font-family: Georgia, serif;
-}
-
-.cv-header {
-    display: grid;
-    grid-template-columns: 35mm 1fr;
-    align-items: center;
-    gap: 11mm;
-    padding-bottom: 7mm;
-    border-bottom: 1.5px solid #000;
-}
-
-.cv-photo {
-    width: 34mm;
-    height: 34mm;
-    object-fit: cover;
-    border: 1.2px solid #000;
-    border-radius: 50%;
-    box-shadow: 3px 3px #000000;
-}
-
-.cv-heading h1 {
-    margin: 0;
-    font-family: Georgia, serif;
-    font-size: 30pt;
-    font-weight: 700;
-    line-height: 0.95;
-    letter-spacing: 0;
-}
-
-.cv-heading p {
-    margin: 5mm 0 0;
-    font-family: "Kalam", cursive;
-    font-size: 17pt;
-    line-height: 1.1;
-    color: #333;
-}
-
-.cv-grid {
-    display: grid;
-    grid-template-columns: 62mm 1fr;
-    gap: 10mm;
-    padding-top: 8mm;
-}
-
-.cv-sidebar {
-    padding-right: 8mm;
-    border-right: 1.5px solid #000;
-}
-
-.cv-section {
-    margin-bottom: 6mm;
-    break-inside: avoid;
-}
-
-.cv-section h2 {
-    margin: 0 0 3mm;
-    padding-bottom: 1.5mm;
-    border-bottom: 1px solid #000;
-    font-family: "Kalam", cursive;
-    font-size: 14pt;
-    line-height: 1.1;
-    text-transform: uppercase;
-}
-
-.cv-section h3 {
-    margin: 0 0 1mm;
-    font-family: Georgia, serif;
-    font-size: 10.5pt;
-    font-weight: 700;
-    line-height: 1.2;
-    text-transform: uppercase;
-}
-
-.cv-section p,
-.cv-section li,
-.cv-section a {
-    font-size: 9.4pt;
-    line-height: 1.32;
-}
-
-.cv-section p {
-    margin: 0 0 2.2mm;
-}
-
-.cv-contact a,
-.cv-contact p {
-    display: flex;
-    align-items: flex-start;
-    gap: 7px;
-    color: rgb(0,0,1);
-    text-decoration: none;
-    word-break: break-word;
-}
-
-.cv-contact a:hover,
-.cv-contact a:focus {
-    color: #6d6968;
-}
-
-.cv-contact i {
-    width: 12px;
-    margin-top: 2px;
-    text-align: center;
-}
-
-.cv-item {
-    margin-bottom: 4mm;
-    break-inside: avoid;
-}
-
-.cv-item.compact {
-    margin-bottom: 3.5mm;
-}
-
-.cv-item-heading {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-}
-
-.cv-date {
-    color: #555;
-    font-family: "Kalam", cursive;
-    font-size: 9.2pt !important;
-    white-space: nowrap;
-}
-
-.cv-list,
-.cv-strengths {
-    margin: 0;
-    padding-left: 17px;
-}
-
-.cv-skills {
-    display: grid;
-    gap: 3mm;
-}
-
-.cv-skills h3 {
-    margin-bottom: 1mm;
-}
-
-.cv-strengths {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.5mm 8mm;
-}
-
-@media screen and (max-width: 767px) {
-    .cv-toolbar {
-        align-items: stretch;
-        flex-direction: column;
-        width: min(100% - 24px, 560px);
-        gap: 10px;
-    }
-
-    .cv-toolbar-link,
-    .cv-print-button {
-        width: 100%;
-    }
-
-    .cv-toolbar-actions {
-        display: grid;
-        grid-template-columns: 48px 1fr;
-        width: 100%;
-        gap: 10px;
-    }
-
-    .cv-toolbar-actions .language-switcher,
-    .cv-toolbar-actions .language-switcher button {
-        width: 100%;
-        height: 100%;
-    }
-
-    .cv-toolbar-actions .language-switcher button {
-        min-width: 0;
-        min-height: 36px;
-    }
-
-    .cv-document {
-        min-height: 0;
-        padding: 24px 18px;
-        box-shadow: 4px 4px #000000;
-    }
-
-    .cv-header,
-    .cv-grid {
-        display: block;
-    }
-
-    .cv-header {
-        text-align: center;
-    }
-
-    .cv-photo {
-        width: 132px;
-        height: 132px;
-        margin-bottom: 16px;
-    }
-
-    .cv-heading h1 {
-        font-size: 2.2rem;
-    }
-
-    .cv-heading p {
-        font-size: 1.35rem;
-    }
-
-    .cv-sidebar {
-        padding-right: 0;
-        border-right: 0;
-        margin-top: 22px;
-    }
-
-    .cv-main {
-        margin-top: 22px;
-    }
-
-    .cv-item-heading {
-        display: block;
-    }
-
-    .cv-strengths {
-        grid-template-columns: 1fr;
-    }
-}
-
-@page {
-    size: A4;
-    margin: 0;
-}
-
-@media print {
-    html,
-    body {
-        width: 210mm;
-        min-height: 297mm;
-        margin: 0;
-        padding: 0;
-        background: #ffffff !important;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-    }
-
-    .cv-toolbar {
-        display: none !important;
-    }
-
-    .cv-shell {
-        padding: 0 !important;
-    }
-
-    .cv-document {
-        width: 210mm;
-        min-height: 297mm;
-        height: 297mm;
-        margin: 0;
-        padding: 13mm 14mm 10mm;
-        border: 0;
-        box-shadow: none;
-        overflow: hidden;
-    }
-
-    .cv-header {
-        display: grid !important;
-        grid-template-columns: 34mm 1fr;
-        text-align: left;
-        gap: 10mm;
-        padding-bottom: 7mm;
-    }
-
-    .cv-grid {
-        display: grid !important;
-        grid-template-columns: 60mm 1fr;
-        gap: 7mm;
-        padding-top: 8mm;
-    }
-
-    .cv-sidebar {
-        padding-right: 6mm;
-        border-right: 1.5px solid #000;
-        margin-top: 0;
-    }
-
-    .cv-sidebar .cv-section {
-        margin-bottom: 3.8mm;
-    }
-
-    .cv-sidebar .cv-item,
-    .cv-sidebar .cv-item.compact {
-        margin-bottom: 2.6mm;
-    }
-
-    .cv-sidebar .cv-section h2 {
-        margin-bottom: 1.8mm;
-    }
-
-    .cv-sidebar .cv-section p,
-    .cv-sidebar .cv-section li,
-    .cv-sidebar .cv-section a {
-        font-size: 8.2pt;
-        line-height: 1.2;
-    }
-
-    .cv-sidebar .cv-section p {
-        margin-bottom: 1.35mm;
-    }
-
-    .cv-sidebar .cv-date {
-        font-size: 8pt !important;
-    }
-
-    .cv-main {
-        margin-top: 0;
-    }
-
-    .cv-item-heading {
-        display: flex;
-    }
-
-    .cv-section {
-        margin-bottom: 5.4mm;
-        page-break-inside: avoid;
-        break-inside: avoid;
-    }
-
-    .cv-section h2 {
-        margin-bottom: 2.5mm;
-        font-size: 13.2pt;
-    }
-
-    .cv-section h3 {
-        font-size: 9.8pt;
-    }
-
-    .cv-section p,
-    .cv-section li,
-    .cv-section a {
-        font-size: 8.8pt;
-        line-height: 1.32;
-    }
-
-    .cv-section p {
-        margin-bottom: 2.1mm;
-    }
-
-    .cv-heading h1 {
-        font-size: 29pt;
-    }
-
-    .cv-heading p {
-        font-size: 16pt;
-    }
-
-    .cv-photo {
-        width: 34mm;
-        height: 34mm;
-        box-shadow: none;
-    }
-
-    .cv-date {
-        font-size: 8.7pt !important;
-    }
-
-    .cv-item {
-        margin-bottom: 3.6mm;
-    }
-
-    a {
-        color: #000000 !important;
-        text-decoration: none !important;
-    }
-}
-
 .mi-carousel-controls {
     display: flex;
     align-items: center;
@@ -2005,6 +1573,7 @@ img.logo {
 }
 
 .footer-inner {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -2022,6 +1591,12 @@ img.logo {
 
 .footer-author {
     text-align: left;
+}
+
+.footer-copy {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
 }
 
 .footer-credits {
@@ -2053,93 +1628,6 @@ img.logo {
     margin-bottom: 0.5rem; 
 }
 
-.not-found-page {
-    min-height: 100%;
-    background-color: #f0f0f0;
-    color: rgb(0,0,1);
-}
-
-.not-found-section {
-    min-height: 100vh;
-    display: grid;
-    place-items: center;
-    padding: 24px;
-    position: relative;
-}
-
-.not-found-language {
-    position: absolute;
-    top: 22px;
-    right: 22px;
-}
-
-.not-found-card {
-    width: min(100%, 680px);
-    padding: 42px 34px;
-    background-color: #ffffff;
-    border: 1px solid #000;
-    box-shadow: 6px 6px #000000;
-    text-align: center;
-}
-
-.not-found-logo {
-    width: 72px;
-    height: 72px;
-    object-fit: contain;
-    margin-bottom: 18px;
-}
-
-.not-found-code {
-    margin: 0;
-    font-family: Georgia, serif;
-    font-size: clamp(4rem, 13vw, 7rem);
-    font-weight: 700;
-    line-height: 0.95;
-}
-
-.not-found-card h1 {
-    margin: 14px 0 12px;
-    font-family: "Kalam", cursive;
-    font-size: clamp(2rem, 6vw, 3.4rem);
-    line-height: 1.05;
-}
-
-.not-found-text {
-    max-width: 500px;
-    margin: 0 auto 28px;
-    font-family: Georgia, serif;
-    font-size: 1.05rem;
-    line-height: 1.5;
-    color: #333;
-}
-
-.not-found-actions {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.not-found-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    min-height: 38px;
-    padding: 7px 13px;
-    background-color: #ffffff;
-    border: 1px solid #000;
-    box-shadow: 2px 2px #000000;
-    color: rgb(0,0,1);
-    font-family: "Kalam", cursive;
-    text-decoration: none;
-}
-
-.not-found-button:hover,
-.not-found-button:focus {
-    color: #6d6968;
-}
-
 @media (max-width: 767px) {
     .footer-inner {
         flex-direction: column;
@@ -2155,24 +1643,5 @@ img.logo {
     .footer-links {
         justify-content: flex-start;
     }
-
-    .not-found-section {
-        align-items: start;
-        padding: 76px 14px 24px;
-    }
-
-    .not-found-language {
-        top: 18px;
-        right: 14px;
-    }
-
-    .not-found-card {
-        padding: 32px 18px;
-        box-shadow: 4px 4px #000000;
-    }
-
-    .not-found-actions {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
 }
+

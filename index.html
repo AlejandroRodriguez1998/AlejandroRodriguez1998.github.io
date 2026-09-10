@@ -98,6 +98,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/terminal.css">
 </head>  
 <!--Body de todo el porfolio-->
 <body>
@@ -156,35 +157,35 @@
         </div>
 
         <a href="#presentacion" class="button">
-            <i class="fa-solid fa-house" aria-hidden="true"></i>
+            <i class="fa-solid fa-address-card" aria-hidden="true"></i>
             <span class="text_button">Presentación</span>
         </a>
         <a href="#sobreMi" class="button">
-            <i class="fa-solid fa-user" aria-hidden="true"></i>
+            <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
             <span class="text_button">Sobre mí</span>
         </a>
         <a href="#intereses" class="button">
-            <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
+            <i class="fa-solid fa-compass" aria-hidden="true"></i>
             <span class="text_button">Intereses</span>
         </a>
         <a href="#formacion" class="button">
-            <i class="fa-solid fa-brain" aria-hidden="true"></i>
+            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
             <span class="text_button">Formación</span>
         </a>
         <a href="#habilidades" class="button">
-            <i class="fa-solid fa-book" aria-hidden="true"></i>
+            <i class="fa-solid fa-code" aria-hidden="true"></i>
             <span class="text_button">Habilidades</span>
         </a>
         <a href="#portfolio" class="button">
-            <i class="fa-solid fa-medal" aria-hidden="true"></i>
+            <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
             <span class="text_button">Portfolio</span>
         </a>
         <a href="#muro" class="button">
-            <i class="fa-solid fa-pencil" aria-hidden="true"></i>
+            <i class="fa-solid fa-newspaper" aria-hidden="true"></i>
             <span class="text_button">Muro</span>
         </a>
         <a href="#contacto" class="button">
-            <i class="fa-solid fa-phone-flip" aria-hidden="true"></i>
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
             <span class="text_button">Contacto</span>
         </a>
     </div>
@@ -193,28 +194,28 @@
     <div class="floating-menu d-none d-lg-block">
         <div class="menu-dots">
             <a href="#presentacion" class="dot" id="dot-presentacion" data-tooltip="Presentación">
-                <i class="fa-solid fa-house"></i>
+                <i class="fa-solid fa-address-card"></i>
             </a>
             <a href="#sobreMi" class="dot" id="dot-sobreMi" data-tooltip="Sobre Mí">
-              <i class="fa-solid fa-user"></i>
+              <i class="fa-solid fa-user-tie"></i>
             </a>
             <a href="#intereses" class="dot" id="dot-intereses" data-tooltip="Intereses">
-                <i class="fa-solid fa-screwdriver-wrench"></i>
+                <i class="fa-solid fa-compass"></i>
             </a>
             <a href="#formacion" class="dot" id="dot-formacion" data-tooltip="Formación">
-                <i class="fa-solid fa-brain"></i>
+                <i class="fa-solid fa-graduation-cap"></i>
             </a>
             <a href="#habilidades" class="dot" id="dot-habilidades" data-tooltip="Habilidades">
-                <i class="fa-solid fa-book"></i>
+                <i class="fa-solid fa-code"></i>
             </a>
             <a href="#portfolio" class="dot" id="dot-portfolio" data-tooltip="Portfolio">
-                <i class="fa-solid fa-medal"></i>
+                <i class="fa-solid fa-briefcase"></i>
             </a>
             <a href="#muro" class="dot" id="dot-muro" data-tooltip="Muro">
-                <i class="fa-solid fa-pencil"></i>
+                <i class="fa-solid fa-newspaper"></i>
             </a>
             <a href="#contacto" class="dot" id="dot-contacto" data-tooltip="Contacto">
-                <i class="fa-solid fa-phone-flip"></i>
+                <i class="fa-solid fa-envelope"></i>
             </a>
         </div>
     </div>
@@ -684,7 +685,7 @@
                     <p class="project-date mb-1">2025 - 2026</p>
                     <div class="featured-tech-list" aria-label="Tecnologías principales del TFG">
                         <span><i class="fa-brands fa-angular" aria-hidden="true"></i> Angular</span>
-                        <span><i class="fa-brands fa-python" aria-hidden="true"></i> Flask</span>
+                        <span><i class="fa-brands fa-python" aria-hidden="true"></i> FastAPI</span>
                         <span><i class="fa-solid fa-cubes" aria-hidden="true"></i> K3s</span>
                     </div>
                     <button class="project-info-button" type="button" data-bs-toggle="modal" data-bs-target="#tfgModal"><i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Más info</button>
@@ -1261,7 +1262,7 @@
                     <h4>Tecnologías principales y áreas de aplicación</h4>
                     <div class="modal-tech-list">
                         <span><i class="fa-brands fa-angular" aria-hidden="true"></i> Angular</span>
-                        <span><i class="fa-brands fa-python" aria-hidden="true"></i> Flask</span>
+                        <span><i class="fa-brands fa-python" aria-hidden="true"></i> FastAPI</span>
                         <span><i class="fa-brands fa-python" aria-hidden="true"></i> Python</span>
                         <span><i class="fa-solid fa-cubes" aria-hidden="true"></i> K3s</span>
                         <span><i class="fa-solid fa-chart-line" aria-hidden="true"></i> InfluxDB</span>
@@ -1500,7 +1501,12 @@
             <div class="footer-inner">
                 <div class="footer-author">
                     <p class="footer-name mb-0">Alejandro Paniagua Rodríguez</p>
-                    <p class="mb-0">© 2024 · Diseñado y desarrollado por el autor</p>
+                    <p class="mb-0 footer-copy">
+                        <span>© 2024 · Diseñado y desarrollado por el autor</span>
+                        <button class="terminal-trigger" type="button" data-terminal-open aria-label="Abrir terminal del portfolio" title="Abrir terminal">
+                            <span aria-hidden="true">&gt;_</span>
+                        </button>
+                    </p>
                 </div>
 
                 <div class="footer-credits">
@@ -1530,8 +1536,29 @@
         </div>
     </footer>
 
+    <div class="terminal-overlay" data-terminal-overlay hidden>
+        <section class="portfolio-terminal" role="dialog" aria-modal="true" aria-labelledby="terminalTitle">
+            <header class="terminal-header">
+                <h2 id="terminalTitle">Terminal</h2>
+                <button class="terminal-close" type="button" data-terminal-close aria-label="Cerrar terminal">
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+            </header>
+            <div class="terminal-body" data-terminal-body tabindex="-1">
+                <div class="terminal-output" data-terminal-output aria-live="polite"></div>
+                <form class="terminal-form" data-terminal-form autocomplete="off">
+                    <label class="visually-hidden" for="terminalInput">Comando de terminal</label>
+                    <span class="terminal-prompt" aria-hidden="true">alejandro@portfolio:~$</span>
+                    <input id="terminalInput" data-terminal-input type="text" spellcheck="false" autocapitalize="none" autocomplete="off">
+                </form>
+            </div>
+        </section>
+    </div>
+
     <!--Bootstrap y personalizado-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="script/i18n.js"></script>
     <script src="script/script.js"></script>
+    <script src="script/terminal.js"></script>
 </body>
 </html>
