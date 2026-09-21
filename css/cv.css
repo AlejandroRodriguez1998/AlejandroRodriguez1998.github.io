@@ -365,16 +365,26 @@
     }
 
     .cv-grid {
-        display: grid !important;
-        grid-template-columns: 60mm 1fr;
+        display: flex !important;
+        align-items: flex-start;
         gap: 7mm;
+        flex-wrap: nowrap;
+        width: 100%;
         padding-top: 6mm;
     }
 
     .cv-sidebar {
+        flex: 0 0 60mm;
+        width: 60mm;
+        max-width: 60mm;
         padding-right: 6mm;
         border-right: 1.5px solid #000;
         margin-top: 0;
+    }
+
+    .cv-main {
+        flex: 1 1 auto;
+        min-width: 0;
     }
 
     .cv-sidebar .cv-section {
