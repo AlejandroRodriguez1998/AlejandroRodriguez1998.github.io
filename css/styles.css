@@ -871,6 +871,7 @@ img.logo {
 
 .mi-carousel-item {
     flex: 0 0 auto; /* Asegura que los ítems no se reduzcan */
+    display: flex;
     width: 100%;    /* Ancho completo por defecto (para móvil) */
     min-height: 430px;
     box-sizing: border-box;
@@ -886,13 +887,15 @@ img.logo {
 }
 
 .mi-carousel-track .mi-project-card {
-    min-height: 330px;
+    min-height: 410px;
     display: flex;
     flex-direction: column;
 }
 
 .mi-carousel-track .ticket-sales-container {
+    width: 100%;
     max-width: 285px;
+    margin: 10px auto 0;
     padding: 13px;
 }
 
@@ -906,6 +909,14 @@ img.logo {
 
 #portfolio .mi-carousel-track p {
     font-size: 0.95rem;
+}
+
+.mi-carousel-track .project-description {
+    flex: 1;
+}
+
+.mi-carousel-track .project-info-button {
+    margin-top: 12px;
 }
 
 .featured-project-card {
@@ -1110,6 +1121,7 @@ img.logo {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 20px;
     margin-bottom: 3px;
 }
 

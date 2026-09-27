@@ -435,7 +435,7 @@ function enhanceCarouselProjectCards() {
 
         description.slice(0, 1).forEach(text => {
             const paragraph = document.createElement('p');
-            paragraph.className = 'mb-1';
+            paragraph.className = 'project-description mb-1';
             paragraph.textContent = text;
             card.appendChild(paragraph);
         });
