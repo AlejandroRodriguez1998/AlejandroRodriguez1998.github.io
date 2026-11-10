@@ -493,6 +493,16 @@ function getCarouselMaxIndex(track) {
     return getCarouselPageCount(track) - 1;
 }
 
+function getCarouselTranslate(track, index) {
+    const items = getCarouselItems(track);
+    if (!items.length) return 0;
+
+    const visibleItems = getVisibleItems();
+    const maxStart = Math.max(items.length - visibleItems, 0);
+    const start = Math.min(index * visibleItems, maxStart);
+    return -start * items[0].getBoundingClientRect().width;
+}
+
 function renderCarouselIndicators(trackId = 'miCarouselTrack') {
     const state = getCarouselState(trackId);
     const indicatorList = document.querySelector(`[data-indicators-for="${trackId}"]`);
@@ -538,14 +548,12 @@ function updateCustomCarousel(trackId = 'miCarouselTrack') {
     const firstItem = items[0];
     if (!firstItem) return;
 
-    const itemWidth = firstItem.offsetWidth;
-    const pageWidth = itemWidth * getVisibleItems();
     const maxIndex = getCarouselMaxIndex(state.track);
 
     if (state.index > maxIndex) state.index = 0;
     if (state.index < 0) state.index = maxIndex;
 
-    state.currentTranslate = -state.index * pageWidth;
+    state.currentTranslate = getCarouselTranslate(state.track, state.index);
     state.prevTranslate = state.currentTranslate;
     state.track.style.transition = 'transform 0.5s ease-in-out';
     state.track.style.transform = `translateX(${state.currentTranslate}px)`;
@@ -601,10 +609,11 @@ function setPositionByIndex(state) {
     const firstItem = state.track.querySelector('.mi-carousel-item');
     if (!firstItem) return;
 
-    state.currentTranslate = state.index * -(firstItem.offsetWidth * getVisibleItems());
+    state.currentTranslate = getCarouselTranslate(state.track, state.index);
     state.prevTranslate = state.currentTranslate;
     state.track.style.transition = 'transform 0.5s ease-out';
     setSliderPosition(state);
+    updateCarouselIndicators(state.track.id);
 }
 
 function initializeCarousel(track) {
@@ -646,10 +655,7 @@ function initializeCarousel(track) {
             const firstItem = state.track.querySelector('.mi-carousel-item');
             if (!firstItem) return;
 
-            const itemWidth = firstItem.offsetWidth;
-            const totalItemsWidth = itemWidth * getCarouselItems(state.track).length;
-            const visibleWidth = state.track.offsetWidth;
-            const maxScrollableWidth = Math.max(totalItemsWidth - visibleWidth, 0);
+            const maxScrollableWidth = -getCarouselTranslate(state.track, getCarouselMaxIndex(state.track));
             const nextTranslate = state.prevTranslate + currentPosition - state.startPos;
 
             if (nextTranslate > 0) {

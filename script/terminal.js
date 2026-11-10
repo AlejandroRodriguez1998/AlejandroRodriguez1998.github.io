@@ -52,7 +52,9 @@
             projects: [
                 'Proyectos principales:',
                 '- Plataforma IoT: rediseño arquitectónico de una plataforma de iluminación inteligente.',
+                '- Savia: PWA para gestionar finanzas personales, incluso sin conexión.',
                 '- Pareja Balance: PWA para gestionar gastos en pareja.',
+                '- Yincana PC: aplicación web para gestionar pruebas, tiempos y clasificación en directo.',
                 '- Agenda Académica: PWA para organizar vida académica.',
                 '',
                 "Escribe 'open projects' para ir a la sección."
@@ -128,7 +130,9 @@
             projects: [
                 'Main projects:',
                 '- IoT Platform: architectural redesign of an intelligent lighting platform.',
+                '- Savia: PWA for managing personal finances, even offline.',
                 '- Pareja Balance: PWA for managing expenses as a couple.',
+                '- Yincana PC: web application for managing challenges, times, and live rankings.',
                 '- Agenda Académica: PWA for organizing academic life.',
                 '',
                 "Type 'open projects' to go to the section."
