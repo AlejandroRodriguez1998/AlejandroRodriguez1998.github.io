@@ -1167,35 +1167,6 @@ img.logo {
     height: 150px;
 }
   
-#add-to-cart,
-.add-to-cart {
-    background: #ffffff;
-    padding: 10px;
-    color: #000;
-    border: 2px solid #000;
-    box-shadow: 4px 4px #000000;
-    font-family: Sans-serif;
-    font-size: 100%;
-} 
-
-#add-to-cart:disabled {
-    color: #666;
-    box-shadow: 3px 3px #666666;
-}
-
-.nav-link {
-    color: rgb(0,0,1);
-    font-kerning: none;
-    font-size: 15px;
-    font-family: "Kalam", cursive;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.nav-link:hover {
-    color: #6d6968;
-}
-
 #muro h2 {
     color: rgb(0,0,1);
     font-kerning: none;
